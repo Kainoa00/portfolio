@@ -1,0 +1,70 @@
+---
+title: "Problems I'm Exploring"
+---
+
+As someone passionate about entrepreneurial finance, deep tech, and data-driven decision making, I'm constantly looking for problems worth solving. Here are five challenges I personally experience and believe represent meaningful opportunities for innovation.
+
+---
+
+## 1. Fragmented Investment Research for Retail Investors
+
+**The Problem:** Individual investors lack access to the same consolidated research tools that institutional investors use. Information is scattered across SEC filings, news sources, earnings calls, and financial databases, making comprehensive due diligence time-consuming and incomplete.
+
+**Why This Matters to Me:** As an Investment Analyst at Nucleus Fund, I see firsthand how powerful consolidated research tools can be. Yet most retail investors are making decisions with incomplete information, leading to suboptimal outcomes and widening the gap between institutional and individual investor performance.
+
+**The Opportunity:** Build an AI-powered research aggregation platform that synthesizes SEC filings, earnings transcripts, news sentiment, and technical indicators into actionable insights accessible to everyday investors.
+
+---
+
+## 2. Inefficient Deal Flow Management in Venture Capital
+
+**The Problem:** VC firms receive hundreds of pitch decks monthly, but the initial screening process is largely manual and inconsistent. Good opportunities get missed while partners spend excessive time on deals that don't fit their thesis.
+
+**Why This Matters to Me:** As I pursue research experience in Venture Capital and Private Equity, I've observed how much time is lost in the deal sourcing and initial screening phases. This inefficiency affects both investors (missed opportunities) and founders (delayed responses).
+
+**The Opportunity:** Develop intelligent deal flow tools that use machine learning to pre-screen opportunities against a firm's investment thesis, track founder background signals, and surface high-potential deals faster.
+
+---
+
+## 3. Lack of Financial Literacy Tools for Young Professionals
+
+**The Problem:** Most young professionals enter the workforce without understanding fundamental concepts like compound interest, tax-advantaged accounts, or equity compensation. Traditional financial education is either too basic or too complex, leaving a gap for practical, actionable knowledge.
+
+**Why This Matters to Me:** As a university student studying finance and analytics, I regularly encounter peers who are intelligent and capable but have never been taught how to think about building wealth. This knowledge gap has long-term consequences for generational wealth building.
+
+**The Opportunity:** Create personalized financial education experiences that meet users where they are, using interactive simulations and AI-driven coaching to build real financial decision-making skills.
+
+---
+
+## 4. Disconnected Data Systems in Small Business Operations
+
+**The Problem:** Small businesses often use multiple disconnected tools for accounting, inventory, CRM, and operations. This creates data silos, manual reconciliation work, and makes it difficult to get a unified view of business health.
+
+**Why This Matters to Me:** From my experience in commercial banking at Genesis Bank, I've seen how small business owners struggle to provide clean financial data because their systems don't talk to each other. This affects their ability to secure financing and make informed decisions.
+
+**The Opportunity:** Build integration layers or unified platforms that automatically sync data across common small business tools, providing real-time dashboards and eliminating manual data entry.
+
+---
+
+## 5. Limited Access to Alternative Investment Opportunities
+
+**The Problem:** Alternative investments like private equity, venture capital, and real estate syndications have historically been restricted to accredited investors, leaving most people with only public market options for wealth building.
+
+**Why This Matters to Me:** As someone interested in fund structuring and alternative investments, I believe the democratization of access to these asset classes could significantly impact wealth inequality. The regulatory landscape is evolving, but the infrastructure to support broader access is still developing.
+
+**The Opportunity:** Develop compliant platforms and fund structures that enable broader participation in alternative investments while maintaining appropriate investor protections and education.
+
+---
+
+## Let's Connect
+
+If any of these problems resonate with you or you're working on solutions in these spaces, I'd love to connect and learn more.
+
+<div class="d-flex justify-content-center gap-3 my-4">
+  <a class="btn btn-primary" href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" target="_blank">
+    <i class="fab fa-linkedin me-2"></i>Connect on LinkedIn
+  </a>
+  <a class="btn btn-outline-dark" href="https://github.com/Kainoa00" target="_blank">
+    <i class="fab fa-github me-2"></i>View My GitHub
+  </a>
+</div>
