@@ -9,7 +9,7 @@ toc: true
 
 # Kainoa Shintaku
 
-<p class="lead">Strategic Management & Data Analytics at BYU</p>
+<p class="lead">Investment Analyst | Finance & Data Analytics | BYU Marriott School of Business</p>
 
 <div class="d-flex justify-content-center gap-3 flex-wrap">
   <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-outline-primary btn-sm" target="_blank">
@@ -18,73 +18,132 @@ toc: true
   <a href="https://github.com/Kainoa00" class="btn btn-outline-primary btn-sm" target="_blank">
     <i class="fab fa-github"></i> GitHub
   </a>
+  <a href="resume.qmd" class="btn btn-outline-primary btn-sm">
+    <i class="fas fa-file-alt"></i> Resume
+  </a>
 </div>
 
 :::
 
 ## My Story
 
-I'm a student at Brigham Young University pursuing dual degrees in **Strategic Management** and **Statistics** with an emphasis in Data Analytics. My passion lies at the intersection of finance, technology, and entrepreneurship.
+I'm an Investment Analyst at Nucleus Fund and a student at Brigham Young University's Marriott School of Business, where I'm pursuing dual degrees in **Strategic Management** and **Statistics** with a concentration in Finance.
 
-I'm driven by the potential to leverage data-driven insights and emerging technologies to transform how investment decisions are made and how capital flows to innovative ventures.
+My passion lies at the intersection of finance, technology, and entrepreneurship. I've contributed to funding **$500k+** in equity across early-stage startups and identified **$30M+** in potential growth opportunities during my commercial banking experience. I'm driven by the potential to leverage data-driven insights and emerging technologies to transform how investment decisions are made.
 
 ## Education
 
 <div class="experience-item">
 
-#### Brigham Young University
+#### Brigham Young University – Marriott School of Business
 
-<div class="company">B.S. Strategic Management & B.S. Statistics (Data Analytics)</div>
-<div class="date">Expected April 2028</div>
+<div class="company">Bachelor of Science in Strategic Management and Statistics</div>
+<div class="date">Concentration in Finance | Expected April 2028 | Provo, UT</div>
+
+**GPA:** 3.82/4.00
+
+**Scholarship:** BYU Multicultural Scholarship
 
 **Relevant Coursework:** Investment Analysis, Financial Modeling, Data Analytics, Statistical Methods
 
-**Focus Areas:** Quantitative finance, venture capital research, AI applications in finance
-
 </div>
 
-## Experience
+## Professional Experience
 
 <div class="experience-item">
 
 #### Investment Analyst
 
 <div class="company">Nucleus Fund</div>
-<div class="date">Current</div>
+<div class="date">September 2025 – Present | Salt Lake City, UT</div>
 
-- Conduct in-depth investment analysis and due diligence on potential portfolio companies
-- Apply quantitative methods and financial modeling to evaluate investment opportunities
-- Collaborate with team members on fund strategy and portfolio management decisions
+- Performed due diligence on **10+ early-stage startups** by conducting market research, industry expert calls, and financial analysis to evaluate investment potential
+- Contributed to the funding of **$500k+** in equity across multiple companies, directly supporting portfolio growth and revenue generation
+- Collaborated with founders to assess how funding would accelerate growth; partnered with analysts to deliver in-depth analyses and pitch decks for investment decisions
 
 </div>
 
 <div class="experience-item">
 
-#### Commercial Banking Intern
+#### Commercial Banking Summer Analyst
 
 <div class="company">Genesis Bank</div>
+<div class="date">June 2025 – August 2025 | Newport Beach, CA</div>
 
-- Gained hands-on experience in commercial banking operations and client relationship management
-- Analyzed financial statements and credit risk for business lending decisions
-- Supported the commercial lending team with deal structuring and documentation
+- Supported Genesis Bank's acquisition of a publicly traded bank by assisting with financial due diligence, utilizing CapIQ and FactSet
+- Worked alongside the President/COO to plan for the implementation and execution of a large-scale backfile for acquired loans
+- Collaborated with deal teams on a market expansion strategy, delivering a proposal that identified **$30M+** in potential loan and deposit growth
 
 </div>
 
 <div class="experience-item">
 
-#### Brand Ambassador
+#### Ambassador
 
 <div class="company">Snagtag</div>
+<div class="date">January 2025 – June 2025 | Lehi, UT</div>
 
-- Represented the brand and promoted platform adoption among target demographics
-- Built relationships and networks to expand market presence
-- Contributed to marketing initiatives and user acquisition strategies
+- Represented Snagtag at the **Silicon Slopes Startup Expo**, connecting with 8 investors and 20+ potential clients
+- Conducted market research on community impact, providing actionable insights to strengthen product offerings
+- Gathered feedback on the new app, facilitating discussions with software development engineers
 
 </div>
 
-## Skills
+## Leadership & Development
+
+<div class="experience-item">
+
+#### SEO EDGE Participant
+
+<div class="company">SEO Career</div>
+<div class="date">January 2025 – June 2025 | New York, NY</div>
+
+- Selected for competitive program providing coaching on interview, technical, and professional development
+- Completed industry-specific training focused on developing technical skills and institutional knowledge
+
+</div>
+
+<div class="experience-item">
+
+#### Activities President
+
+<div class="company">BYU FlexGE Student Council</div>
+<div class="date">January 2024 – April 2024 | Provo, UT</div>
+
+- Led strategic initiatives to enhance student life at BYU
+- Helped **25+ students** receive scholarships and admittance to specialty programs through private consulting
+
+</div>
+
+<div class="experience-item">
+
+#### Volunteer Representative
+
+<div class="company">The Church of Jesus Christ of Latter-day Saints</div>
+<div class="date">December 2021 – January 2024 | Santo Domingo, Dominican Republic</div>
+
+- Served two years conducting community outreach in **Spanish** (fluent)
+- Coordinated social and educational events, positively impacting underprivileged populations
+
+</div>
+
+## Skills & Expertise
 
 <div class="skill-cards">
+
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-chart-line"></i>
+</div>
+
+### Finance
+
+- Investment Analysis
+- Due Diligence
+- Financial Modeling
+- M&A Support
+
+</div>
 
 <div class="skill-card">
 <div class="skill-card-icon">
@@ -96,7 +155,7 @@ I'm driven by the potential to leverage data-driven insights and emerging techno
 - Python
 - SQL
 - VBA
-- Statistical Modeling
+- Data Analytics
 
 </div>
 
@@ -108,35 +167,29 @@ I'm driven by the potential to leverage data-driven insights and emerging techno
 ### AI & Automation
 
 - AI Integration
+- LLM Prompt Engineering
 - Workflow Automation
-- LLM Model Training
 - Process Optimization
 
 </div>
 
-<div class="skill-card">
-<div class="skill-card-icon">
-<i class="fas fa-users"></i>
 </div>
 
-### Soft Skills
+## Organizations
 
-- Strategic Thinking
-- Cross-functional Collaboration
-- Clear Communication
-- Problem-solving
+**Leadership Roles:** President, Trading Desk at BYU | Captain, Water Polo Club
 
-</div>
+**Professional Clubs:** AI in Business Association | Management Consulting Association | Venture Capital Club
 
-</div>
+**Other Activities:** Student Athlete & Volunteer Coach (Water Polo) | Physical & Mental Health Advocate
 
-## Interests
+## Languages
 
-I'm deeply passionate about **entrepreneurial finance**, **financial consulting**, and **deep tech**. I enjoy exploring how emerging technologies can disrupt traditional industries and create new opportunities for value creation.
+**Spanish** – Fluent (reading, writing, and speaking)
 
-Outside of academics, I stay engaged with the latest developments in AI, fintech, and the venture ecosystem.
+Gained through two years of full-time service in the Dominican Republic.
 
-## What's Next
+## What I'm Looking For
 
 I'm seeking research and professional experience in **Venture Capital**, **Private Equity**, and **Fund Structuring**. My goal is to develop expertise in evaluating high-growth companies, understanding fund mechanics, and contributing to investment decisions that support innovative entrepreneurs.
 
@@ -146,16 +199,16 @@ I'm particularly interested in opportunities that combine rigorous financial ana
 
 ::: {.cta-section}
 
-## Let's Build Something Together
+## Let's Connect
 
 I'm always interested in discussing venture capital, fintech, and innovative solutions to complex problems.
 
 <div class="cta-buttons">
-  <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-primary" target="_blank">
-    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+  <a href="files/Kainoa_Shintaku_Resume.pdf" class="btn btn-primary" download>
+    <i class="fas fa-download"></i> Download Resume
   </a>
-  <a href="https://github.com/Kainoa00" class="btn btn-outline-dark" target="_blank">
-    <i class="fab fa-github"></i> Follow on GitHub
+  <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-outline-dark" target="_blank">
+    <i class="fab fa-linkedin"></i> Connect on LinkedIn
   </a>
 </div>
 

@@ -10,34 +10,85 @@ page-layout: full
 
 # Kainoa Shintaku
 
-<p class="lead">Investment Analyst | Data Analytics | Building the Future of Finance</p>
+<p class="lead">Investment Analyst | BYU Marriott School of Business | Finance & Data Analytics</p>
 
 <div class="d-flex justify-content-center gap-3 flex-wrap">
-  <a href="#projects" class="btn btn-primary">
-    <i class="fas fa-briefcase"></i> View My Work
+  <a href="#about" class="btn btn-primary">
+    <i class="fas fa-user"></i> About Me
   </a>
-  <a href="#connect" class="btn btn-outline-primary">
-    <i class="fas fa-paper-plane"></i> Let's Connect
+  <a href="files/Kainoa_Shintaku_Resume.pdf" class="btn btn-outline-primary" download>
+    <i class="fas fa-download"></i> Download Resume
   </a>
 </div>
 
 :::
 
-## What I Bring to the Table
+## At a Glance {#about}
 
 <div class="skill-cards">
+
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-dollar-sign"></i>
+</div>
+
+### $500K+
+
+Contributed to equity funding across early-stage startups at Nucleus Fund
+
+</div>
 
 <div class="skill-card">
 <div class="skill-card-icon">
 <i class="fas fa-chart-line"></i>
 </div>
 
-### Finance
+### $30M+
 
-- Investment Analysis
-- Financial Modeling
+Identified in potential loan and deposit growth at Genesis Bank
+
+</div>
+
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-graduation-cap"></i>
+</div>
+
+### 3.82 GPA
+
+BYU Marriott School of Business, Multicultural Scholarship Recipient
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+## About
+
+I'm an Investment Analyst at **Nucleus Fund** and a student at **BYU's Marriott School of Business**, pursuing dual degrees in Strategic Management and Statistics with a concentration in Finance.
+
+I've performed due diligence on 10+ early-stage startups and collaborated with deal teams on M&A transactions and market expansion strategies. I'm fluent in **Spanish** and experienced in **Python, SQL, VBA**, and **AI integration**.
+
+[Learn more about my background →](about.qmd)
+
+<div class="divider"></div>
+
+## What I Bring
+
+<div class="skill-cards">
+
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-search-dollar"></i>
+</div>
+
+### Finance & Investment
+
 - Due Diligence
-- Fund Structuring
+- Financial Modeling
+- Investment Analysis
+- M&A Support
 
 </div>
 
@@ -46,7 +97,7 @@ page-layout: full
 <i class="fas fa-code"></i>
 </div>
 
-### Technical
+### Technical Skills
 
 - Python & SQL
 - VBA Automation
@@ -62,7 +113,7 @@ page-layout: full
 
 ### AI & Innovation
 
-- LLM Model Training
+- LLM Prompt Engineering
 - AI Integration
 - Workflow Automation
 - Process Optimization
@@ -108,22 +159,24 @@ A caregiving coordination app designed to help families manage the logistics of 
 
 ## Currently Exploring
 
-I'm actively researching problems at the intersection of finance and technology. [See what I'm working on →](problems.qmd)
+I'm actively researching problems at the intersection of finance and technology, including fragmented investment research, deal flow management in VC, and alternative investment access.
+
+[See what I'm working on →](problems.qmd)
 
 <div class="divider"></div>
 
 ::: {.cta-section #connect}
 
-## Let's Build Something Together
+## Let's Connect
 
-I'm always interested in discussing venture capital, fintech, and innovative solutions to complex problems.
+I'm seeking opportunities in Venture Capital, Private Equity, and Fund Structuring.
 
 <div class="cta-buttons">
   <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-primary" target="_blank">
     <i class="fab fa-linkedin"></i> Connect on LinkedIn
   </a>
-  <a href="https://github.com/Kainoa00" class="btn btn-outline-dark" target="_blank">
-    <i class="fab fa-github"></i> Follow on GitHub
+  <a href="files/Kainoa_Shintaku_Resume.pdf" class="btn btn-outline-dark" download>
+    <i class="fas fa-download"></i> Download Resume
   </a>
 </div>
 

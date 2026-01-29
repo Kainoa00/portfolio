@@ -1,0 +1,237 @@
+---
+title: "Resume"
+toc: false
+---
+
+::: {.hero-banner}
+
+# Resume
+
+<p class="lead">Investment Analyst | Finance & Data Analytics</p>
+
+<div class="d-flex justify-content-center gap-3 flex-wrap">
+  <a href="files/Kainoa_Shintaku_Resume.pdf" class="btn btn-primary" download>
+    <i class="fas fa-download"></i> Download PDF
+  </a>
+  <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-outline-primary" target="_blank">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+</div>
+
+:::
+
+## Education
+
+<div class="experience-item">
+
+#### Brigham Young University – Marriott School of Business
+
+<div class="company">Bachelor of Science in Strategic Management and Statistics</div>
+<div class="date">Concentration in Finance | Expected April 2028 | Provo, UT</div>
+
+**GPA:** 3.82/4.00
+
+**Scholarship:** Brigham Young University Multicultural Scholarship
+
+</div>
+
+## Experience
+
+<div class="experience-item">
+
+#### Investment Analyst
+
+<div class="company">Nucleus Fund</div>
+<div class="date">September 2025 – Present | Salt Lake City, UT</div>
+
+- Performed due diligence on 10+ early-stage startups by conducting market research, industry expert calls, and financial analysis to evaluate investment potential
+- Contributed to the funding of **$500k+** in equity across multiple companies, directly supporting portfolio growth and revenue generation
+- Collaborated with founders to assess how funding would accelerate growth; partnered with a team of analysts to deliver in-depth analyses and pitch decks for investment decisions
+
+</div>
+
+<div class="experience-item">
+
+#### Commercial Banking Summer Analyst
+
+<div class="company">Genesis Bank</div>
+<div class="date">June 2025 – August 2025 | Newport Beach, CA</div>
+
+- Supported Genesis Bank's acquisition of a publicly traded bank by assisting with financial due diligence, improving the Phase 1-2 request list utilizing SMPs such as CapIQ and FactSet
+- Worked alongside the President/COO to plan for the implementation and execution of a large-scale backfile for acquired loans, which beat the one-time cost saved in the acquisition model
+- Collaborated with deal teams on a market expansion strategy, delivering a proposal to senior leadership that identified **$30M+** in potential loan and deposit growth across new sectors
+
+</div>
+
+<div class="experience-item">
+
+#### Ambassador
+
+<div class="company">Snagtag</div>
+<div class="date">January 2025 – June 2025 | Lehi, UT</div>
+
+- Conducted market research on community impact, providing actionable insights to strengthen Snagtag's product offerings
+- Represented Snagtag at the Silicon Slopes Startup Expo, generating brand exposure and connecting with 8 investors and 20+ potential clients
+- Gathered feedback on Snagtag's new app, facilitating discussions with software development engineers to enhance future operations development
+
+</div>
+
+## Leadership & Professional Development
+
+<div class="experience-item">
+
+#### SEO EDGE Participant
+
+<div class="company">SEO Career</div>
+<div class="date">January 2025 – June 2025 | New York, NY</div>
+
+- Received coaching and online instruction to achieve targeted interview, technical, and professional developmental goals
+- Learned business fundamentals to compete successfully for internship opportunities
+- Completed industry-specific training and assessments focused on developing technical skills, institutional knowledge, and attention to detail
+
+</div>
+
+<div class="experience-item">
+
+#### Activities President
+
+<div class="company">BYU FlexGE Student Council</div>
+<div class="date">January 2024 – April 2024 | Provo, UT</div>
+
+- Led and facilitated meetings for student council members, focusing on strategic initiatives to enhance student life at BYU
+- Directed the planning and execution of service and social events, increasing student participation and engagement
+- Privately consulted students for academic and professional positioning, helping **25+ students** receive scholarships and admittance to specialty programs
+
+</div>
+
+<div class="experience-item">
+
+#### Volunteer Representative
+
+<div class="company">The Church of Jesus Christ of Latter-day Saints</div>
+<div class="date">December 2021 – January 2024 | Santo Domingo, Dominican Republic</div>
+
+- Engaged with dozens of individuals in Spanish through various communication channels, including social media, cold calling, door-to-door outreach, and referrals
+- Collaborated with community leaders to coordinate social and educational events, positively impacting underprivileged populations
+
+</div>
+
+## Organizations & Activities
+
+<div class="skill-cards">
+
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-users"></i>
+</div>
+
+### Leadership Roles
+
+- President, Trading Desk at BYU
+- Captain, Water Polo Club
+- Officer, Water Polo Club
+- Activities President, Student Council
+
+</div>
+
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-briefcase"></i>
+</div>
+
+### Professional Clubs
+
+- AI in Business Association (2025-2026)
+- Management Consulting Association
+- Venture Capital Club (2024-2025)
+
+</div>
+
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-heart"></i>
+</div>
+
+### Other Activities
+
+- Student Athlete, Water Polo
+- Volunteer Coach, High School Water Polo
+- Physical & Mental Health Advocate
+
+</div>
+
+</div>
+
+## Skills & Certifications
+
+<div class="skill-cards">
+
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-code"></i>
+</div>
+
+### Technical
+
+- Python
+- SQL
+- VBA
+- AI Integration & Automation
+- LLM Prompt Engineering
+
+</div>
+
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-globe"></i>
+</div>
+
+### Language
+
+- **Spanish** – Fluent
+- Reading, Writing, Speaking
+
+</div>
+
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-search-dollar"></i>
+</div>
+
+### Research Focus
+
+- Venture Capital
+- Private Equity
+- Fund Structuring
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+::: {.cta-section}
+
+## Let's Connect
+
+Interested in discussing opportunities in venture capital, private equity, or finance?
+
+<div class="cta-buttons">
+  <a href="files/Kainoa_Shintaku_Resume.pdf" class="btn btn-primary" download>
+    <i class="fas fa-download"></i> Download Resume
+  </a>
+  <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-outline-dark" target="_blank">
+    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+  </a>
+</div>
+
+<div class="cta-emails">
+  <span class="email-chip" onclick="navigator.clipboard.writeText('kshintak@byu.edu'); this.innerHTML='<i class=\'fas fa-check\'></i> Copied!';">
+    <i class="fas fa-envelope"></i> kshintak@byu.edu
+  </span>
+  <span class="email-chip" onclick="navigator.clipboard.writeText('kaishintak08@gmail.com'); this.innerHTML='<i class=\'fas fa-check\'></i> Copied!';">
+    <i class="fas fa-envelope"></i> kaishintak08@gmail.com
+  </span>
+</div>
+
+:::
