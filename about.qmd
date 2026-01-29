@@ -1,72 +1,171 @@
 ---
 title: "About Me"
+toc: true
 ---
 
-::: {.hero-banner .text-center}
+::: {.hero-banner}
 
-<img src="images/profile.jpg" alt="Kainoa Shintaku" class="rounded-circle mb-3" width="160">
+<img src="images/profile.jpg" alt="Kainoa Shintaku" class="rounded-circle" width="180">
 
-<h1>Kainoa Shintaku</h1>
+# Kainoa Shintaku
 
-<a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-outline-primary btn-sm" target="_blank">
-  <i class="fab fa-linkedin"></i> LinkedIn
-</a>
-<a href="https://github.com/Kainoa00" class="btn btn-outline-primary btn-sm" target="_blank">
-  <i class="fab fa-github"></i> GitHub
-</a>
+<p class="lead">Strategic Management & Data Analytics at BYU</p>
+
+<div class="d-flex justify-content-center gap-3 flex-wrap">
+  <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-outline-primary btn-sm" target="_blank">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+  <a href="https://github.com/Kainoa00" class="btn btn-outline-primary btn-sm" target="_blank">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+</div>
 
 :::
 
-## Background
+## My Story
 
-I am a student at Brigham Young University pursuing dual degrees in Strategic Management and Statistics with an emphasis in Data Analytics. My passion lies at the intersection of finance, technology, and entrepreneurship. I am driven by the potential to leverage data-driven insights and emerging technologies to transform how investment decisions are made and how capital flows to innovative ventures.
+I'm a student at Brigham Young University pursuing dual degrees in **Strategic Management** and **Statistics** with an emphasis in Data Analytics. My passion lies at the intersection of finance, technology, and entrepreneurship.
 
-### Education
+I'm driven by the potential to leverage data-driven insights and emerging technologies to transform how investment decisions are made and how capital flows to innovative ventures.
 
-- **B.S. Strategic Management & B.S. Statistics (Data Analytics)**, Brigham Young University (Expected April 2028)
-- **Relevant Coursework**: Investment Analysis, Financial Modeling, Data Analytics, Statistical Methods
-- **Focus Areas**: Quantitative finance, venture capital research, AI applications in finance
+## Education
 
-### Experience
+<div class="experience-item">
 
-#### Investment Analyst - Nucleus Fund
-*Current*
+#### Brigham Young University
+
+<div class="company">B.S. Strategic Management & B.S. Statistics (Data Analytics)</div>
+<div class="date">Expected April 2028</div>
+
+**Relevant Coursework:** Investment Analysis, Financial Modeling, Data Analytics, Statistical Methods
+
+**Focus Areas:** Quantitative finance, venture capital research, AI applications in finance
+
+</div>
+
+## Experience
+
+<div class="experience-item">
+
+#### Investment Analyst
+
+<div class="company">Nucleus Fund</div>
+<div class="date">Current</div>
 
 - Conduct in-depth investment analysis and due diligence on potential portfolio companies
 - Apply quantitative methods and financial modeling to evaluate investment opportunities
 - Collaborate with team members on fund strategy and portfolio management decisions
 
-#### Commercial Banking Intern - Genesis Bank
+</div>
+
+<div class="experience-item">
+
+#### Commercial Banking Intern
+
+<div class="company">Genesis Bank</div>
 
 - Gained hands-on experience in commercial banking operations and client relationship management
 - Analyzed financial statements and credit risk for business lending decisions
 - Supported the commercial lending team with deal structuring and documentation
 
-#### Ambassador - Snagtag
+</div>
+
+<div class="experience-item">
+
+#### Brand Ambassador
+
+<div class="company">Snagtag</div>
 
 - Represented the brand and promoted platform adoption among target demographics
 - Built relationships and networks to expand market presence
 - Contributed to marketing initiatives and user acquisition strategies
 
-### Skills & Interests
+</div>
 
-**Technical Skills**
+## Skills
 
-- **Programming**: Python, SQL, VBA
-- **AI & Automation**: AI integration, workflow automation, LLM model training
-- **Analytics**: Data analysis, statistical modeling, financial modeling
-- **Platforms**: Certified across multiple professional platforms
+<div class="skill-cards">
 
-**Soft Skills**
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-code"></i>
+</div>
 
-- Strategic thinking and analytical problem-solving
-- Cross-functional collaboration and teamwork
-- Clear communication and presentation of complex financial concepts
+### Technical
 
-**Interests**
+- Python
+- SQL
+- VBA
+- Statistical Modeling
 
-I am deeply passionate about entrepreneurial finance, financial consulting, and deep tech. I enjoy exploring how emerging technologies can disrupt traditional industries and create new opportunities for value creation. Outside of academics, I stay engaged with the latest developments in AI, fintech, and the venture ecosystem.
+</div>
 
-### What's Next
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-robot"></i>
+</div>
 
-I am seeking research and professional experience in Venture Capital, Private Equity, and Fund Structuring. My goal is to develop expertise in evaluating high-growth companies, understanding fund mechanics, and contributing to investment decisions that support innovative entrepreneurs. I am particularly interested in opportunities that combine rigorous financial analysis with exposure to cutting-edge technologies and emerging markets.
+### AI & Automation
+
+- AI Integration
+- Workflow Automation
+- LLM Model Training
+- Process Optimization
+
+</div>
+
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-users"></i>
+</div>
+
+### Soft Skills
+
+- Strategic Thinking
+- Cross-functional Collaboration
+- Clear Communication
+- Problem-solving
+
+</div>
+
+</div>
+
+## Interests
+
+I'm deeply passionate about **entrepreneurial finance**, **financial consulting**, and **deep tech**. I enjoy exploring how emerging technologies can disrupt traditional industries and create new opportunities for value creation.
+
+Outside of academics, I stay engaged with the latest developments in AI, fintech, and the venture ecosystem.
+
+## What's Next
+
+I'm seeking research and professional experience in **Venture Capital**, **Private Equity**, and **Fund Structuring**. My goal is to develop expertise in evaluating high-growth companies, understanding fund mechanics, and contributing to investment decisions that support innovative entrepreneurs.
+
+I'm particularly interested in opportunities that combine rigorous financial analysis with exposure to cutting-edge technologies and emerging markets.
+
+<div class="divider"></div>
+
+::: {.cta-section}
+
+## Let's Build Something Together
+
+I'm always interested in discussing venture capital, fintech, and innovative solutions to complex problems.
+
+<div class="cta-buttons">
+  <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-primary" target="_blank">
+    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+  </a>
+  <a href="https://github.com/Kainoa00" class="btn btn-outline-dark" target="_blank">
+    <i class="fab fa-github"></i> Follow on GitHub
+  </a>
+</div>
+
+<div class="cta-emails">
+  <span class="email-chip" onclick="navigator.clipboard.writeText('kshintak@byu.edu'); this.innerHTML='<i class=\'fas fa-check\'></i> Copied!';">
+    <i class="fas fa-envelope"></i> kshintak@byu.edu
+  </span>
+  <span class="email-chip" onclick="navigator.clipboard.writeText('kaishintak08@gmail.com'); this.innerHTML='<i class=\'fas fa-check\'></i> Copied!';">
+    <i class="fas fa-envelope"></i> kaishintak08@gmail.com
+  </span>
+</div>
+
+:::

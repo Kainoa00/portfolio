@@ -1,12 +1,23 @@
 ---
 title: "Problems I'm Exploring"
+toc: true
 ---
+
+::: {.hero-banner}
+
+# Problems I'm Exploring
+
+<p class="lead">Challenges at the intersection of finance, technology, and entrepreneurship</p>
+
+:::
 
 As someone passionate about entrepreneurial finance, deep tech, and data-driven decision making, I'm constantly looking for problems worth solving. Here are five challenges I personally experience and believe represent meaningful opportunities for innovation.
 
 ---
 
-## 1. Fragmented Investment Research for Retail Investors
+<div class="problem-card">
+
+## <span class="problem-number">1</span> Fragmented Investment Research for Retail Investors
 
 **The Problem:** Individual investors lack access to the same consolidated research tools that institutional investors use. Information is scattered across SEC filings, news sources, earnings calls, and financial databases, making comprehensive due diligence time-consuming and incomplete.
 
@@ -14,9 +25,11 @@ As someone passionate about entrepreneurial finance, deep tech, and data-driven 
 
 **The Opportunity:** Build an AI-powered research aggregation platform that synthesizes SEC filings, earnings transcripts, news sentiment, and technical indicators into actionable insights accessible to everyday investors.
 
----
+</div>
 
-## 2. Inefficient Deal Flow Management in Venture Capital
+<div class="problem-card">
+
+## <span class="problem-number">2</span> Inefficient Deal Flow Management in Venture Capital
 
 **The Problem:** VC firms receive hundreds of pitch decks monthly, but the initial screening process is largely manual and inconsistent. Good opportunities get missed while partners spend excessive time on deals that don't fit their thesis.
 
@@ -24,9 +37,11 @@ As someone passionate about entrepreneurial finance, deep tech, and data-driven 
 
 **The Opportunity:** Develop intelligent deal flow tools that use machine learning to pre-screen opportunities against a firm's investment thesis, track founder background signals, and surface high-potential deals faster.
 
----
+</div>
 
-## 3. Lack of Financial Literacy Tools for Young Professionals
+<div class="problem-card">
+
+## <span class="problem-number">3</span> Lack of Financial Literacy Tools for Young Professionals
 
 **The Problem:** Most young professionals enter the workforce without understanding fundamental concepts like compound interest, tax-advantaged accounts, or equity compensation. Traditional financial education is either too basic or too complex, leaving a gap for practical, actionable knowledge.
 
@@ -34,9 +49,11 @@ As someone passionate about entrepreneurial finance, deep tech, and data-driven 
 
 **The Opportunity:** Create personalized financial education experiences that meet users where they are, using interactive simulations and AI-driven coaching to build real financial decision-making skills.
 
----
+</div>
 
-## 4. Disconnected Data Systems in Small Business Operations
+<div class="problem-card">
+
+## <span class="problem-number">4</span> Disconnected Data Systems in Small Business Operations
 
 **The Problem:** Small businesses often use multiple disconnected tools for accounting, inventory, CRM, and operations. This creates data silos, manual reconciliation work, and makes it difficult to get a unified view of business health.
 
@@ -44,9 +61,11 @@ As someone passionate about entrepreneurial finance, deep tech, and data-driven 
 
 **The Opportunity:** Build integration layers or unified platforms that automatically sync data across common small business tools, providing real-time dashboards and eliminating manual data entry.
 
----
+</div>
 
-## 5. Limited Access to Alternative Investment Opportunities
+<div class="problem-card">
+
+## <span class="problem-number">5</span> Limited Access to Alternative Investment Opportunities
 
 **The Problem:** Alternative investments like private equity, venture capital, and real estate syndications have historically been restricted to accredited investors, leaving most people with only public market options for wealth building.
 
@@ -54,17 +73,32 @@ As someone passionate about entrepreneurial finance, deep tech, and data-driven 
 
 **The Opportunity:** Develop compliant platforms and fund structures that enable broader participation in alternative investments while maintaining appropriate investor protections and education.
 
----
+</div>
 
-## Let's Connect
+<div class="divider"></div>
+
+::: {.cta-section}
+
+## Let's Solve Problems Together
 
 If any of these problems resonate with you or you're working on solutions in these spaces, I'd love to connect and learn more.
 
-<div class="d-flex justify-content-center gap-3 my-4">
-  <a class="btn btn-primary" href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" target="_blank">
-    <i class="fab fa-linkedin me-2"></i>Connect on LinkedIn
+<div class="cta-buttons">
+  <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-primary" target="_blank">
+    <i class="fab fa-linkedin"></i> Connect on LinkedIn
   </a>
-  <a class="btn btn-outline-dark" href="https://github.com/Kainoa00" target="_blank">
-    <i class="fab fa-github me-2"></i>View My GitHub
+  <a href="https://github.com/Kainoa00" class="btn btn-outline-dark" target="_blank">
+    <i class="fab fa-github"></i> Follow on GitHub
   </a>
 </div>
+
+<div class="cta-emails">
+  <span class="email-chip" onclick="navigator.clipboard.writeText('kshintak@byu.edu'); this.innerHTML='<i class=\'fas fa-check\'></i> Copied!';">
+    <i class="fas fa-envelope"></i> kshintak@byu.edu
+  </span>
+  <span class="email-chip" onclick="navigator.clipboard.writeText('kaishintak08@gmail.com'); this.innerHTML='<i class=\'fas fa-check\'></i> Copied!';">
+    <i class="fas fa-envelope"></i> kaishintak08@gmail.com
+  </span>
+</div>
+
+:::

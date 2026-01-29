@@ -1,49 +1,139 @@
 ---
-title: "Kainoa Shintaku | Finance & Analytics"
+title: "Kainoa Shintaku"
+toc: false
+page-layout: full
 ---
 
-::: {.hero-banner .text-center}
+::: {.hero-banner}
 
-<img src="images/profile.jpg" alt="Kainoa Shintaku" class="rounded-circle mb-3" width="160">
+<img src="images/profile.jpg" alt="Kainoa Shintaku" class="rounded-circle" width="180">
 
-<h1>Kainoa Shintaku</h1>
+# Kainoa Shintaku
 
-<p class="lead">BYU Student | Strategic Management & Data Analytics | Investment Research</p>
+<p class="lead">Investment Analyst | Data Analytics | Building the Future of Finance</p>
 
-<a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-outline-primary btn-sm" target="_blank">
-  <i class="fab fa-linkedin"></i> LinkedIn
-</a>
-<a href="https://github.com/Kainoa00" class="btn btn-outline-primary btn-sm" target="_blank">
-  <i class="fab fa-github"></i> GitHub
-</a>
+<div class="d-flex justify-content-center gap-3 flex-wrap">
+  <a href="#projects" class="btn btn-primary">
+    <i class="fas fa-briefcase"></i> View My Work
+  </a>
+  <a href="#connect" class="btn btn-outline-primary">
+    <i class="fas fa-paper-plane"></i> Let's Connect
+  </a>
+</div>
 
 :::
 
-## About Me
+## What I Bring to the Table
 
-I'm a student at Brigham Young University pursuing dual degrees in Strategic Management and Statistics (Data Analytics). My work focuses on the intersection of finance, technology, and entrepreneurship—leveraging data-driven insights and AI to transform investment decision-making.
+<div class="skill-cards">
 
-Currently serving as an Investment Analyst at Nucleus Fund, I bring experience in commercial banking, financial modeling, and AI integration. I'm passionate about Venture Capital, Private Equity, and fund structuring.
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-chart-line"></i>
+</div>
 
-[Learn more about me →](about.qmd)
+### Finance
 
----
+- Investment Analysis
+- Financial Modeling
+- Due Diligence
+- Fund Structuring
 
-## Skills
+</div>
 
-| Technical | Finance | Tools |
-|-----------|---------|-------|
-| Python | Investment Analysis | AI Integration |
-| SQL | Financial Modeling | LLM Training |
-| VBA | Due Diligence | Workflow Automation |
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-code"></i>
+</div>
 
----
+### Technical
 
-## Featured Projects
+- Python & SQL
+- VBA Automation
+- Data Analytics
+- Statistical Modeling
 
-::: {.g-col-12 .g-col-md-6 .card}
+</div>
 
-### [Project 1](projects/project-1.qmd)
-Investment analysis, financial modeling, or data analytics project showcasing technical and analytical skills.
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-robot"></i>
+</div>
+
+### AI & Innovation
+
+- LLM Model Training
+- AI Integration
+- Workflow Automation
+- Process Optimization
+
+</div>
+
+</div>
+
+<div class="divider"></div>
+
+## Featured Project {#projects}
+
+<div class="project-card">
+<div class="project-card-content">
+
+### Parent Planner
+
+A caregiving coordination app designed to help families manage the logistics of caring for aging parents. Built with React, Next.js, and Supabase with HIPAA-compliant security standards.
+
+**Key Features:**
+
+- Care Circle with role-based permissions for family coordination
+- Unified Care Calendar with task claiming functionality
+- Secure Vault for medical documents and emergency information
+- Incident Feed for tracking health updates
+
+<div class="d-flex gap-3 flex-wrap mt-4">
+  <a href="https://parent-planner.vercel.app/" class="btn btn-primary" target="_blank">
+    <i class="fas fa-external-link-alt"></i> Live Demo
+  </a>
+  <a href="https://github.com/Kainoa00/parent-planner" class="btn btn-outline-dark" target="_blank">
+    <i class="fab fa-github"></i> View Source
+  </a>
+  <a href="projects/project-1.qmd" class="btn btn-outline-dark">
+    <i class="fas fa-file-alt"></i> Case Study
+  </a>
+</div>
+
+</div>
+</div>
+
+<div class="divider"></div>
+
+## Currently Exploring
+
+I'm actively researching problems at the intersection of finance and technology. [See what I'm working on →](problems.qmd)
+
+<div class="divider"></div>
+
+::: {.cta-section #connect}
+
+## Let's Build Something Together
+
+I'm always interested in discussing venture capital, fintech, and innovative solutions to complex problems.
+
+<div class="cta-buttons">
+  <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-primary" target="_blank">
+    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+  </a>
+  <a href="https://github.com/Kainoa00" class="btn btn-outline-dark" target="_blank">
+    <i class="fab fa-github"></i> Follow on GitHub
+  </a>
+</div>
+
+<div class="cta-emails">
+  <span class="email-chip" onclick="navigator.clipboard.writeText('kshintak@byu.edu'); this.innerHTML='<i class=\'fas fa-check\'></i> Copied!';">
+    <i class="fas fa-envelope"></i> kshintak@byu.edu
+  </span>
+  <span class="email-chip" onclick="navigator.clipboard.writeText('kaishintak08@gmail.com'); this.innerHTML='<i class=\'fas fa-check\'></i> Copied!';">
+    <i class="fas fa-envelope"></i> kaishintak08@gmail.com
+  </span>
+</div>
 
 :::
