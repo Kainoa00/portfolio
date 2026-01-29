@@ -1,28 +1,49 @@
 ---
-title: "Welcome to My Product Management Portfolio"
+title: "Kainoa Shintaku | Finance & Analytics"
 ---
 
 ::: {.hero-banner .text-center}
 
-<img src="images/profile.jpg" alt="add photo to /images" class="rounded-circle mb-3" width="160">
+<img src="images/profile.jpg" alt="Kainoa Shintaku" class="rounded-circle mb-3" width="160">
 
-<h1>Your Name</h1>
+<h1>Kainoa Shintaku</h1>
 
-<a href="https://linkedin.com/in/your-profile" class="btn btn-outline-primary btn-sm" target="_blank">
+<p class="lead">BYU Student | Strategic Management & Data Analytics | Investment Research</p>
+
+<a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-outline-primary btn-sm" target="_blank">
   <i class="fab fa-linkedin"></i> LinkedIn
 </a>
-<a href="https://github.com/your-username" class="btn btn-outline-primary btn-sm" target="_blank">
+<a href="https://github.com/Kainoa00" class="btn btn-outline-primary btn-sm" target="_blank">
   <i class="fab fa-github"></i> GitHub
 </a>
 
 :::
 
+## About Me
+
+I'm a student at Brigham Young University pursuing dual degrees in Strategic Management and Statistics (Data Analytics). My work focuses on the intersection of finance, technology, and entrepreneurship—leveraging data-driven insights and AI to transform investment decision-making.
+
+Currently serving as an Investment Analyst at Nucleus Fund, I bring experience in commercial banking, financial modeling, and AI integration. I'm passionate about Venture Capital, Private Equity, and fund structuring.
+
+[Learn more about me →](about.qmd)
+
+---
+
+## Skills
+
+| Technical | Finance | Tools |
+|-----------|---------|-------|
+| Python | Investment Analysis | AI Integration |
+| SQL | Financial Modeling | LLM Training |
+| VBA | Due Diligence | Workflow Automation |
+
+---
+
 ## Featured Projects
 
 ::: {.g-col-12 .g-col-md-6 .card}
 
-### [Name of my first app](projects/project-1.qmd)
-A one sentence description of my first application which is deployed to vercel. 
+### [Project 1](projects/project-1.qmd)
+Investment analysis, financial modeling, or data analytics project showcasing technical and analytical skills.
 
 :::
-

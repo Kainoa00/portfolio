@@ -1,24 +1,29 @@
+
 ---
-title: "Name of the application I have published for Homework 1"
+title: "Parent Planner"
 date: "2024-09-15"
-categories: [GitHub, Vercel, Claude Code]
+categories: [Healthcare, Caregiving, React Native, Claude Code]
 ---
 
 ## Overview
 
-This project involved using Claude Code to write the code to needed to deveop an app that ...
+Parent Planner is a caregiving coordination app designed to help families manage the logistics of caring for aging parents. The app moves the "care team" (siblings, spouse, home aides) out of chaotic text threads and into a structured, secure workflow.
 
 The primary purpose of this app is to:
 
-- ....
-- ....
+- Provide one secure place to coordinate caregiving tasks among family members
+- Eliminate the "I thought you were taking her" errors with task claiming functionality
+- Store critical medical and access information for instant retrieval during emergencies
+- Create a searchable history of health incidents and updates
+
+**Target User:** The eldest daughter or son who takes on the bulk of the administrative burden for aging parents and is constantly fielding texts from siblings while worrying that appointments will be missed.
 
 ## Live Product Demo
 
 <div class="d-flex justify-content-center gap-3 my-4">
   <!-- Open App button -->
   <a class="btn btn-primary d-inline-flex align-items-center"
-     href="https://tetris-game-egc6.vercel.app/"
+     href="https://parent-planner.vercel.app/"
      target="_blank" rel="noopener"
      aria-label="Open live app">
     <i class="fa-solid fa-window-restore me-2" aria-hidden="true"></i>
@@ -27,7 +32,7 @@ The primary purpose of this app is to:
 
   <!-- GitHub Source button -->
   <a class="btn btn-outline-dark d-inline-flex align-items-center"
-     href="https://github.com/your-user/your-repo"
+     href="https://github.com/Kainoa00/parent-planner"
      target="_blank" rel="noopener"
      aria-label="Open GitHub source">
     <i class="fa-brands fa-github me-2" aria-hidden="true"></i>
@@ -35,20 +40,146 @@ The primary purpose of this app is to:
   </a>
 </div>
 
-<iframe src="https://tetris-game-egc6.vercel.app/"
+<iframe src="https://parent-planner.vercel.app/"
         style="width:100%; height:900px; border:none;"
         allowfullscreen>
 </iframe>
 
 ## Technical Details
 
-Framework/Stack: [e.g., React, Quarto, HTML/CSS/JS]
+**Framework/Stack:** React Native (Cross-platform for iOS and Android)
 
-Deployment: GitHub Pages + Vercel
+**Deployment:** GitHub + Vercel
 
-Tools Used:
--   Claude Code
+**Security Features:**
+
+- HIPAA-compliant standards (encryption at rest and in transit)
+- Two-Factor Authentication (2FA) for Vault access
+- Role-based permissions (Admin, Team, Viewer)
+
+**Tools Used:**
+
+- Claude Code for development
+- React Native for cross-platform mobile development
+
+## Key Features
+
+### 1. Care Circle (Roles & Permissions)
+
+A multiplayer-by-default system with three permission levels:
+
+| Role | Permissions |
+|------|-------------|
+| **Admin** | Full edit rights to all features |
+| **Team** | Can view and claim tasks |
+| **Viewer** | Can see schedule but not sensitive medical info |
+
+Invitation system via SMS link for easy onboarding.
+
+### 2. Unified Care Calendar
+
+The central coordination hub with:
+
+- **Pre-set Event Categories:** Doctor Visit, Medication Refill, Social Activity, Family Visit
+- **"Claim" Button:** The killer feature—appointments remain "unassigned" until someone clicks "I'll do it"
+- **Calendar Integration:** Distinct from work calendar but compatible with it
+
+### 3. The Vault (Digital Filing Cabinet)
+
+Critical information accessible in 3 seconds:
+
+- Insurance Card (front/back photo upload)
+- Medication List (brand name, dosage, frequency)
+- Provider Contacts (one-tap calling for PCP, specialists)
+- WiFi/Door Codes for parents' home
+
+### 4. Incident Feed
+
+A chronological, searchable log for health updates:
+
+- Post updates like "Mom fell today, no bruise but keep an eye on it"
+- Track medication changes and doctor recommendations
+- Searchable history for doctor visits
+
+## Success Metrics (KPIs)
+
+| Metric | Purpose |
+|--------|---------|
+| **Task Completion Rate** | Measures if unassigned appointments are getting claimed |
+| **Vault Retrieval Rate** | High usage proves solution to "information scatter" problem |
+| **Weekly Active Users (WAU)** | Care is a daily/weekly grind—monthly usage indicates failure |
 
 ## Product Requirements Document
 
-Paste in the PRD that you submitted to Claude Code
+### 1. Core Value Proposition
+
+"One secure place to manage the logistics of your parents' care."
+
+The goal is to move the "care team" (siblings, spouse, home aides) out of chaotic text threads and into a structured workflow.
+
+### 2. Target User (The "Primary")
+
+**Who:** The eldest daughter or son who takes on the bulk of the administrative burden for aging parents.
+
+**Pain Point:** They are constantly fielding texts from siblings ("What is Mom's insurance ID again?") and worrying that appointments will be missed.
+
+### 3. The MVP Feature Set (The "Must-Haves")
+
+We strip away nice-to-haves (like integrated payments or AI health analysis) to focus on **Coordination** and **Information Access**.
+
+#### A. The "Care Circle" (Roles & Permissions)
+
+Unlike a standard calendar, this app is multiplayer by default.
+
+- **The Admin:** (You) Has full edit rights.
+- **The Team:** (Siblings/Spouse) Can view and claim tasks.
+- **The Viewer:** (Maybe the aging parent or a neighbor) Can see the schedule but not sensitive medical info.
+
+**MVP Function:** Simple invite system via SMS link.
+
+#### B. The Unified Care Calendar
+
+The central nervous system of the app. It must be distinct from a work calendar but compatible with it.
+
+- **Event Types:** Pre-set categories for "Doctor Visit," "Medication Refill," "Social Activity," and "Family Visit."
+- **The "Claim" Button:** This is the killer feature. An appointment isn't just "listed"; it is "unassigned" until someone clicks "I'll do it." This stops the "I thought you were taking her" errors.
+
+#### C. The "Vault" (Digital Filing Cabinet)
+
+The most immediate relief for users is having critical info accessible in 3 seconds, not 3 hours of digging through paperwork.
+
+**MVP Fields:**
+
+- **Insurance Card:** Front/Back photo upload.
+- **Medication List:** Simple text list (Brand name, Dosage, Frequency).
+- **Provider Contacts:** One-tap calling for Primary Care Physician, Cardiologist, etc.
+- **WiFi/Door Codes:** Essential access info for the parents' home.
+
+#### D. The "Incident" Feed
+
+A specific log for health updates that don't belong in a casual text thread.
+
+- **Function:** A chronological feed where caregivers post updates like "Mom fell today, no bruise but keep an eye on it" or "Dr. Smith changed the dosage to 50mg."
+- **Searchable:** Unlike a text thread, this history is saved and searchable for the next doctor's visit.
+
+### 4. Technical Architecture & Security (Critical)
+
+Since you are dealing with health-adjacent data, trust is your currency.
+
+- **Compliance:** Even for an MVP, aim for HIPAA-compliant standards (encryption at rest and in transit) to future-proof the business, even if not legally a "Covered Entity" yet.
+- **Platform:** React Native or Flutter (Cross-platform is essential; Mom might have an iPhone, but the brother helping out might have an Android).
+- **Auth:** Two-Factor Authentication (2FA) is non-negotiable for the "Vault."
+
+### 5. Success Metrics (KPIs)
+
+How do we know the MVP is working?
+
+- **Metric 1: Task Completion Rate.** Are "unassigned" appointments getting claimed?
+- **Metric 2: Vault Retrieval.** How often are users opening the "Vault"? High usage here proves you are solving the "information scatter" problem.
+- **Metric 3: WAU (Weekly Active Users).** Care is a daily/weekly grind. If they only open it once a month, it's not solving the core problem.
+
+### 6. The "Hook" (Why they will download it)
+
+To get the MVP into hands, market the "Emergency Kit" angle:
+
+> "If you had to go to the ER with your dad right now, would you have his medication list and insurance ID ready? Download Parent Planner and upload them now so you're safe later."

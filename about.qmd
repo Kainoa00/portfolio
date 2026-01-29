@@ -4,14 +4,14 @@ title: "About Me"
 
 ::: {.hero-banner .text-center}
 
-<img src="images/profile.jpg" alt="add photo to /images" class="rounded-circle mb-3" width="160">
+<img src="images/profile.jpg" alt="Kainoa Shintaku" class="rounded-circle mb-3" width="160">
 
-<h1>Your Name</h1>
+<h1>Kainoa Shintaku</h1>
 
-<a href="https://linkedin.com/in/your-profile" class="btn btn-outline-primary btn-sm" target="_blank">
+<a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-outline-primary btn-sm" target="_blank">
   <i class="fab fa-linkedin"></i> LinkedIn
 </a>
-<a href="https://github.com/your-username" class="btn btn-outline-primary btn-sm" target="_blank">
+<a href="https://github.com/Kainoa00" class="btn btn-outline-primary btn-sm" target="_blank">
   <i class="fab fa-github"></i> GitHub
 </a>
 
@@ -19,45 +19,54 @@ title: "About Me"
 
 ## Background
 
-Write a compelling narrative about your background, education, and what drives your passion for product management. This is your chance to tell your story and connect with potential employers or collaborators.
+I am a student at Brigham Young University pursuing dual degrees in Strategic Management and Statistics with an emphasis in Data Analytics. My passion lies at the intersection of finance, technology, and entrepreneurship. I am driven by the potential to leverage data-driven insights and emerging technologies to transform how investment decisions are made and how capital flows to innovative ventures.
 
 ### Education
 
-- **Degree Name**, University Name (Year)
-- **Relevant Coursework**: List key courses related to product management, analytics, or business
-- **Academic Achievements**: Honor societies, relevant projects, or awards
+- **B.S. Strategic Management & B.S. Statistics (Data Analytics)**, Brigham Young University (Expected April 2028)
+- **Relevant Coursework**: Investment Analysis, Financial Modeling, Data Analytics, Statistical Methods
+- **Focus Areas**: Quantitative finance, venture capital research, AI applications in finance
 
 ### Experience
 
-#### Job/Internship Title - Company Name
-*Dates*
+#### Investment Analyst - Nucleus Fund
+*Current*
 
-- Key accomplishment or responsibility
-- Another achievement with quantifiable results
-- Skills or technologies used
+- Conduct in-depth investment analysis and due diligence on potential portfolio companies
+- Apply quantitative methods and financial modeling to evaluate investment opportunities
+- Collaborate with team members on fund strategy and portfolio management decisions
 
-#### Another Position - Company Name
-*Dates*
+#### Commercial Banking Intern - Genesis Bank
 
-- What you contributed to the organization
-- Projects you worked on
-- Impact you made
+- Gained hands-on experience in commercial banking operations and client relationship management
+- Analyzed financial statements and credit risk for business lending decisions
+- Supported the commercial lending team with deal structuring and documentation
+
+#### Ambassador - Snagtag
+
+- Represented the brand and promoted platform adoption among target demographics
+- Built relationships and networks to expand market presence
+- Contributed to marketing initiatives and user acquisition strategies
 
 ### Skills & Interests
 
 **Technical Skills**
-- Programming languages (Python, R, SQL)
-- Analytics tools (Tableau, Power BI, Google Analytics)
-- Product management tools (Jira, Confluence, Figma)
+
+- **Programming**: Python, SQL, VBA
+- **AI & Automation**: AI integration, workflow automation, LLM model training
+- **Analytics**: Data analysis, statistical modeling, financial modeling
+- **Platforms**: Certified across multiple professional platforms
 
 **Soft Skills**
-- Communication and presentation
-- Cross-functional collaboration
-- Strategic thinking and problem-solving
+
+- Strategic thinking and analytical problem-solving
+- Cross-functional collaboration and teamwork
+- Clear communication and presentation of complex financial concepts
 
 **Interests**
-Share what you're passionate about outside of work - this helps humanize your professional brand and can be great conversation starters.
+
+I am deeply passionate about entrepreneurial finance, financial consulting, and deep tech. I enjoy exploring how emerging technologies can disrupt traditional industries and create new opportunities for value creation. Outside of academics, I stay engaged with the latest developments in AI, fintech, and the venture ecosystem.
 
 ### What's Next
 
-Describe your career goals and what type of opportunities you're seeking. This helps visitors understand how they might work with you or whether you'd be a good fit for their organization.
+I am seeking research and professional experience in Venture Capital, Private Equity, and Fund Structuring. My goal is to develop expertise in evaluating high-growth companies, understanding fund mechanics, and contributing to investment decisions that support innovative entrepreneurs. I am particularly interested in opportunities that combine rigorous financial analysis with exposure to cutting-edge technologies and emerging markets.
