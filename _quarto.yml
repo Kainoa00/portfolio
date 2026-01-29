@@ -5,8 +5,12 @@ project:
 website:
   title: "Kainoa Shintaku"
   favicon: images/favicon.svg
+  search:
+    location: navbar
+    type: overlay
   navbar:
     background: primary
+    search: true
     left:
       - href: index.qmd
         text: Home
