@@ -21,7 +21,7 @@ website:
       - text: Projects
         menu:
           - href: projects/project-1.qmd
-            text: Parent Planner
+            text: Gather
       - href: problems.qmd
         text: Problems I'm Exploring
           #- href: projects/project-2.qmd

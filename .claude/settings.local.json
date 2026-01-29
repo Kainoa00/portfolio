@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(copy \"c:\\\\Users\\\\kaish\\\\OneDrive\\\\Pictures\\\\Screenshots\\\\Screenshot 2025-10-01 183758.png\" \"c:\\\\Users\\\\kaish\\\\OneDrive - Brigham Young University\\\\AI product development\\\\portfolio\\\\images\\\\profile.jpg\")",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd personal info and profile photo to portfolio\n\n- Update about.qmd with Kainoa''s background, education, experience, and skills\n- Update index.qmd with bio, skills table, and social links\n- Add profile photo to images folder\n- Update GitHub link in project-1.qmd\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)",
+      "Bash(winget install:*)",
+      "Bash(quarto preview)",
+      "Bash(\"/c/Program Files/Quarto/bin/quarto\" --version)",
+      "Bash(\"/c/Program Files/Quarto/bin/quarto\" preview)",
+      "Bash(git commit:*)",
+      "WebSearch",
+      "Bash(git restore:*)",
+      "Bash(\"/c/Program Files/Quarto/bin/quarto\" render about.qmd)",
+      "Bash(vercel --version:*)",
+      "Bash(\"/c/Program Files/Quarto/bin/quarto\" render)",
+      "Bash(vercel:*)"
+    ]
+  }
+}

@@ -1,13 +1,13 @@
 
 ---
-title: "Parent Planner"
+title: "Gather"
 date: "2024-09-15"
 categories: [Healthcare, Caregiving, React Native, Claude Code]
 ---
 
 ## Overview
 
-Parent Planner is a caregiving coordination app designed to help families manage the logistics of caring for aging parents. The app moves the "care team" (siblings, spouse, home aides) out of chaotic text threads and into a structured, secure workflow.
+Gather is a caregiving coordination app designed to help families manage the logistics of caring for aging parents. The app moves the "care team" (siblings, spouse, home aides) out of chaotic text threads and into a structured, secure workflow.
 
 The primary purpose of this app is to:
 
@@ -182,4 +182,4 @@ How do we know the MVP is working?
 
 To get the MVP into hands, market the "Emergency Kit" angle:
 
-> "If you had to go to the ER with your dad right now, would you have his medication list and insurance ID ready? Download Parent Planner and upload them now so you're safe later."
+> "If you had to go to the ER with your dad right now, would you have his medication list and insurance ID ready? Download Gather and upload them now so you're safe later."

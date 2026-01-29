@@ -129,7 +129,7 @@ I've performed due diligence on 10+ early-stage startups and collaborated with d
 <div class="project-card">
 <div class="project-card-content">
 
-### Parent Planner
+### Gather
 
 A caregiving coordination app designed to help families manage the logistics of caring for aging parents. Built with React, Next.js, and Supabase with HIPAA-compliant security standards.
 
