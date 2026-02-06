@@ -124,14 +124,14 @@ I've performed due diligence on 10+ early-stage startups and collaborated with d
 
 <div class="divider"></div>
 
-## Featured Project {#projects}
+## Featured Projects {#projects}
 
 <div class="project-card">
 <div class="project-card-content">
 
-### Gather
+### GatherIn
 
-A caregiving coordination app designed to help families manage the logistics of caring for aging parents. Built with React, Next.js, and Supabase with HIPAA-compliant security standards.
+A caregiving coordination web app for skilled nursing facility families. Built with Next.js 14, React, TypeScript, Tailwind CSS, and Supabase with HIPAA-compliant security standards.
 
 **Key Features:**
 
@@ -144,13 +144,38 @@ A caregiving coordination app designed to help families manage the logistics of 
   <a href="https://parent-planner.vercel.app/" class="btn btn-primary" target="_blank">
     <i class="fas fa-external-link-alt"></i> Live Demo
   </a>
-  <a href="https://github.com/Kainoa00/parent-planner" class="btn btn-outline-dark" target="_blank">
+  <a href="https://github.com/Kainoa00/gather-app" class="btn btn-outline-dark" target="_blank">
     <i class="fab fa-github"></i> View Source
   </a>
   <a href="projects/project-1.qmd" class="btn btn-outline-dark">
     <i class="fas fa-file-alt"></i> Case Study
   </a>
 </div>
+
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-card-content">
+
+### Compass
+
+An AI-powered business development automation platform for professional services firms. Monitors commercial triggers like court filings and funding rounds, scores prospects with a relevance algorithm, and generates personalized outreach using AI.
+
+**Key Features:**
+
+- Signal Library for monitoring commercial triggers across industries
+- R-Score algorithm for intelligent prospect ranking
+- AI-powered Hook Generator for contextual outreach
+- Daily Digest with human-in-the-loop review workflow
+
+<div class="d-flex gap-3 flex-wrap mt-4">
+  <a href="projects/project-2.qmd" class="btn btn-outline-dark">
+    <i class="fas fa-file-alt"></i> Case Study
+  </a>
+</div>
+
+<p class="text-muted mt-2" style="font-size: 0.9rem;"><i class="fas fa-wrench"></i> Currently in active development</p>
 
 </div>
 </div>

@@ -1,13 +1,13 @@
 
 ---
-title: "Gather"
+title: "GatherIn"
 date: "2024-09-15"
-categories: [Healthcare, Caregiving, React Native, Claude Code]
+categories: [Healthcare, Caregiving, Next.js, Supabase, Claude Code]
 ---
 
 ## Overview
 
-Gather is a caregiving coordination app designed to help families manage the logistics of caring for aging parents. The app moves the "care team" (siblings, spouse, home aides) out of chaotic text threads and into a structured, secure workflow.
+GatherIn is a caregiving coordination web app designed to help families manage the logistics of caring for aging parents in skilled nursing facilities. The app moves the "care team" (siblings, spouse, home aides) out of chaotic text threads and into a structured, secure workflow.
 
 The primary purpose of this app is to:
 
@@ -32,11 +32,11 @@ The primary purpose of this app is to:
 
   <!-- GitHub Source button -->
   <a class="btn btn-outline-dark d-inline-flex align-items-center"
-     href="https://github.com/Kainoa00/parent-planner"
+     href="https://github.com/Kainoa00/gather-app"
      target="_blank" rel="noopener"
      aria-label="Open GitHub source">
     <i class="fa-brands fa-github me-2" aria-hidden="true"></i>
-    View source on GitHub
+    View Source on GitHub
   </a>
 </div>
 
@@ -47,20 +47,23 @@ The primary purpose of this app is to:
 
 ## Technical Details
 
-**Framework/Stack:** React Native (Cross-platform for iOS and Android)
+**Framework/Stack:** Next.js 14 (App Router), React 18, TypeScript, Tailwind CSS, Supabase
 
-**Deployment:** GitHub + Vercel
+**Deployment:** Vercel
 
 **Security Features:**
 
 - HIPAA-compliant standards (encryption at rest and in transit)
-- Two-Factor Authentication (2FA) for Vault access
+- Row Level Security (RLS) policies on all Supabase tables
 - Role-based permissions (Admin, Team, Viewer)
+
+**Database:** Supabase (PostgreSQL) with 20 tables and real-time subscriptions
 
 **Tools Used:**
 
-- Claude Code for development
-- React Native for cross-platform mobile development
+- Claude Code for AI-assisted development
+- Supabase for backend, auth, and real-time data
+- Vercel for hosting and CI/CD
 
 ## Key Features
 
@@ -167,8 +170,8 @@ A specific log for health updates that don't belong in a casual text thread.
 Since you are dealing with health-adjacent data, trust is your currency.
 
 - **Compliance:** Even for an MVP, aim for HIPAA-compliant standards (encryption at rest and in transit) to future-proof the business, even if not legally a "Covered Entity" yet.
-- **Platform:** React Native or Flutter (Cross-platform is essential; Mom might have an iPhone, but the brother helping out might have an Android).
-- **Auth:** Two-Factor Authentication (2FA) is non-negotiable for the "Vault."
+- **Platform:** Next.js 14 with Supabase (PostgreSQL) for a responsive web experience accessible on any device.
+- **Auth:** Row Level Security (RLS) policies and role-based access control for the "Vault."
 
 ### 5. Success Metrics (KPIs)
 
@@ -182,4 +185,4 @@ How do we know the MVP is working?
 
 To get the MVP into hands, market the "Emergency Kit" angle:
 
-> "If you had to go to the ER with your dad right now, would you have his medication list and insurance ID ready? Download Gather and upload them now so you're safe later."
+> "If you had to go to the ER with your dad right now, would you have his medication list and insurance ID ready? Download GatherIn and upload them now so you're safe later."
