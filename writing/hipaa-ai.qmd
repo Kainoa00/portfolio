@@ -1,0 +1,59 @@
+---
+title: "What I Learned Building HIPAA-Compliant AI"
+description: "Most 'secure AI' products skip the hard parts. Here's what actually matters when you're handling health data."
+date: "2026-02-15"
+categories: [AI Architecture, Healthcare, Engineering]
+---
+
+When I started building CareBridge Connect, I thought HIPAA compliance meant adding a checkbox to my privacy policy and enabling database encryption. Three months and two complete architectural rewrites later, I understand what it actually requires — and why most "HIPAA-compliant AI" products aren't.
+
+## The Gap Between "Encrypted" and "Compliant"
+
+Encryption is table stakes. Every major cloud provider offers encryption at rest and in transit by default. What HIPAA actually demands is a layered security model that most developers don't build because it slows down shipping.
+
+The specific requirements that caught me off guard:
+
+**Minimum Necessary Access.** Every query, API call, and AI prompt must only access the minimum data required for its specific purpose. This sounds obvious until you're building an AI chat feature that needs context to answer questions accurately. The naive implementation passes the patient's full care record to the LLM. The compliant implementation passes only the data fields directly relevant to the user's query — which means you need a retrieval layer that classifies queries and fetches selectively.
+
+**Audit Logging.** Every access to Protected Health Information (PHI) must be logged with who accessed it, when, from what IP, and what they did with it. Not just application-level logs — database-level audit trails. I rebuilt my Supabase audit logging three times before the trail was complete enough to satisfy the technical requirements.
+
+**Business Associate Agreements.** Every third-party service that touches PHI needs a BAA. This eliminated several tools I wanted to use — some AI providers don't offer BAAs at all, which means you can't send patient data to their models, even for analysis. It also changed which AI models I could use for the guardrailed family chat feature.
+
+## The AI Problem Specifically
+
+The intersection of AI and HIPAA creates a problem that didn't exist five years ago: **LLMs are probabilistic systems operating in a compliance framework that requires determinism.**
+
+HIPAA requires you to be able to answer: "What PHI did this system access, when, and for what purpose?" Standard LLM API calls don't give you that. The model receives a prompt, processes it in a black box, and returns a response. There's no reliable way to audit which parts of the input influenced the output.
+
+My solution was to build a retrieval layer that sits between the user's query and the LLM:
+
+1. User submits a question to the family chat
+2. Query classifier determines what data categories are relevant
+3. Retrieval layer fetches only those specific fields from the database (with audit log entry)
+4. Sanitized context + query sent to LLM with strict system prompt constraints
+5. Response filtered against a list of PHI patterns before delivery
+6. Full interaction logged with data categories accessed
+
+This is slower and more expensive than the naive implementation. It also means the AI can only answer questions accurately when I've built the right retrieval logic for that question type. But it's auditable, which is what compliance actually requires.
+
+## What Most "HIPAA-Compliant AI" Products Actually Do
+
+I've looked at competitor products in the care coordination space. The majority of them take one of two approaches:
+
+**Approach 1: Avoid the problem.** Don't use AI at all on data that could constitute PHI. Keep the AI features to general wellness content or scheduling — nothing tied to a specific patient's clinical record. This is technically compliant but it's also the least valuable version of the product.
+
+**Approach 2: Bury it in the Terms of Service.** The product is technically operating on "de-identified data" by stripping obvious identifiers (name, DOB, SSN) but keeping everything else. This satisfies a narrow reading of HIPAA's Safe Harbor de-identification standard while passing contextually identifiable patient data to external AI models.
+
+Neither approach is what a healthcare facility actually needs.
+
+## The Moat Is the Compliance Infrastructure
+
+The hardest part of building a HIPAA-compliant AI system isn't the AI. It's building the audit infrastructure, the retrieval layer, the BAA relationships, and the access control model — and doing it in a way that doesn't make the product unusable.
+
+That operational complexity is defensible. Any developer can clone the frontend in a week. Replicating the compliant data architecture takes months and requires actually understanding what the regulations require, not just what the marketing copy says.
+
+This is the lens I now apply when evaluating healthcare AI startups at Nucleus Fund: not "is their AI impressive?" but "can they actually deploy it in a regulated environment?" The delta between those two questions is where most healthcare AI products fail.
+
+---
+
+*Built with Next.js, Supabase, and OpenAI. The guardrailed AI chat in CareBridge Connect is live at [carebridgeconnect.ai](https://www.carebridgeconnect.ai).*

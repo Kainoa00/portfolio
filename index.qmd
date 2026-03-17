@@ -10,7 +10,7 @@ page-layout: full
 
 # Kainoa Shintaku
 
-<p class="lead">Investment Analyst | BYU Marriott School of Business | Finance & Data Analytics</p>
+<p class="lead">AI Architect & Software Engineer | Strategic Consulting | BYU Marriott School of Business</p>
 
 <div class="d-flex justify-content-center gap-3 flex-wrap">
   <a href="#about" class="btn btn-primary">
@@ -32,9 +32,9 @@ page-layout: full
 <i class="fas fa-dollar-sign"></i>
 </div>
 
-### $500K+
+### 6 Products Shipped
 
-Contributed to equity funding across early-stage startups at Nucleus Fund
+Full-stack apps from zero to live — healthcare, AI tooling, telemedicine, and more
 
 </div>
 
@@ -43,9 +43,9 @@ Contributed to equity funding across early-stage startups at Nucleus Fund
 <i class="fas fa-chart-line"></i>
 </div>
 
-### $30M+
+### 15+ Startups
 
-Identified in potential loan and deposit growth at Genesis Bank
+Due diligence performed at Nucleus Fund, contributing to $500K+ in equity funding
 
 </div>
 
@@ -66,9 +66,9 @@ BYU Marriott School of Business, Multicultural Scholarship Recipient
 
 ## About
 
-I'm an Investment Analyst at **Nucleus Fund** and a student at **BYU's Marriott School of Business**, pursuing dual degrees in Strategic Management and Statistics with a concentration in Finance.
+I'm a **Technical Founder** at CareBridge Connect, **Investment Analyst** at Nucleus Fund, and a student at **BYU's Marriott School of Business** — focused on AI architecture, software engineering, and strategic consulting.
 
-I've performed due diligence on 10+ early-stage startups and collaborated with deal teams on M&A transactions and market expansion strategies. I'm fluent in **Spanish** and experienced in **Python, SQL, VBA**, and **AI integration**.
+I design and ship AI-native systems, then evaluate them from an investor's perspective. That dual lens — deep technical execution and strategic business thinking — is what I bring to every problem. I've shipped six products from zero to live, performed due diligence on 15+ startups, and built systems that operate at the intersection of healthcare, AI, and enterprise.
 
 [Learn more about my background →](about.qmd)
 
@@ -83,12 +83,12 @@ I've performed due diligence on 10+ early-stage startups and collaborated with d
 <i class="fas fa-search-dollar"></i>
 </div>
 
-### Finance & Investment
+### Strategic Consulting
 
-- Due Diligence
-- Financial Modeling
-- Investment Analysis
-- M&A Support
+- AI Integration Strategy
+- Due Diligence & Market Analysis
+- Financial Modeling & Valuation
+- Go-to-Market & Product Strategy
 
 </div>
 
@@ -99,10 +99,10 @@ I've performed due diligence on 10+ early-stage startups and collaborated with d
 
 ### Technical Skills
 
-- Python & SQL
-- VBA Automation
-- Data Analytics
-- Statistical Modeling
+- Python, SQL, VBA
+- Full-Stack Development (Next.js, React, FastAPI)
+- Data Analytics & Statistical Modeling
+- Database Design (PostgreSQL, Supabase)
 
 </div>
 
@@ -111,12 +111,12 @@ I've performed due diligence on 10+ early-stage startups and collaborated with d
 <i class="fas fa-robot"></i>
 </div>
 
-### AI & Innovation
+### AI Architecture
 
-- LLM Prompt Engineering
-- AI Integration
-- Workflow Automation
-- Process Optimization
+- LLM Integration (OpenAI, Grok, Claude)
+- Prompt Engineering & Reasoning Systems
+- Agentic Systems & Automation
+- HIPAA-Compliant AI Infrastructure
 
 </div>
 
@@ -129,19 +129,19 @@ I've performed due diligence on 10+ early-stage startups and collaborated with d
 <div class="project-card">
 <div class="project-card-content">
 
-### GatherIn
+### CareBridge Connect
 
-A caregiving coordination web app for skilled nursing facility families. Built with Next.js 14, React, TypeScript, Tailwind CSS, and Supabase with HIPAA-compliant security standards.
+A HIPAA-compliant B2B platform that eliminates 2-3 hours of nurse call burden per shift by translating clinical documentation into plain-language family updates. Pivoted from consumer to B2B after customer discovery revealed stronger product-market fit with facility operators.
 
 **Key Features:**
 
-- Care Circle with role-based permissions for family coordination
-- Unified Care Calendar with task claiming functionality
+- Event-based care timeline surfaced from existing facility documentation
+- AI-generated daily/weekly progress summaries in plain language
+- Guardrailed AI chat for 24/7 family inquiries
 - Secure Vault for medical documents and emergency information
-- Incident Feed for tracking health updates
 
 <div class="d-flex gap-3 flex-wrap mt-4">
-  <a href="https://parent-planner.vercel.app/" class="btn btn-primary" target="_blank">
+  <a href="https://www.carebridgeconnect.ai" class="btn btn-primary" target="_blank">
     <i class="fas fa-external-link-alt"></i> Live Demo
   </a>
   <a href="https://github.com/Kainoa00/gather-app" class="btn btn-outline-dark" target="_blank">
@@ -160,7 +160,7 @@ A caregiving coordination web app for skilled nursing facility families. Built w
 
 ### Compass
 
-An AI-powered business development automation platform for professional services firms. Monitors commercial triggers like court filings and funding rounds, scores prospects with a relevance algorithm, and generates personalized outreach using AI.
+A business development automation platform for professional services firms. Monitors commercial triggers (court filings, funding rounds, executive hires), scores prospects with a proprietary relevance algorithm, and generates contextual outreach -- replacing the manual grind that most rainmakers abandon within weeks.
 
 **Key Features:**
 
@@ -180,11 +180,115 @@ An AI-powered business development automation platform for professional services
 </div>
 </div>
 
+<div class="project-card">
+<div class="project-card-content">
+
+### Consulting Agent
+
+A strategic advisory platform that compresses the execution layer of consulting -- SCQA structuring, MECE frameworks, Pyramid Principle -- so practitioners can focus on judgment, where expertise actually compounds. Generates complete executive decks from a single brief.
+
+**Key Features:**
+
+- Interactive advisory chat at senior consultant level
+- Executive deck builder with PPTX export (5–20 slides)
+- SCQA framework builder and consulting frameworks library
+- Graph/chart builder for data visualization
+
+<div class="d-flex gap-3 flex-wrap mt-4">
+  <a href="https://consulting-agent.vercel.app" class="btn btn-primary" target="_blank">
+    <i class="fas fa-external-link-alt"></i> Live Demo
+  </a>
+  <a href="projects/project-3.qmd" class="btn btn-outline-dark">
+    <i class="fas fa-file-alt"></i> Case Study
+  </a>
+</div>
+
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-card-content">
+
+### AI Pulse
+
+A weekly AI intelligence publication started as a personal curation habit for deal evaluation at Nucleus Fund. Covers research, products, policy, models, and applications -- published every Wednesday for the BYU community.
+
+**Key Features:**
+
+- 5 curated articles weekly across Research, Products, Policy, Models, and Applications
+- AI-generated drafts with editorial curation and source verification
+- Ties directly to deal evaluation work at Nucleus Fund
+- Searchable archive of past editions
+
+<div class="d-flex gap-3 flex-wrap mt-4">
+  <a href="https://ai-pulse-umber.vercel.app" class="btn btn-primary" target="_blank">
+    <i class="fas fa-external-link-alt"></i> Read Publication
+  </a>
+  <a href="projects/project-4.qmd" class="btn btn-outline-dark">
+    <i class="fas fa-file-alt"></i> Case Study
+  </a>
+</div>
+
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-card-content">
+
+### Eternally
+
+A digital memorial platform with 10,000+ memorials created that turns cemeteries into interactive living memorials. Combines a consumer product (collaborative storytelling, AI photo restoration) with a marketplace model (remote grave services) that cemetery operators can white-label.
+
+**Key Features:**
+
+- Life history timeline for collaborative family storytelling
+- Remote grave services marketplace (flowers, cleaning, decorations)
+- AI-enhanced photo and video gallery
+- Interactive cemetery map with offline access
+
+<div class="d-flex gap-3 flex-wrap mt-4">
+  <a href="https://eternally-f2g2.vercel.app" class="btn btn-primary" target="_blank">
+    <i class="fas fa-external-link-alt"></i> Live Demo
+  </a>
+  <a href="projects/project-5.qmd" class="btn btn-outline-dark">
+    <i class="fas fa-file-alt"></i> Case Study
+  </a>
+</div>
+
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-card-content">
+
+### Peptide Portal
+
+A telemedicine platform serving 4,200+ patients that solves the prescribing compliance layer for peptide therapy -- connecting patients with board-certified doctors across weight loss, longevity, recovery, and cognitive performance. Regulatory expertise as a moat.
+
+**Key Features:**
+
+- 2-minute free consultation quiz and async physician review
+- Discreet home delivery with no contracts
+- Personal health dashboard with direct provider messaging
+- HIPAA-compliant telemedicine infrastructure
+
+<div class="d-flex gap-3 flex-wrap mt-4">
+  <a href="https://peptide-portal-final-ten.vercel.app" class="btn btn-primary" target="_blank">
+    <i class="fas fa-external-link-alt"></i> Live Demo
+  </a>
+  <a href="projects/project-6.qmd" class="btn btn-outline-dark">
+    <i class="fas fa-file-alt"></i> Case Study
+  </a>
+</div>
+
+</div>
+</div>
+
 <div class="divider"></div>
 
 ## Currently Exploring
 
-I'm actively researching problems at the intersection of finance and technology, including fragmented investment research, deal flow management in VC, and alternative investment access.
+I spend my free cycles on problems at the intersection of AI and enterprise: why most "AI integrations" are surface-level wrappers, how agentic systems can replace entire workflow layers, and where strategic consulting firms are still using 2010-era tooling on 2026 problems. These aren't hypothetical — they come from building products and sitting in diligence calls.
 
 [See what I'm working on →](problems.qmd)
 
@@ -194,7 +298,7 @@ I'm actively researching problems at the intersection of finance and technology,
 
 ## Let's Connect
 
-I'm seeking opportunities in Venture Capital, Private Equity, and Fund Structuring.
+AI architect who thinks strategically. Seeking roles in AI engineering, technical consulting, and product strategy.
 
 <div class="cta-buttons">
   <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-primary" target="_blank">

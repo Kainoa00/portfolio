@@ -1,33 +1,85 @@
 ---
-title: "Project 6"
-description: "Project description placeholder - replace with your actual project"
-date: "2024-XX-XX"
-image: ../images/project6-preview.jpg
-categories: [Category 1, Category 2, Category 3]
+title: "Peptide Portal"
+date: "2024-12-01"
+categories: [Healthcare, Telemedicine, Next.js, HIPAA, Consumer Health]
 ---
 
-## Project Overview
+## Overview
 
-Replace this content with your actual project details. This is a placeholder template for your sixth project.
+Peptide Portal is a physician-prescribed peptide therapy delivery platform that connects patients with board-certified doctors for personalized treatment protocols. It removes the friction between patients seeking evidence-based wellness treatments and the licensed providers who can legally prescribe them.
 
-## Challenge
+**Scale:** 4,200+ patients served, multiple licensed providers, four treatment categories.
 
-Describe the specific challenge or problem you were addressing.
+**The Problem:** Peptide therapies—used for weight loss, longevity, recovery, and cognitive performance—are only legally available via prescription, but the traditional clinic pathway is expensive, slow, and geographically limited. Most patients don't know where to start.
 
-## Approach
+**The Solution:** A telemedicine platform that guides patients from discovery → consultation → prescription → home delivery in a single, compliant workflow.
 
-Detail your methodology and approach to solving the problem.
+## Live Product
 
-## Results
+<div class="d-flex justify-content-center gap-3 my-4">
+  <a class="btn btn-primary d-inline-flex align-items-center"
+     href="https://peptide-portal-final-ten.vercel.app"
+     target="_blank" rel="noopener"
+     aria-label="Open live app">
+    <i class="fa-solid fa-window-restore me-2" aria-hidden="true"></i>
+    Open App in New Tab
+  </a>
+</div>
 
-Present your findings, outcomes, and impact.
+<iframe src="https://peptide-portal-final-ten.vercel.app"
+        style="width:100%; height:900px; border:none;"
+        allowfullscreen>
+</iframe>
 
-## Skills Demonstrated
+## Treatment Categories
 
-List the key skills this project showcases.
+| Category | Focus |
+|----------|-------|
+| **Weight Loss** | GLP-1 adjacent peptides for metabolic optimization |
+| **Longevity** | Protocols targeting cellular repair and aging pathways |
+| **Recovery** | Tissue repair and injury recovery support |
+| **Cognitive** | Nootropic peptides for focus and neurological performance |
+
+## Key Features
+
+### 1. Free Consultation Quiz
+
+A 2-minute intake questionnaire that captures health history, goals, and current protocols. Designed to give physicians enough context to make an informed prescribing decision without requiring an in-person visit.
+
+### 2. Physician Review & Prescription
+
+Board-certified doctors review each intake asynchronously and prescribe appropriate protocols. No appointment scheduling, no waiting rooms, no geographic restrictions.
+
+### 3. Discreet Home Delivery
+
+Prescriptions are compounded and shipped directly to patients in discreet packaging. No pharmacy pickup, no insurance navigation.
+
+### 4. Personal Health Dashboard
+
+Patients track their active protocols, message their providers directly, and monitor progress—all within a single authenticated dashboard.
+
+### 5. HIPAA-Compliant Infrastructure
+
+All patient data is stored and transmitted in compliance with HIPAA standards. No contracts; patients can cancel anytime.
+
+## Technical Architecture
+
+**Framework:** Next.js (App Router), React, TypeScript, Tailwind CSS
+
+**Compliance:** HIPAA-compliant data storage and transmission
+
+**SEO:** schema.org structured data for medical content
+
+**Deployment:** Vercel
+
+## Why This Market
+
+Compounded peptide therapy sits at the intersection of three tailwinds: the democratization of longevity medicine, telemedicine adoption post-COVID, and growing demand for personalized health protocols. The global peptide therapeutics market is projected to exceed $60B by 2030.
+
+The defensibility here is regulatory, not technical. Any developer can build a telemedicine UI. Few can navigate the prescribing compliance layer -- state licensing requirements, compounding pharmacy relationships, HIPAA infrastructure -- and package it into a consumer-grade experience. That compliance moat is what makes this a platform business rather than a feature. Building Peptide Portal taught me how regulatory complexity creates investable defensibility, a lens I now apply when evaluating healthcare startups at Nucleus Fund.
 
 ---
 
-**Skills Demonstrated:** [Your skills here]
+**Skills Demonstrated:** Healthcare Product Development, HIPAA Compliance, Telemedicine UX, Next.js Development, Consumer Health Strategy
 
-**Tools Used:** [Your tools here]
+**Tools Used:** Claude Code, Next.js, Vercel, HIPAA-compliant infrastructure

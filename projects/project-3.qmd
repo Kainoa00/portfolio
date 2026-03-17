@@ -1,143 +1,76 @@
 ---
-title: "Market Entry Strategy Analysis"
-description: "Comprehensive market research and go-to-market strategy for new product launch"
-date: "2024-01-10"
-image: ../images/project3-preview.jpg
-categories: [Strategy, Market Research, Business Development]
+title: "Consulting Agent"
+date: "2025-02-01"
+categories: [AI, Strategy, Consulting, OpenAI, React]
 ---
 
-## Project Overview
+## Overview
 
-Summarize the market entry challenge and your role in developing the strategy. What new market or product category were you analyzing?
+Consulting Agent is an AI-powered strategic advisory platform that generates McKinsey-caliber analysis and executive presentations. It applies rigorous consulting methodology—MECE structuring, the Pyramid Principle, hypothesis-driven thinking—to help professionals produce structured, boardroom-ready deliverables without a traditional consulting engagement.
 
-## Executive Summary
+**The Problem:** Strategy consultants and business leaders spend disproportionate time on formatting, structuring, and drafting rather than thinking. The frameworks exist; the bottleneck is execution speed.
 
-Provide a high-level overview of your recommendations and the expected impact. This section should be accessible to both technical and business stakeholders.
+**The Solution:** A browser-based platform that acts as a senior consultant on demand—generating structured decks, performing SCQA analysis, and providing real-time strategic guidance in minutes rather than days.
 
-## Market Analysis
+## Live Product
 
-### Industry Landscape
-- What is the size and growth rate of the target market?
-- Who are the major players and what market share do they hold?
-- What are the key industry trends and drivers?
+<div class="d-flex justify-content-center gap-3 my-4">
+  <a class="btn btn-primary d-inline-flex align-items-center"
+     href="https://consulting-agent.vercel.app"
+     target="_blank" rel="noopener"
+     aria-label="Open live app">
+    <i class="fa-solid fa-window-restore me-2" aria-hidden="true"></i>
+    Open App in New Tab
+  </a>
+</div>
 
-### Competitive Analysis
-- Who are your direct and indirect competitors?
-- What are their strengths, weaknesses, and market positioning?
-- Where are the gaps and opportunities?
+<iframe src="https://consulting-agent.vercel.app"
+        style="width:100%; height:900px; border:none;"
+        allowfullscreen>
+</iframe>
 
-### Customer Analysis
-- Who is your target customer?
-- What are their needs, pain points, and preferences?
-- How do they currently solve the problem you're addressing?
+## Key Features
 
-## Strategic Framework
+### 1. Advisory Chat
 
-### Market Opportunity
-- What specific opportunity did you identify?
-- How large is the addressable market?
-- What factors make this the right time to enter?
+An interactive AI consultant operating at the senior consultant level. Users describe their strategic challenge; the agent asks clarifying questions, applies appropriate frameworks, and delivers structured recommendations. It draws on consulting best practices from McKinsey, BCG, and Bain methodologies.
 
-### Value Proposition
-- What unique value does your product/service offer?
-- How does it differentiate from existing solutions?
-- Why would customers choose you over alternatives?
+### 2. Executive Deck Builder
 
-### Go-to-Market Strategy
-- What channels will you use to reach customers?
-- How will you price your offering?
-- What partnerships or alliances are needed?
+Generates complete slide decks (5–20 slides) from a single brief. Each deck follows a logical narrative arc with an executive summary, analysis slides, and a clear recommendation. Outputs are customizable by format and export to PPTX, Markdown, JSON, or HTML.
 
-## Research Methodology
+### 3. SCQA Framework Builder
 
-### Data Sources
-- What primary research did you conduct?
-- Which secondary sources did you leverage?
-- How did you ensure data quality and reliability?
+Structures any situation into the **Situation → Complication → Question → Answer** format used in top-tier consulting engagements. Forces rigorous problem framing before jumping to solutions.
 
-### Analysis Techniques
-- What frameworks did you apply (Porter's Five Forces, SWOT, etc.)?
-- Which quantitative and qualitative methods did you use?
-- How did you validate your assumptions?
+### 4. Graph & Chart Builder
 
-## Key Findings
+Generates publication-ready data visualizations for inclusion in decks—bar charts, waterfall charts, trend lines—formatted to consulting presentation standards.
 
-### Market Insights
-Present your 3-5 most important discoveries:
+### 5. Quick Prompt Templates
 
-1. **Insight #1**: Description and implications
-2. **Insight #2**: Description and implications  
-3. **Insight #3**: Description and implications
+Pre-built scenarios for common consulting tasks: market entry analysis, competitive positioning, operational improvement, and M&A rationale. Reduces setup time for common engagement types.
 
-### Customer Insights
-- What did you learn about customer behavior and preferences?
-- What unmet needs did you identify?
-- How price-sensitive is the target market?
+## Technical Architecture
 
-## Strategic Recommendations
+**Frontend:** React 18, Vite, Tailwind CSS
 
-### Market Entry Approach
-- What entry strategy do you recommend (direct, partnership, acquisition)?
-- What should be the geographic focus?
-- What's the optimal timing for launch?
+**AI Integration:** OpenAI API (GPT-4o, GPT-4o Mini, GPT-4 Turbo)
 
-### Product Strategy
-- What features should be prioritized for launch?
-- How should the product be positioned?
-- What pricing strategy will maximize adoption?
+**Export:** PPTX generation, Markdown, JSON, HTML
 
-### Resource Requirements
-- What investment is needed?
-- What capabilities must be developed?
-- What partnerships are critical for success?
+**Storage:** Browser-based local storage (no server-side data retention)
 
-## Implementation Roadmap
+**Deployment:** Vercel
 
-### Phase 1: Foundation (Months 1-3)
-- Key activities and milestones
-- Resource requirements
-- Success metrics
+## Why I Built This
 
-### Phase 2: Launch (Months 4-9)
-- Go-to-market execution
-- Customer acquisition strategy
-- Performance monitoring
+I watched analysts at Nucleus Fund spend hours formatting decks when the actual insight took minutes. The bottleneck in consulting and investment analysis is rarely thinking -- it's execution. MECE structuring, Pyramid Principle narratives, and clean slide layouts are learnable frameworks, not scarce judgment. That makes them ideal candidates for AI compression.
 
-### Phase 3: Scale (Months 10-18)
-- Expansion opportunities
-- Optimization initiatives
-- Long-term growth strategy
-
-## Risk Assessment
-
-### Key Risks
-- What are the primary threats to success?
-- How likely are these risks to materialize?
-- What would be the potential impact?
-
-### Mitigation Strategies
-- How can each risk be reduced or eliminated?
-- What contingency plans should be developed?
-- What early warning indicators should be monitored?
-
-## Expected Outcomes
-
-### Financial Projections
-- What revenue potential do you forecast?
-- What are the key cost drivers?
-- When do you expect to reach profitability?
-
-### Success Metrics
-- How will you measure progress and success?
-- What leading and lagging indicators will you track?
-- What are the key performance benchmarks?
-
-## Conclusion
-
-Summarize your recommendations and their strategic importance. Emphasize the opportunity size, competitive advantages, and expected returns on investment.
+Building this also forced me to solve a hard prompt engineering problem: getting an LLM to produce consistently structured, logically rigorous outputs rather than plausible-sounding filler. The gap between "AI that sounds smart" and "AI that structures thinking" is where the real product work lives.
 
 ---
 
-**Skills Demonstrated:** Market Research, Strategic Analysis, Business Planning, Financial Modeling, Competitive Intelligence, Stakeholder Communication
+**Skills Demonstrated:** AI Product Development, Prompt Engineering, React Development, Consulting Methodology, UX Design
 
-**Tools Used:** Excel, Tableau, Survey Tools, Industry Databases, Financial Modeling Software
+**Tools Used:** Claude Code, React, OpenAI API (GPT-4o), Vercel, PPTX Export Libraries

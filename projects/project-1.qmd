@@ -1,36 +1,33 @@
 
 ---
-title: "GatherIn"
+title: "CareBridge Connect"
 date: "2024-09-15"
-categories: [Healthcare, Caregiving, Next.js, Supabase, Claude Code]
+categories: [Healthcare, B2B SaaS, Next.js, Supabase, HIPAA, Claude Code]
 ---
 
 ## Overview
 
-GatherIn is a caregiving coordination web app designed to help families manage the logistics of caring for aging parents in skilled nursing facilities. The app moves the "care team" (siblings, spouse, home aides) out of chaotic text threads and into a structured, secure workflow.
+CareBridge Connect is a HIPAA-compliant B2B communication platform that bridges skilled nursing facilities and families. Healthcare already documents everything—but families still feel blind. CareBridge solves the communication gap by translating clinical documentation into plain-language family updates, reducing staff call burden while dramatically improving family satisfaction and trust.
 
-The primary purpose of this app is to:
+**The Problem in Numbers:**
 
-- Provide one secure place to coordinate caregiving tasks among family members
-- Eliminate the "I thought you were taking her" errors with task claiming functionality
-- Store critical medical and access information for instant retrieval during emergencies
-- Create a searchable history of health incidents and updates
+- 2–3 hours per nurse shift lost to routine family calls
+- 27% of families dissatisfied with communication quality
+- Only 29% of families report being informed of care changes
 
-**Target User:** The eldest daughter or son who takes on the bulk of the administrative burden for aging parents and is constantly fielding texts from siblings while worrying that appointments will be missed.
+**Target Customer:** Skilled nursing facilities, long-term care operators, and care coordinators seeking to reduce staff burden, improve family satisfaction scores, and increase census through stronger family trust.
 
-## Live Product Demo
+## Live Product
 
 <div class="d-flex justify-content-center gap-3 my-4">
-  <!-- Open App button -->
   <a class="btn btn-primary d-inline-flex align-items-center"
-     href="https://parent-planner.vercel.app/"
+     href="https://www.carebridgeconnect.ai"
      target="_blank" rel="noopener"
      aria-label="Open live app">
     <i class="fa-solid fa-window-restore me-2" aria-hidden="true"></i>
     Open App in New Tab
   </a>
 
-  <!-- GitHub Source button -->
   <a class="btn btn-outline-dark d-inline-flex align-items-center"
      href="https://github.com/Kainoa00/gather-app"
      target="_blank" rel="noopener"
@@ -40,7 +37,7 @@ The primary purpose of this app is to:
   </a>
 </div>
 
-<iframe src="https://parent-planner.vercel.app/"
+<iframe src="https://www.carebridgeconnect.ai"
         style="width:100%; height:900px; border:none;"
         allowfullscreen>
 </iframe>
@@ -49,140 +46,62 @@ The primary purpose of this app is to:
 
 **Framework/Stack:** Next.js 14 (App Router), React 18, TypeScript, Tailwind CSS, Supabase
 
-**Deployment:** Vercel
+**Deployment:** Vercel (custom domain: carebridgeconnect.ai)
 
-**Security Features:**
+**Security & Compliance:**
 
-- HIPAA-compliant standards (encryption at rest and in transit)
+- HIPAA-compliant architecture with end-to-end encryption
 - Row Level Security (RLS) policies on all Supabase tables
-- Role-based permissions (Admin, Team, Viewer)
+- Role-based access control (Admin, Care Staff, Family)
+- Integration-ready with PointClickCare and existing EHR systems
 
-**Database:** Supabase (PostgreSQL) with 20 tables and real-time subscriptions
+**Database:** Supabase (PostgreSQL) with real-time subscriptions
 
-**Tools Used:**
-
-- Claude Code for AI-assisted development
-- Supabase for backend, auth, and real-time data
-- Vercel for hosting and CI/CD
+**Tools Used:** Claude Code, Supabase, Vercel, OpenAI API
 
 ## Key Features
 
-### 1. Care Circle (Roles & Permissions)
+### 1. Event-Based Care Timeline
 
-A multiplayer-by-default system with three permission levels:
+A timestamped, chronological feed of care events—medications administered, vitals recorded, activities attended—surfaced automatically from existing facility documentation. Families see what's happening without staff needing to make a call.
 
-| Role | Permissions |
-|------|-------------|
-| **Admin** | Full edit rights to all features |
-| **Team** | Can view and claim tasks |
-| **Viewer** | Can see schedule but not sensitive medical info |
+### 2. AI-Generated Progress Summaries
 
-Invitation system via SMS link for easy onboarding.
+Daily and weekly summaries that identify trends and highlight notable changes in plain language. Instead of raw clinical notes, families receive a paragraph like: *"Mom had a great week—her appetite improved and she attended three group activities."*
 
-### 2. Unified Care Calendar
+### 3. Guardrailed AI Family Chat
 
-The central coordination hub with:
+Families can ask questions 24/7 and receive accurate, safe responses drawn from their loved one's care record. The AI is constrained to verified data, preventing hallucination while reducing overnight call volume.
 
-- **Pre-set Event Categories:** Doctor Visit, Medication Refill, Social Activity, Family Visit
-- **"Claim" Button:** The killer feature—appointments remain "unassigned" until someone clicks "I'll do it"
-- **Calendar Integration:** Distinct from work calendar but compatible with it
+### 4. The Vault
 
-### 3. The Vault (Digital Filing Cabinet)
+A secure information hub storing:
 
-Critical information accessible in 3 seconds:
+- Facility contacts, room numbers, and visiting hours
+- Medication lists, insurance cards, and care directives
+- Emergency contacts and physician information
 
-- Insurance Card (front/back photo upload)
-- Medication List (brand name, dosage, frequency)
-- Provider Contacts (one-tap calling for PCP, specialists)
-- WiFi/Door Codes for parents' home
+### 5. Permission-Based Access
 
-### 4. Incident Feed
+Granular role controls so administrators, care staff, and family members each see only what's appropriate—with full audit logging for compliance.
 
-A chronological, searchable log for health updates:
+## Business Value for Facilities
 
-- Post updates like "Mom fell today, no bruise but keep an eye on it"
-- Track medication changes and doctor recommendations
-- Searchable history for doctor visits
+| Outcome | Driver |
+|---------|--------|
+| **Reduced call volume** | AI chat + proactive updates handle routine inquiries |
+| **Higher family satisfaction** | Families feel informed and in control |
+| **Better online reviews** | Trust translates to 5-star ratings |
+| **Increased census** | Informed families recommend the facility |
 
-## Success Metrics (KPIs)
+## Development Journey
 
-| Metric | Purpose |
-|--------|---------|
-| **Task Completion Rate** | Measures if unassigned appointments are getting claimed |
-| **Vault Retrieval Rate** | High usage proves solution to "information scatter" problem |
-| **Weekly Active Users (WAU)** | Care is a daily/weekly grind—monthly usage indicates failure |
+CareBridge Connect began as **GatherIn**, a consumer-facing caregiving app for families. After 15+ customer discovery interviews, a clear pattern emerged: families wanted better communication, but they had no purchasing power. The budget holder was the facility operator, and what they needed was a turnkey communication layer that reduced call volume and improved satisfaction scores -- not another app for families to download.
 
-## Product Requirements Document
+The pivot to CareBridge Connect reoriented the product around facility workflows, PointClickCare integration, and staff-facing dashboards while preserving the family-side experience that made the original concept compelling. This is the kind of pivot that separates real product work from class projects: the willingness to follow the market signal, even when it means rebuilding.
 
-### 1. Core Value Proposition
+---
 
-"One secure place to manage the logistics of your parents' care."
+**Skills Demonstrated:** B2B Product Strategy, Healthcare Compliance (HIPAA), Full-Stack Development, AI Integration, Customer Discovery, Go-to-Market Pivoting
 
-The goal is to move the "care team" (siblings, spouse, home aides) out of chaotic text threads and into a structured workflow.
-
-### 2. Target User (The "Primary")
-
-**Who:** The eldest daughter or son who takes on the bulk of the administrative burden for aging parents.
-
-**Pain Point:** They are constantly fielding texts from siblings ("What is Mom's insurance ID again?") and worrying that appointments will be missed.
-
-### 3. The MVP Feature Set (The "Must-Haves")
-
-We strip away nice-to-haves (like integrated payments or AI health analysis) to focus on **Coordination** and **Information Access**.
-
-#### A. The "Care Circle" (Roles & Permissions)
-
-Unlike a standard calendar, this app is multiplayer by default.
-
-- **The Admin:** (You) Has full edit rights.
-- **The Team:** (Siblings/Spouse) Can view and claim tasks.
-- **The Viewer:** (Maybe the aging parent or a neighbor) Can see the schedule but not sensitive medical info.
-
-**MVP Function:** Simple invite system via SMS link.
-
-#### B. The Unified Care Calendar
-
-The central nervous system of the app. It must be distinct from a work calendar but compatible with it.
-
-- **Event Types:** Pre-set categories for "Doctor Visit," "Medication Refill," "Social Activity," and "Family Visit."
-- **The "Claim" Button:** This is the killer feature. An appointment isn't just "listed"; it is "unassigned" until someone clicks "I'll do it." This stops the "I thought you were taking her" errors.
-
-#### C. The "Vault" (Digital Filing Cabinet)
-
-The most immediate relief for users is having critical info accessible in 3 seconds, not 3 hours of digging through paperwork.
-
-**MVP Fields:**
-
-- **Insurance Card:** Front/Back photo upload.
-- **Medication List:** Simple text list (Brand name, Dosage, Frequency).
-- **Provider Contacts:** One-tap calling for Primary Care Physician, Cardiologist, etc.
-- **WiFi/Door Codes:** Essential access info for the parents' home.
-
-#### D. The "Incident" Feed
-
-A specific log for health updates that don't belong in a casual text thread.
-
-- **Function:** A chronological feed where caregivers post updates like "Mom fell today, no bruise but keep an eye on it" or "Dr. Smith changed the dosage to 50mg."
-- **Searchable:** Unlike a text thread, this history is saved and searchable for the next doctor's visit.
-
-### 4. Technical Architecture & Security (Critical)
-
-Since you are dealing with health-adjacent data, trust is your currency.
-
-- **Compliance:** Even for an MVP, aim for HIPAA-compliant standards (encryption at rest and in transit) to future-proof the business, even if not legally a "Covered Entity" yet.
-- **Platform:** Next.js 14 with Supabase (PostgreSQL) for a responsive web experience accessible on any device.
-- **Auth:** Row Level Security (RLS) policies and role-based access control for the "Vault."
-
-### 5. Success Metrics (KPIs)
-
-How do we know the MVP is working?
-
-- **Metric 1: Task Completion Rate.** Are "unassigned" appointments getting claimed?
-- **Metric 2: Vault Retrieval.** How often are users opening the "Vault"? High usage here proves you are solving the "information scatter" problem.
-- **Metric 3: WAU (Weekly Active Users).** Care is a daily/weekly grind. If they only open it once a month, it's not solving the core problem.
-
-### 6. The "Hook" (Why they will download it)
-
-To get the MVP into hands, market the "Emergency Kit" angle:
-
-> "If you had to go to the ER with your dad right now, would you have his medication list and insurance ID ready? Download GatherIn and upload them now so you're safe later."
+**Tools Used:** Claude Code, Next.js, Supabase, OpenAI API, Vercel

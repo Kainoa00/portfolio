@@ -1,33 +1,73 @@
 ---
-title: "Project 4"
-description: "Project description placeholder - replace with your actual project"
-date: "2024-XX-XX"
-image: ../images/project4-preview.jpg
-categories: [Category 1, Category 2, Category 3]
+title: "AI Pulse"
+date: "2025-01-01"
+categories: [AI, Media, Next.js, Publishing, BYU]
 ---
 
-## Project Overview
+## Overview
 
-Replace this content with your actual project details. This is a placeholder template for your fourth project.
+AI Pulse is a weekly AI intelligence publication built for the BYU community. Published every Wednesday at 7:00 AM MST, it curates and contextualizes the most significant AI developments across five categories: Research, Products, Policy, Models, and Applications.
 
-## Challenge
+The publication applies BYU's institutional mission—*spiritually strengthening, intellectually enlarging, and character building*—as an editorial filter, covering AI advances through the lens of ethical innovation, responsible governance, and practical application.
 
-Describe the specific challenge or problem you were addressing.
+**The Problem:** AI is moving faster than most professionals can track. News is fragmented across Twitter/X, research preprints, and industry blogs—and most coverage either lacks depth or lacks accessibility.
 
-## Approach
+**The Solution:** A curated weekly digest that distills what matters, verifies claims against primary sources, and frames developments for an audience that cares about both capability and consequence.
 
-Detail your methodology and approach to solving the problem.
+## Live Publication
 
-## Results
+<div class="d-flex justify-content-center gap-3 my-4">
+  <a class="btn btn-primary d-inline-flex align-items-center"
+     href="https://ai-pulse-umber.vercel.app"
+     target="_blank" rel="noopener"
+     aria-label="Open live publication">
+    <i class="fa-solid fa-window-restore me-2" aria-hidden="true"></i>
+    Read AI Pulse
+  </a>
+</div>
 
-Present your findings, outcomes, and impact.
+<iframe src="https://ai-pulse-umber.vercel.app"
+        style="width:100%; height:900px; border:none;"
+        allowfullscreen>
+</iframe>
 
-## Skills Demonstrated
+## Editorial Structure
 
-List the key skills this project showcases.
+Each weekly edition contains **5 articles** averaging 3-minute reads, organized by category:
+
+| Category | What's Covered |
+|----------|----------------|
+| **Research** | Academic breakthroughs, new model capabilities, benchmark results |
+| **Products** | Consumer and enterprise AI product launches and updates |
+| **Policy** | Regulation, governance frameworks, government AI initiatives |
+| **Models** | Foundation model releases, fine-tuning advances, open-source developments |
+| **Applications** | Industry use cases, deployment stories, real-world impact |
+
+## Editorial Standards
+
+- **Sourced from X.com and primary publications** — each claim links to a verifiable source
+- **AI-generated content with human curation** — Grok AI drafts are reviewed for accuracy and framing
+- **Transparent disclosure** — the publication is explicit about its AI-assisted production process
+- **Archived editions** — all past issues remain accessible for reference and research
+
+## Technical Details
+
+**Framework:** Next.js (React)
+
+**Content Generation:** Grok AI with editorial curation
+
+**Publishing Cadence:** Weekly (Wednesdays, 7:00 AM MST)
+
+**Deployment:** Vercel
+
+## Why I Built This
+
+AI Pulse started because I needed it. Evaluating AI-adjacent startups at Nucleus Fund requires knowing what's real and what's hype -- which model advances matter, which policy shifts will reshape markets, which product launches signal durable trends versus demos. Tracking this weekly became a professional edge.
+
+Publishing forces discipline: I can't skim a paper and call it research if I have to explain it to readers. The archive also compounds -- six months of curated AI developments is a reference library I use in diligence calls and investment memos.
 
 ---
 
-**Skills Demonstrated:** [Your skills here]
+**Skills Demonstrated:** AI Content Strategy, Editorial Curation, Next.js Development, Publishing Operations, AI Tool Integration
 
-**Tools Used:** [Your tools here]
+**Tools Used:** Next.js, Grok AI, Vercel, X.com API

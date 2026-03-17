@@ -1,33 +1,78 @@
 ---
-title: "Project 5"
-description: "Project description placeholder - replace with your actual project"
-date: "2024-XX-XX"
-image: ../images/project5-preview.jpg
-categories: [Category 1, Category 2, Category 3]
+title: "Eternally"
+date: "2024-11-01"
+categories: [Consumer, Marketplace, Next.js, Cloudinary, Memorial Tech]
 ---
 
-## Project Overview
+## Overview
 
-Replace this content with your actual project details. This is a placeholder template for your fifth project.
+Eternally transforms cemeteries from static physical locations into interactive living memorials. Families can preserve life stories, coordinate remote grave services, and stay connected to their loved ones—regardless of where they live.
 
-## Challenge
+The platform bridges the gap between physical burial sites and distributed families. Most families no longer live near their ancestral cemeteries. Visiting requires travel; maintaining graves requires proximity; sharing memories requires coordination. Eternally makes all three possible from anywhere.
 
-Describe the specific challenge or problem you were addressing.
+**Scale:** 10,000+ memorials created, 4.9-star family rating, partnerships with multiple cemeteries.
 
-## Approach
+## Live Product
 
-Detail your methodology and approach to solving the problem.
+<div class="d-flex justify-content-center gap-3 my-4">
+  <a class="btn btn-primary d-inline-flex align-items-center"
+     href="https://eternally-f2g2.vercel.app"
+     target="_blank" rel="noopener"
+     aria-label="Open live app">
+    <i class="fa-solid fa-window-restore me-2" aria-hidden="true"></i>
+    Open App in New Tab
+  </a>
+</div>
 
-## Results
+<iframe src="https://eternally-f2g2.vercel.app"
+        style="width:100%; height:900px; border:none;"
+        allowfullscreen>
+</iframe>
 
-Present your findings, outcomes, and impact.
+## Key Features
 
-## Skills Demonstrated
+### 1. Life History Timeline
 
-List the key skills this project showcases.
+A collaborative storytelling tool where family members contribute memories, milestones, and photos to build a comprehensive biography. The timeline surfaces the full arc of a person's life—not just their dates.
+
+### 2. Photo & Video Gallery with AI Enhancement
+
+Families upload decades-old photos that get automatically enhanced using AI—sharpened, colorized, and restored. The gallery becomes a permanent, high-quality visual record.
+
+### 3. Interactive Cemetery Map
+
+A digital map of the cemetery with offline access. Visitors can navigate to the exact gravesite without searching. Cemetery operators can embed it for visitor wayfinding.
+
+### 4. Remote Grave Services Marketplace
+
+Families order flowers, professional cleaning, seasonal decorations, and memorial items—delivered and placed by local service providers. A family in California can have flowers placed on a grave in Hawaii for a birthday or anniversary.
+
+### 5. Moderated Guest Book
+
+Friends, former colleagues, and community members leave memories and condolences in a moderated digital guest book. Unlike social media comments, the platform curates what becomes part of the permanent memorial.
+
+### 6. Privacy Controls
+
+Memorials can be set to public, family-only, or unlisted. Families control who can view, contribute, and share.
+
+## Technical Architecture
+
+**Frontend:** Next.js, React, Tailwind CSS
+
+**Image Processing:** Cloudinary (AI enhancement, optimization, transformation)
+
+**Maps:** Interactive cemetery mapping with offline-capable routing
+
+**Deployment:** Vercel
+
+## Market Context & Why I Built This
+
+The U.S. death care industry generates $23B+ annually, yet cemetery operators run on paper records and phone calls. Families have no centralized platform for preservation or coordination. This is a classic "picks and shovels" opportunity: don't compete with funeral homes -- give cemetery operators the digital infrastructure they lack and charge for the platform.
+
+The remote services marketplace is the wedge. Flowers, cleaning, and decorations create recurring revenue that cemetery operators can white-label. Once you own the digital relationship between family and cemetery, you own the distribution channel for every adjacent service: estate planning referrals, memorial events, genealogy integrations. Legacy industries with fragmented operators and no digital incumbents are exactly where platform businesses get built.
 
 ---
 
-**Skills Demonstrated:** [Your skills here]
+**Skills Demonstrated:** Consumer Product Design, Marketplace Architecture, AI Feature Integration, Next.js Development, Service Marketplace Design
 
-**Tools Used:** [Your tools here]
+**Tools Used:** Claude Code, Next.js, Cloudinary, Vercel

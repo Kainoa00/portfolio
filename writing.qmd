@@ -1,0 +1,27 @@
+---
+title: "Writing"
+toc: false
+listing:
+  contents: writing
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, description, categories, reading-time]
+page-layout: full
+---
+
+::: {.hero-banner}
+
+# Writing
+
+<p class="lead">Essays on AI architecture, software engineering, and strategic thinking</p>
+
+:::
+
+<div class="writing-intro">
+
+Short-form thinking on what I'm building, learning, and observing. Not polished takes — working notes from someone who ships products and sits in diligence calls.
+
+</div>

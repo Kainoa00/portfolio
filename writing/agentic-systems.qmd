@@ -1,0 +1,52 @@
+---
+title: "Agentic Systems Are the Next Infrastructure Layer"
+description: "We're moving from AI as a tool to AI as an actor. The architecture implications are enormous."
+date: "2026-03-05"
+categories: [AI Architecture, Engineering, Strategy]
+---
+
+For the past two years, most AI products have been built on a simple pattern: user inputs something, AI outputs something. The human is in every loop. The AI is a sophisticated autocomplete.
+
+That's changing. The next wave of AI infrastructure is agentic — systems where the AI doesn't just respond to prompts but executes sequences of actions, makes decisions, and operates autonomously over time. The architecture required to build these systems is fundamentally different from what most engineers are used to building.
+
+## What "Agentic" Actually Means in Practice
+
+An agentic system has at minimum four components that a standard LLM API call doesn't:
+
+**Persistent memory.** The agent needs to remember what it has done, what it has learned, and what context is relevant to its current task. This is not the same as conversation history — it's a structured knowledge graph that persists across sessions, updates as new information arrives, and can be queried selectively.
+
+**Tool use.** The agent can call external services — APIs, databases, browsers, code execution environments — and incorporate the results into its reasoning. The LLM itself doesn't execute code or browse the web. It generates calls to tools that do those things, receives the results, and reasons about what to do next.
+
+**Planning and decomposition.** Complex tasks require breaking down into subtasks, executing them in the right order, handling failures, and replanning when results are unexpected. This requires a different prompting architecture than single-shot responses — typically some form of chain-of-thought that makes the planning visible and testable.
+
+**Action execution.** The agent doesn't just recommend actions — it takes them. This is where most engineers slow down, because giving an AI system the ability to take irreversible actions (send emails, modify databases, make API calls with side effects) requires careful guardrailing.
+
+## The Infrastructure Gap
+
+The gap between "I want to build an agentic system" and "I have a production-ready agentic system" is much larger than most people expect.
+
+The specific problems that aren't solved by existing tools:
+
+**Reliability under failure.** Agentic systems fail in ways that synchronous API calls don't. A tool call might time out. An LLM output might not parse correctly. An external API might return unexpected data. Each failure mode requires explicit handling, retry logic, and fallback behavior. Systems that work 90% of the time in testing fail constantly in production.
+
+**Observability.** When a multi-step agent fails or produces a wrong result, you need to understand exactly which step went wrong, what inputs it received, what the model reasoned, and what action it took. Standard application monitoring doesn't capture this. You need agent-specific observability tooling — most of which is still being built by the ecosystem.
+
+**Cost management.** Agentic systems make many more LLM calls than single-shot applications. A task that requires 10 reasoning steps with tool calls between each step might cost 10-50x more than a simple prompt. Without careful cost modeling and optimization, production systems become prohibitively expensive fast.
+
+**Parallelism and coordination.** Some tasks can be decomposed into parallel subtasks. Others have strict sequential dependencies. Orchestrating multiple agents working on different aspects of the same problem — and merging their outputs correctly — is a genuinely hard engineering problem with no standard solution yet.
+
+## Why This Matters Strategically
+
+The companies that figure out agentic infrastructure first will have a significant and durable advantage.
+
+The current AI landscape is largely commoditized at the model level. GPT-4o, Claude Sonnet, Gemini Pro — these are increasingly interchangeable for most tasks. Competitive advantage doesn't come from choosing the right model. It comes from the system architecture around the model.
+
+Agentic infrastructure is the next layer where this plays out. The companies with the cleanest data architectures, the most reliable tool execution layers, and the best observability into agent behavior will be able to automate workflows that their competitors still run manually. And because agentic systems improve through feedback loops, those advantages compound.
+
+I'm building in this direction deliberately. Compass's signal processing pipeline is an early version of an agentic architecture — a system that monitors external data sources, enriches what it finds, scores it against criteria, and drafts actions for human review. The human-in-the-loop review workflow is a guardrail, not a fundamental limitation. As the system builds a track record of accurate scoring, the human review step can be progressively automated away.
+
+That progression — from tool to agent to autonomous system — is the architectural arc I'm designing toward.
+
+---
+
+*I write about this more technically on the [AI Pulse](https://ai-pulse-umber.vercel.app) publication. The Compass signal processing architecture is documented in the [case study](/projects/project-2.qmd).*

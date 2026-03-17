@@ -9,7 +9,7 @@ toc: true
 
 # Kainoa Shintaku
 
-<p class="lead">Investment Analyst | Finance & Data Analytics | BYU Marriott School of Business</p>
+<p class="lead">AI Architect & Software Engineer | Strategic Consulting | BYU Marriott School of Business</p>
 
 <div class="d-flex justify-content-center gap-3 flex-wrap">
   <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-outline-primary btn-sm" target="_blank">
@@ -43,7 +43,7 @@ When my father lost his job last year, I depleted my savings and took on a secon
 
 ### Where I'm Headed
 
-My goal is to graduate from BYU, earn an MBA from Stanford, and build a venture capital firm that backs founders who understand sacrifice—entrepreneurs solving real problems in physical tech and software who are willing to endure what building something meaningful requires.
+My goal is to graduate from BYU, earn an MBA from Stanford, and build a venture capital firm that backs founders who understand sacrifice -- entrepreneurs solving hard problems in physical tech and software who are willing to endure what building something meaningful requires. In the meantime, I'm building products myself so that when I sit across from a founder, I understand what they're going through.
 
 ### Beyond the Resume
 
@@ -58,7 +58,7 @@ Two ideas anchor how I approach work and life:
 > "The joy we feel has little to do with the circumstances of our lives and everything to do with the focus of our lives."
 > — President Russell M. Nelson
 
-These aren't just words I repeat—they're the filter through which I make decisions. When circumstances are outside my control, I focus on what I can change. When challenges arise, I choose where to direct my attention.
+These are the filter through which I make decisions.
 
 ## Education
 
@@ -81,12 +81,25 @@ These aren't just words I repeat—they're the filter through which I make decis
 
 <div class="experience-item">
 
+#### Technical Founder
+
+<div class="company">CareBridge Connect</div>
+<div class="date">January 2026 – Present | Provo, UT</div>
+
+- Developed a full-stack healthcare platform improving transparency between skilled nursing facilities and families, delivering key patient well-being indicators in a clear, accessible interface
+- Built an automated CRM of **200+ healthcare facilities** across the Western region, generating **50+ warm leads** of potential clients
+- Fundraised **$1,000+ in grants** for initial funding applied toward software development and go-to-market outreach
+
+</div>
+
+<div class="experience-item">
+
 #### Investment Analyst
 
 <div class="company">Nucleus Fund</div>
 <div class="date">September 2025 – Present | Salt Lake City, UT</div>
 
-- Performed due diligence on **10+ early-stage startups** by conducting market research, industry expert calls, and financial analysis to evaluate investment potential
+- Performed due diligence on **15+ early-stage startups** by conducting market research, industry expert calls, and financial analysis to evaluate investment potential
 - Contributed to the funding of **$500k+** in equity across multiple companies, directly supporting portfolio growth and revenue generation
 - Collaborated with founders to assess how funding would accelerate growth; partnered with analysts to deliver in-depth analyses and pitch decks for investment decisions
 
@@ -139,20 +152,19 @@ These aren't just words I repeat—they're the filter through which I make decis
 <div class="company">BYU FlexGE Student Council</div>
 <div class="date">January 2024 – April 2024 | Provo, UT</div>
 
-- Led strategic initiatives to enhance student life at BYU
-- Helped **25+ students** receive scholarships and admittance to specialty programs through private consulting
+- Privately consulted **25+ students** on academic and professional positioning, helping them secure scholarships and admittance to specialty programs
 
 </div>
 
 <div class="experience-item">
 
-#### Volunteer Representative
+#### In-Country Humanitarian Director
 
 <div class="company">The Church of Jesus Christ of Latter-day Saints</div>
 <div class="date">December 2021 – January 2024 | Santo Domingo, Dominican Republic</div>
 
-- Served two years conducting community outreach in **Spanish** (fluent)
-- Coordinated social and educational events, positively impacting underprivileged populations
+- Served two years conducting community outreach in **Spanish** (fluent) across social media, cold calling, door-to-door, and referral channels
+- Coordinated social and educational events with community leaders, positively impacting underprivileged populations
 
 </div>
 
@@ -165,12 +177,12 @@ These aren't just words I repeat—they're the filter through which I make decis
 <i class="fas fa-chart-line"></i>
 </div>
 
-### Finance
+### AI Architecture
 
-- Investment Analysis
-- Due Diligence
-- Financial Modeling
-- M&A Support
+- LLM Integration (OpenAI, Grok, Claude)
+- Prompt Engineering & Reasoning Systems
+- AI-Native Workflow Design
+- Agentic Systems & Automation
 
 </div>
 
@@ -179,26 +191,26 @@ These aren't just words I repeat—they're the filter through which I make decis
 <i class="fas fa-code"></i>
 </div>
 
-### Technical
+### Engineering
 
-- Python
-- SQL
-- VBA
-- Data Analytics
+- Full-Stack Development (Next.js, React, FastAPI)
+- Python, SQL, VBA
+- Database Design (PostgreSQL, Supabase)
+- HIPAA-Compliant Systems Architecture
 
 </div>
 
 <div class="skill-card">
 <div class="skill-card-icon">
-<i class="fas fa-robot"></i>
+<i class="fas fa-chart-line"></i>
 </div>
 
-### AI & Automation
+### Strategic Consulting
 
-- AI Integration
-- LLM Prompt Engineering
-- Workflow Automation
-- Process Optimization
+- AI Integration Strategy
+- Due Diligence & Market Analysis
+- Financial Modeling & Valuation
+- Go-to-Market & Product Strategy
 
 </div>
 
@@ -220,9 +232,9 @@ Gained through two years of full-time service in the Dominican Republic.
 
 ## What I'm Looking For
 
-I'm seeking research and professional experience in **Venture Capital**, **Private Equity**, and **Fund Structuring**. My goal is to develop expertise in evaluating high-growth companies, understanding fund mechanics, and contributing to investment decisions that support innovative entrepreneurs.
+I'm focused on roles at the intersection of **AI architecture**, **software engineering**, and **strategic consulting** — building and advising on systems that matter. I want to work where deep technical execution meets real business problems: designing AI-native workflows, architecting enterprise systems, and translating complex technology into strategic advantage.
 
-I'm particularly interested in opportunities that combine rigorous financial analysis with exposure to cutting-edge technologies and emerging markets.
+My financial background isn't gone — it's a lens. Understanding how deals are structured, how markets move, and how investors think makes me a sharper engineer and a better strategic partner. I evaluate problems the way a builder and an analyst would simultaneously: not just "does this work?" but "does this compound?"
 
 <div class="divider"></div>
 
@@ -230,7 +242,7 @@ I'm particularly interested in opportunities that combine rigorous financial ana
 
 ## Let's Connect
 
-I'm always interested in discussing venture capital, fintech, and innovative solutions to complex problems.
+I'm always interested in discussing AI architecture, software engineering, and where strategic consulting meets technical execution.
 
 <div class="cta-buttons">
   <a href="files/Kainoa_Shintaku_Resume.pdf" class="btn btn-primary" download>

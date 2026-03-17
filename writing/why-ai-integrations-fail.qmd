@@ -1,0 +1,55 @@
+---
+title: "Why Most AI Integrations Fail"
+description: "Companies are bolting AI onto existing workflows. The ones that win are rebuilding the workflow around AI."
+date: "2026-01-28"
+categories: [AI Architecture, Strategy, Consulting]
+---
+
+I've reviewed the AI strategies of dozens of companies — some in diligence at Nucleus Fund, others through consulting conversations, others just by using their products. The pattern of failure is remarkably consistent.
+
+Most AI integrations fail not because the AI doesn't work, but because the workflow it's plugged into wasn't designed for AI.
+
+## The "Bolt-On" Problem
+
+The default AI integration looks like this:
+
+1. Identify a task someone does manually (write emails, summarize documents, answer questions)
+2. Find an LLM that can do that task
+3. Add a button that calls the LLM API
+4. Call it "AI-powered"
+
+This approach produces tools that are mildly useful, occasionally impressive, and rarely transformative. The reason is that the underlying workflow was designed for a human completing that task manually. You haven't eliminated the friction — you've just automated one step inside a process full of other steps.
+
+I built the Consulting Agent this way initially. The first version was a chat interface where you described your strategic problem and received AI-generated analysis. Users found it interesting but didn't change how they worked. They'd use it to generate a first draft, then immediately export it and rebuild it in PowerPoint.
+
+The insight was that the bottleneck wasn't the analysis — it was the transition from analysis to presentation. The workflow was: think → analyze → format → present. I'd automated the analysis step. The formatting step was still entirely manual.
+
+The second version integrated the deck builder directly into the analysis output. Now the workflow is: think → analyze+format → present. The AI doesn't just answer the question — it produces the artifact that ends the workflow. That's a fundamentally different product.
+
+## What "AI-Native" Actually Means
+
+The term is overused to the point of meaninglessness. But the underlying concept is real: some workflows are designed from scratch with AI capabilities as assumptions, not additions.
+
+The difference shows up in three places:
+
+**Data architecture.** Bolt-on AI operates on data that was structured for humans to read — PDFs, spreadsheets, unstructured text in CRMs. AI-native systems structure data for retrieval and inference from the start. Vector embeddings, structured metadata, chunking strategies — these are architectural decisions that have to be made before the first line of product code is written.
+
+**Permission models.** Most enterprise software has permission models designed around human access patterns: who can see this file, who can edit this record. AI agents require a different permission model: what can this agent query, what can it act on, and how do we audit its actions? Retrofitting this onto an existing permission model is extremely hard. Building it in from the start is straightforward.
+
+**Feedback loops.** Human workflows improve through training and documentation. AI-native workflows improve through systematic feedback — thumbs up/down, correction interfaces, evaluation datasets. Products that don't build these feedback mechanisms have AI that doesn't get better. Products that do have a compounding advantage over time.
+
+## The Consulting Implication
+
+I'm interested in strategic consulting as a lens specifically because this problem is everywhere in enterprise. Large organizations are buying AI tools, watching adoption stagnate, and concluding that AI isn't ready for enterprise use. The diagnosis is usually wrong. The AI works. The integration strategy doesn't.
+
+The right consulting engagement isn't "which AI tool should we buy?" It's "how do we redesign this workflow so AI is a load-bearing structural element, not an optional add-on?"
+
+That question requires both technical and strategic depth simultaneously. You need to understand what AI can reliably do (and what it reliably cannot), how to architect a system that takes advantage of those capabilities, and how to make the business case for rebuilding a workflow that's currently functional.
+
+Most consulting firms have people who can do the strategy piece. Very few have people who can also write the architecture document and evaluate whether the implementation actually delivered what was promised.
+
+That's the gap I'm trying to fill.
+
+---
+
+*The Consulting Agent is live at [consulting-agent.vercel.app](https://consulting-agent.vercel.app). The workflow redesign problem is also what Compass was built to solve — see the [case study](/projects/project-2.qmd).*

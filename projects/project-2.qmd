@@ -72,9 +72,9 @@ A human-in-the-loop workflow that respects the professional's judgment.
 
 ## Why This Matters
 
-Professional services is a relationship business, but relationships start with relevant, timely outreach. Compass doesn't replace the professional's expertise or judgment—it amplifies it by ensuring they never miss an opportunity to start a conversation that matters.
+Professional services is a $700B+ market where rainmaking still runs on manual effort and luck. The partners who generate business are the ones who happen to notice a relevant filing or funding round -- and most don't, because they're busy billing. Compass turns business development from a sporadic activity into a systematic pipeline.
 
-The platform is designed to scale: what starts with court docket monitoring for litigation attorneys can expand to funding round alerts for venture lawyers, M&A activity for corporate advisors, and regulatory changes for compliance consultants.
+The platform scales horizontally: court docket monitoring for litigators, funding round alerts for venture lawyers, M&A activity for corporate advisors, regulatory changes for compliance consultants. Each vertical is a wedge into a new customer segment with the same core engine.
 
 ## Status
 

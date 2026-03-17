@@ -7,7 +7,7 @@ toc: false
 
 # Resume
 
-<p class="lead">Investment Analyst | Finance & Data Analytics</p>
+<p class="lead">AI Architect & Software Engineer | Strategic Consulting | BYU Marriott School of Business</p>
 
 <div class="d-flex justify-content-center gap-3 flex-wrap">
   <a href="files/Kainoa_Shintaku_Resume.pdf" class="btn btn-primary" download>
@@ -39,12 +39,25 @@ toc: false
 
 <div class="experience-item">
 
+#### Technical Founder
+
+<div class="company">CareBridge Connect</div>
+<div class="date">January 2026 – Present | Provo, UT</div>
+
+- Developed a full-stack healthcare platform improving transparency between skilled nursing facilities and families, delivering key patient well-being indicators in a clear, accessible interface
+- Built an automated CRM of **200+ healthcare facilities** across the Western region, generating **50+ warm leads** of potential clients
+- Fundraised **$1,000+ in grants** for initial funding, applied toward software development and go-to-market outreach
+
+</div>
+
+<div class="experience-item">
+
 #### Investment Analyst
 
 <div class="company">Nucleus Fund</div>
 <div class="date">September 2025 – Present | Salt Lake City, UT</div>
 
-- Performed due diligence on 10+ early-stage startups by conducting market research, industry expert calls, and financial analysis to evaluate investment potential
+- Performed due diligence on **15+ early-stage startups** by conducting market research, industry expert calls, and financial analysis to evaluate investment potential
 - Contributed to the funding of **$500k+** in equity across multiple companies, directly supporting portfolio growth and revenue generation
 - Collaborated with founders to assess how funding would accelerate growth; partnered with a team of analysts to deliver in-depth analyses and pitch decks for investment decisions
 
@@ -85,9 +98,8 @@ toc: false
 <div class="company">SEO Career</div>
 <div class="date">January 2025 – June 2025 | New York, NY</div>
 
-- Received coaching and online instruction to achieve targeted interview, technical, and professional developmental goals
-- Learned business fundamentals to compete successfully for internship opportunities
-- Completed industry-specific training and assessments focused on developing technical skills, institutional knowledge, and attention to detail
+- Selected for competitive program (< 15% acceptance) providing technical interview preparation and professional development for careers in finance
+- Completed industry-specific training in financial modeling, valuation, and accounting fundamentals
 
 </div>
 
@@ -98,20 +110,19 @@ toc: false
 <div class="company">BYU FlexGE Student Council</div>
 <div class="date">January 2024 – April 2024 | Provo, UT</div>
 
-- Led and facilitated meetings for student council members, focusing on strategic initiatives to enhance student life at BYU
-- Directed the planning and execution of service and social events, increasing student participation and engagement
-- Privately consulted students for academic and professional positioning, helping **25+ students** receive scholarships and admittance to specialty programs
+- Directed planning and execution of service and social events, increasing student participation
+- Privately consulted **25+ students** on academic and professional positioning, helping them secure scholarships and admittance to specialty programs
 
 </div>
 
 <div class="experience-item">
 
-#### Volunteer Representative
+#### In-Country Humanitarian Director
 
 <div class="company">The Church of Jesus Christ of Latter-day Saints</div>
 <div class="date">December 2021 – January 2024 | Santo Domingo, Dominican Republic</div>
 
-- Engaged with dozens of individuals in Spanish through various communication channels, including social media, cold calling, door-to-door outreach, and referrals
+- Engaged with dozens of individuals in **Spanish** (fluent) across social media, cold calling, door-to-door, and referral channels promoting community engagement and humanitarian work
 - Collaborated with community leaders to coordinate social and educational events, positively impacting underprivileged populations
 
 </div>
@@ -171,13 +182,26 @@ toc: false
 <i class="fas fa-code"></i>
 </div>
 
-### Technical
+### Engineering
 
-- Python
-- SQL
-- VBA
-- AI Integration & Automation
-- LLM Prompt Engineering
+- Full-Stack Development (Next.js, React, FastAPI)
+- Python, SQL, VBA
+- Database Design (PostgreSQL, Supabase)
+- HIPAA-Compliant Systems Architecture
+
+</div>
+
+<div class="skill-card">
+<div class="skill-card-icon">
+<i class="fas fa-robot"></i>
+</div>
+
+### AI & Architecture
+
+- LLM Integration (OpenAI, Grok, Claude)
+- Prompt Engineering & Reasoning Systems
+- AI-Native Workflow Design
+- Agentic Systems & Automation
 
 </div>
 
@@ -186,23 +210,12 @@ toc: false
 <i class="fas fa-globe"></i>
 </div>
 
-### Language
+### Languages & Focus
 
-- **Spanish** – Fluent
-- Reading, Writing, Speaking
-
-</div>
-
-<div class="skill-card">
-<div class="skill-card-icon">
-<i class="fas fa-search-dollar"></i>
-</div>
-
-### Research Focus
-
-- Venture Capital
-- Private Equity
-- Fund Structuring
+- **Spanish** – Fluent (Reading, Writing, Speaking)
+- Strategic Consulting & AI Integration
+- Entrepreneurial Finance
+- Venture Capital & Fund Structuring
 
 </div>
 
@@ -214,7 +227,7 @@ toc: false
 
 ## Let's Connect
 
-Interested in discussing opportunities in venture capital, private equity, or finance?
+AI architect and software engineer with a strategic consulting lens. Building systems that solve hard problems at the intersection of AI and enterprise.
 
 <div class="cta-buttons">
   <a href="files/Kainoa_Shintaku_Resume.pdf" class="btn btn-primary" download>

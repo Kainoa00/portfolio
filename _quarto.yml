@@ -9,7 +9,7 @@ website:
     location: navbar
     type: overlay
   navbar:
-    background: primary
+    background: light
     search: true
     left:
       - href: index.qmd
@@ -21,19 +21,23 @@ website:
       - text: Projects
         menu:
           - href: projects/project-1.qmd
-            text: GatherIn
+            text: CareBridge Connect
           - href: projects/project-2.qmd
             text: Compass
+          - href: projects/project-3.qmd
+            text: Consulting Agent
+          - href: projects/project-4.qmd
+            text: AI Pulse
+          - href: projects/project-5.qmd
+            text: Eternally
+          - href: projects/project-6.qmd
+            text: Peptide Portal
+      - href: stack.qmd
+        text: Stack
+      - href: writing.qmd
+        text: Writing
       - href: problems.qmd
         text: Problems I'm Exploring
-          #- href: projects/project-3.qmd
-          #  text: Project 3
-          #- href: projects/project-4.qmd
-          #  text: Project 4
-          #- href: projects/project-5.qmd
-          #  text: Project 5
-          #- href: projects/project-6.qmd
-          #  text: Project 6
 
 format:
   html:
@@ -42,4 +46,10 @@ format:
     toc: true
     include-in-header:
       - text: |
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    include-after-body:
+      - text: |
+          <script src="scroll-reveal.js"></script>
