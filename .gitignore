@@ -1,6 +1,6 @@
 # Quarto
 /.quarto/
-/_site/
+
 /_book/
 /.quarto_cache/
 
@@ -70,3 +70,4 @@ $RECYCLE.BIN/
 *.tmp
 *.temp
 **/*.quarto_ipynb
+.vercel

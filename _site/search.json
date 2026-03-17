@@ -1,0 +1,639 @@
+[
+  {
+    "objectID": "writing.html",
+    "href": "writing.html",
+    "title": "Writing",
+    "section": "",
+    "text": "Writing\n\nEssays on AI architecture, software engineering, and strategic thinking\n\n\n\nShort-form thinking on what I’m building, learning, and observing. Not polished takes — working notes from someone who ships products and sits in diligence calls.\n\n\n\n\n\n\n\n\n\n\nAgentic Systems Are the Next Infrastructure Layer\n\n\n\nAI Architecture\n\nEngineering\n\nStrategy\n\n\n\nWe’re moving from AI as a tool to AI as an actor. The architecture implications are enormous.\n\n\n\n\n\nMar 5, 2026\n\n4 min\n\n\n\n\n\n\nWhat I Learned Building HIPAA-Compliant AI\n\n\n\nAI Architecture\n\nHealthcare\n\nEngineering\n\n\n\nMost ‘secure AI’ products skip the hard parts. Here’s what actually matters when you’re handling health data.\n\n\n\n\n\nFeb 15, 2026\n\n4 min\n\n\n\n\n\n\nWhy Most AI Integrations Fail\n\n\n\nAI Architecture\n\nStrategy\n\nConsulting\n\n\n\nCompanies are bolting AI onto existing workflows. The ones that win are rebuilding the workflow around AI.\n\n\n\n\n\nJan 28, 2026\n\n4 min\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "writing/hipaa-ai.html",
+    "href": "writing/hipaa-ai.html",
+    "title": "What I Learned Building HIPAA-Compliant AI",
+    "section": "",
+    "text": "When I started building CareBridge Connect, I thought HIPAA compliance meant adding a checkbox to my privacy policy and enabling database encryption. Three months and two complete architectural rewrites later, I understand what it actually requires — and why most “HIPAA-compliant AI” products aren’t."
+  },
+  {
+    "objectID": "writing/hipaa-ai.html#the-gap-between-encrypted-and-compliant",
+    "href": "writing/hipaa-ai.html#the-gap-between-encrypted-and-compliant",
+    "title": "What I Learned Building HIPAA-Compliant AI",
+    "section": "The Gap Between “Encrypted” and “Compliant”",
+    "text": "The Gap Between “Encrypted” and “Compliant”\nEncryption is table stakes. Every major cloud provider offers encryption at rest and in transit by default. What HIPAA actually demands is a layered security model that most developers don’t build because it slows down shipping.\nThe specific requirements that caught me off guard:\nMinimum Necessary Access. Every query, API call, and AI prompt must only access the minimum data required for its specific purpose. This sounds obvious until you’re building an AI chat feature that needs context to answer questions accurately. The naive implementation passes the patient’s full care record to the LLM. The compliant implementation passes only the data fields directly relevant to the user’s query — which means you need a retrieval layer that classifies queries and fetches selectively.\nAudit Logging. Every access to Protected Health Information (PHI) must be logged with who accessed it, when, from what IP, and what they did with it. Not just application-level logs — database-level audit trails. I rebuilt my Supabase audit logging three times before the trail was complete enough to satisfy the technical requirements.\nBusiness Associate Agreements. Every third-party service that touches PHI needs a BAA. This eliminated several tools I wanted to use — some AI providers don’t offer BAAs at all, which means you can’t send patient data to their models, even for analysis. It also changed which AI models I could use for the guardrailed family chat feature."
+  },
+  {
+    "objectID": "writing/hipaa-ai.html#the-ai-problem-specifically",
+    "href": "writing/hipaa-ai.html#the-ai-problem-specifically",
+    "title": "What I Learned Building HIPAA-Compliant AI",
+    "section": "The AI Problem Specifically",
+    "text": "The AI Problem Specifically\nThe intersection of AI and HIPAA creates a problem that didn’t exist five years ago: LLMs are probabilistic systems operating in a compliance framework that requires determinism.\nHIPAA requires you to be able to answer: “What PHI did this system access, when, and for what purpose?” Standard LLM API calls don’t give you that. The model receives a prompt, processes it in a black box, and returns a response. There’s no reliable way to audit which parts of the input influenced the output.\nMy solution was to build a retrieval layer that sits between the user’s query and the LLM:\n\nUser submits a question to the family chat\nQuery classifier determines what data categories are relevant\nRetrieval layer fetches only those specific fields from the database (with audit log entry)\nSanitized context + query sent to LLM with strict system prompt constraints\nResponse filtered against a list of PHI patterns before delivery\nFull interaction logged with data categories accessed\n\nThis is slower and more expensive than the naive implementation. It also means the AI can only answer questions accurately when I’ve built the right retrieval logic for that question type. But it’s auditable, which is what compliance actually requires."
+  },
+  {
+    "objectID": "writing/hipaa-ai.html#what-most-hipaa-compliant-ai-products-actually-do",
+    "href": "writing/hipaa-ai.html#what-most-hipaa-compliant-ai-products-actually-do",
+    "title": "What I Learned Building HIPAA-Compliant AI",
+    "section": "What Most “HIPAA-Compliant AI” Products Actually Do",
+    "text": "What Most “HIPAA-Compliant AI” Products Actually Do\nI’ve looked at competitor products in the care coordination space. The majority of them take one of two approaches:\nApproach 1: Avoid the problem. Don’t use AI at all on data that could constitute PHI. Keep the AI features to general wellness content or scheduling — nothing tied to a specific patient’s clinical record. This is technically compliant but it’s also the least valuable version of the product.\nApproach 2: Bury it in the Terms of Service. The product is technically operating on “de-identified data” by stripping obvious identifiers (name, DOB, SSN) but keeping everything else. This satisfies a narrow reading of HIPAA’s Safe Harbor de-identification standard while passing contextually identifiable patient data to external AI models.\nNeither approach is what a healthcare facility actually needs."
+  },
+  {
+    "objectID": "writing/hipaa-ai.html#the-moat-is-the-compliance-infrastructure",
+    "href": "writing/hipaa-ai.html#the-moat-is-the-compliance-infrastructure",
+    "title": "What I Learned Building HIPAA-Compliant AI",
+    "section": "The Moat Is the Compliance Infrastructure",
+    "text": "The Moat Is the Compliance Infrastructure\nThe hardest part of building a HIPAA-compliant AI system isn’t the AI. It’s building the audit infrastructure, the retrieval layer, the BAA relationships, and the access control model — and doing it in a way that doesn’t make the product unusable.\nThat operational complexity is defensible. Any developer can clone the frontend in a week. Replicating the compliant data architecture takes months and requires actually understanding what the regulations require, not just what the marketing copy says.\nThis is the lens I now apply when evaluating healthcare AI startups at Nucleus Fund: not “is their AI impressive?” but “can they actually deploy it in a regulated environment?” The delta between those two questions is where most healthcare AI products fail.\n\nBuilt with Next.js, Supabase, and OpenAI. The guardrailed AI chat in CareBridge Connect is live at carebridgeconnect.ai."
+  },
+  {
+    "objectID": "stack.html",
+    "href": "stack.html",
+    "title": "Stack",
+    "section": "",
+    "text": "The tools, frameworks, and systems I build with"
+  },
+  {
+    "objectID": "stack.html#frontend",
+    "href": "stack.html#frontend",
+    "title": "Stack",
+    "section": "Frontend",
+    "text": "Frontend\n\n\n\n\n\n\nNext.js\n\n\nMy primary framework. App Router, server components, and seamless Vercel deployment make it the fastest path from idea to production for full-stack web apps.\n\nPrimary\n\n\n\n\n\n\nReact\n\n\nComponent architecture that scales. Every frontend I’ve shipped — CareBridge Connect, Peptide Portal, Eternally — is built on React’s composability model.\n\nPrimary\n\n\n\n\n\n\nTypeScript\n\n\nNon-negotiable for production systems. Type safety catches bugs before they reach users and makes large codebases navigable without memorizing every interface.\n\nPrimary\n\n\n\n\n\n\nTailwind CSS\n\n\nUtility-first CSS that makes design decisions explicit in markup. Eliminates the naming problem and keeps styles co-located with components.\n\nPrimary"
+  },
+  {
+    "objectID": "stack.html#backend-data",
+    "href": "stack.html#backend-data",
+    "title": "Stack",
+    "section": "Backend & Data",
+    "text": "Backend & Data\n\n\n\n\n\n\nSupabase\n\n\nPostgreSQL with auth, real-time subscriptions, Row Level Security, and storage — all in one. My default backend for any product that needs multi-user data with security constraints.\n\nPrimary\n\n\n\n\n\n\nPostgreSQL\n\n\nThe database I think in. Relational modeling, RLS policies, and complex joins for systems where data integrity is non-negotiable — especially healthcare applications.\n\nPrimary\n\n\n\n\n\n\nFastAPI\n\n\nPython API framework for AI-heavy backends. Used in Compass for the signal processing pipeline — automatic OpenAPI docs, async support, and seamless OpenAI integration.\n\nSecondary\n\n\n\n\n\n\nPython\n\n\nData manipulation, automation scripts, API backends, and LLM orchestration. The lingua franca for anything touching AI infrastructure.\n\nPrimary"
+  },
+  {
+    "objectID": "stack.html#ai-llm-infrastructure",
+    "href": "stack.html#ai-llm-infrastructure",
+    "title": "Stack",
+    "section": "AI & LLM Infrastructure",
+    "text": "AI & LLM Infrastructure\n\n\n\n\n\n\n\n\nOpenAI API\n\n\nGPT-4o and GPT-4o Mini for reasoning tasks, content generation, and structured outputs. Used in Consulting Agent for SCQA structuring and in CareBridge for guardrailed family chat.\n\nAI Core\n\n\n\n\n\n\n\n\nClaude (Anthropic)\n\n\nMy primary development partner via Claude Code — used for complex reasoning chains, code architecture, and long-context analysis. Also powering AI Pulse’s editorial curation pipeline.\n\nAI Core\n\n\n\n\n\n\n\n\nGrok (xAI)\n\n\nReal-time web and X.com data access for AI Pulse. Used for sourcing and initial drafting of weekly editions — the only model with live internet access at the speed I need.\n\nAI Tooling\n\n\n\n\n\n\nDocker\n\n\nContainerized deployments for backend services. Used in Compass to package the FastAPI signal processing pipeline for consistent local and cloud environments.\n\nSecondary"
+  },
+  {
+    "objectID": "stack.html#dev-workflow",
+    "href": "stack.html#dev-workflow",
+    "title": "Stack",
+    "section": "Dev Workflow",
+    "text": "Dev Workflow\n\n\n\n\n\n\nVercel\n\n\nEvery product I ship deploys here. Zero-config CI/CD, preview deployments on every branch, and Next.js-native infrastructure. The fastest path from commit to production.\n\nPrimary\n\n\n\n\n\n\nGitHub\n\n\nVersion control and CI triggers for all projects. Every repo linked to Vercel for automatic preview and production deploys on merge.\n\nPrimary\n\n\n\n\n\n\n\n\nClaude Code\n\n\nAI-assisted development environment that handles architecture discussions, complex debugging, and cross-file refactors. This entire portfolio was built with it.\n\nAI Dev\n\n\n\n\n\n\nVS Code\n\n\nPrimary editor with TypeScript IntelliSense, ESLint, and Tailwind CSS IntelliSense. Pairs with Claude Code for the development workflow on every project.\n\nPrimary"
+  },
+  {
+    "objectID": "stack.html#data-analytics",
+    "href": "stack.html#data-analytics",
+    "title": "Stack",
+    "section": "Data & Analytics",
+    "text": "Data & Analytics\n\n\n\n\n\n\nPython (Data)\n\n\nPandas, NumPy, and Matplotlib for financial modeling and data analysis. Used at Nucleus Fund for market research synthesis and at Genesis Bank for acquisition modeling.\n\nPrimary\n\n\n\n\n\n\nSQL / VBA\n\n\nDatabase querying and Excel automation for financial workflows. VBA for automating repetitive due diligence tasks — request list generation, model population, and report formatting.\n\nSecondary\n\n\n\n\n\n\n\n\nCapIQ / FactSet\n\n\nFinancial data infrastructure for investment research. Used at Genesis Bank for acquisition due diligence and at Nucleus Fund for comparable company analysis and market sizing.\n\nFinance\n\n\n\n\n\n\nCloudinary\n\n\nMedia management, AI image enhancement, and transformation pipelines. Used in Eternally for photo restoration and optimization across memorial galleries.\n\nSecondary"
+  },
+  {
+    "objectID": "projects/project-6.html",
+    "href": "projects/project-6.html",
+    "title": "Peptide Portal",
+    "section": "",
+    "text": "Peptide Portal is a physician-prescribed peptide therapy delivery platform that connects patients with board-certified doctors for personalized treatment protocols. It removes the friction between patients seeking evidence-based wellness treatments and the licensed providers who can legally prescribe them.\nScale: 4,200+ patients served, multiple licensed providers, four treatment categories.\nThe Problem: Peptide therapies—used for weight loss, longevity, recovery, and cognitive performance—are only legally available via prescription, but the traditional clinic pathway is expensive, slow, and geographically limited. Most patients don’t know where to start.\nThe Solution: A telemedicine platform that guides patients from discovery → consultation → prescription → home delivery in a single, compliant workflow."
+  },
+  {
+    "objectID": "projects/project-6.html#overview",
+    "href": "projects/project-6.html#overview",
+    "title": "Peptide Portal",
+    "section": "",
+    "text": "Peptide Portal is a physician-prescribed peptide therapy delivery platform that connects patients with board-certified doctors for personalized treatment protocols. It removes the friction between patients seeking evidence-based wellness treatments and the licensed providers who can legally prescribe them.\nScale: 4,200+ patients served, multiple licensed providers, four treatment categories.\nThe Problem: Peptide therapies—used for weight loss, longevity, recovery, and cognitive performance—are only legally available via prescription, but the traditional clinic pathway is expensive, slow, and geographically limited. Most patients don’t know where to start.\nThe Solution: A telemedicine platform that guides patients from discovery → consultation → prescription → home delivery in a single, compliant workflow."
+  },
+  {
+    "objectID": "projects/project-6.html#live-product",
+    "href": "projects/project-6.html#live-product",
+    "title": "Peptide Portal",
+    "section": "Live Product",
+    "text": "Live Product\n\n  Open App in New Tab"
+  },
+  {
+    "objectID": "projects/project-6.html#treatment-categories",
+    "href": "projects/project-6.html#treatment-categories",
+    "title": "Peptide Portal",
+    "section": "Treatment Categories",
+    "text": "Treatment Categories\n\n\n\n\n\n\n\nCategory\nFocus\n\n\n\n\nWeight Loss\nGLP-1 adjacent peptides for metabolic optimization\n\n\nLongevity\nProtocols targeting cellular repair and aging pathways\n\n\nRecovery\nTissue repair and injury recovery support\n\n\nCognitive\nNootropic peptides for focus and neurological performance"
+  },
+  {
+    "objectID": "projects/project-6.html#key-features",
+    "href": "projects/project-6.html#key-features",
+    "title": "Peptide Portal",
+    "section": "Key Features",
+    "text": "Key Features\n\n1. Free Consultation Quiz\nA 2-minute intake questionnaire that captures health history, goals, and current protocols. Designed to give physicians enough context to make an informed prescribing decision without requiring an in-person visit.\n\n\n2. Physician Review & Prescription\nBoard-certified doctors review each intake asynchronously and prescribe appropriate protocols. No appointment scheduling, no waiting rooms, no geographic restrictions.\n\n\n3. Discreet Home Delivery\nPrescriptions are compounded and shipped directly to patients in discreet packaging. No pharmacy pickup, no insurance navigation.\n\n\n4. Personal Health Dashboard\nPatients track their active protocols, message their providers directly, and monitor progress—all within a single authenticated dashboard.\n\n\n5. HIPAA-Compliant Infrastructure\nAll patient data is stored and transmitted in compliance with HIPAA standards. No contracts; patients can cancel anytime."
+  },
+  {
+    "objectID": "projects/project-6.html#technical-architecture",
+    "href": "projects/project-6.html#technical-architecture",
+    "title": "Peptide Portal",
+    "section": "Technical Architecture",
+    "text": "Technical Architecture\nFramework: Next.js (App Router), React, TypeScript, Tailwind CSS\nCompliance: HIPAA-compliant data storage and transmission\nSEO: schema.org structured data for medical content\nDeployment: Vercel"
+  },
+  {
+    "objectID": "projects/project-6.html#why-this-market",
+    "href": "projects/project-6.html#why-this-market",
+    "title": "Peptide Portal",
+    "section": "Why This Market",
+    "text": "Why This Market\nCompounded peptide therapy sits at the intersection of three tailwinds: the democratization of longevity medicine, telemedicine adoption post-COVID, and growing demand for personalized health protocols. The global peptide therapeutics market is projected to exceed $60B by 2030.\nThe defensibility here is regulatory, not technical. Any developer can build a telemedicine UI. Few can navigate the prescribing compliance layer – state licensing requirements, compounding pharmacy relationships, HIPAA infrastructure – and package it into a consumer-grade experience. That compliance moat is what makes this a platform business rather than a feature. Building Peptide Portal taught me how regulatory complexity creates investable defensibility, a lens I now apply when evaluating healthcare startups at Nucleus Fund.\n\nSkills Demonstrated: Healthcare Product Development, HIPAA Compliance, Telemedicine UX, Next.js Development, Consumer Health Strategy\nTools Used: Claude Code, Next.js, Vercel, HIPAA-compliant infrastructure"
+  },
+  {
+    "objectID": "projects/project-4.html",
+    "href": "projects/project-4.html",
+    "title": "AI Pulse",
+    "section": "",
+    "text": "AI Pulse is a weekly AI intelligence publication built for the BYU community. Published every Wednesday at 7:00 AM MST, it curates and contextualizes the most significant AI developments across five categories: Research, Products, Policy, Models, and Applications.\nThe publication applies BYU’s institutional mission—spiritually strengthening, intellectually enlarging, and character building—as an editorial filter, covering AI advances through the lens of ethical innovation, responsible governance, and practical application.\nThe Problem: AI is moving faster than most professionals can track. News is fragmented across Twitter/X, research preprints, and industry blogs—and most coverage either lacks depth or lacks accessibility.\nThe Solution: A curated weekly digest that distills what matters, verifies claims against primary sources, and frames developments for an audience that cares about both capability and consequence."
+  },
+  {
+    "objectID": "projects/project-4.html#overview",
+    "href": "projects/project-4.html#overview",
+    "title": "AI Pulse",
+    "section": "",
+    "text": "AI Pulse is a weekly AI intelligence publication built for the BYU community. Published every Wednesday at 7:00 AM MST, it curates and contextualizes the most significant AI developments across five categories: Research, Products, Policy, Models, and Applications.\nThe publication applies BYU’s institutional mission—spiritually strengthening, intellectually enlarging, and character building—as an editorial filter, covering AI advances through the lens of ethical innovation, responsible governance, and practical application.\nThe Problem: AI is moving faster than most professionals can track. News is fragmented across Twitter/X, research preprints, and industry blogs—and most coverage either lacks depth or lacks accessibility.\nThe Solution: A curated weekly digest that distills what matters, verifies claims against primary sources, and frames developments for an audience that cares about both capability and consequence."
+  },
+  {
+    "objectID": "projects/project-4.html#live-publication",
+    "href": "projects/project-4.html#live-publication",
+    "title": "AI Pulse",
+    "section": "Live Publication",
+    "text": "Live Publication\n\n  Read AI Pulse"
+  },
+  {
+    "objectID": "projects/project-4.html#editorial-structure",
+    "href": "projects/project-4.html#editorial-structure",
+    "title": "AI Pulse",
+    "section": "Editorial Structure",
+    "text": "Editorial Structure\nEach weekly edition contains 5 articles averaging 3-minute reads, organized by category:\n\n\n\n\n\n\n\nCategory\nWhat’s Covered\n\n\n\n\nResearch\nAcademic breakthroughs, new model capabilities, benchmark results\n\n\nProducts\nConsumer and enterprise AI product launches and updates\n\n\nPolicy\nRegulation, governance frameworks, government AI initiatives\n\n\nModels\nFoundation model releases, fine-tuning advances, open-source developments\n\n\nApplications\nIndustry use cases, deployment stories, real-world impact"
+  },
+  {
+    "objectID": "projects/project-4.html#editorial-standards",
+    "href": "projects/project-4.html#editorial-standards",
+    "title": "AI Pulse",
+    "section": "Editorial Standards",
+    "text": "Editorial Standards\n\nSourced from X.com and primary publications — each claim links to a verifiable source\nAI-generated content with human curation — Grok AI drafts are reviewed for accuracy and framing\nTransparent disclosure — the publication is explicit about its AI-assisted production process\nArchived editions — all past issues remain accessible for reference and research"
+  },
+  {
+    "objectID": "projects/project-4.html#technical-details",
+    "href": "projects/project-4.html#technical-details",
+    "title": "AI Pulse",
+    "section": "Technical Details",
+    "text": "Technical Details\nFramework: Next.js (React)\nContent Generation: Grok AI with editorial curation\nPublishing Cadence: Weekly (Wednesdays, 7:00 AM MST)\nDeployment: Vercel"
+  },
+  {
+    "objectID": "projects/project-4.html#why-i-built-this",
+    "href": "projects/project-4.html#why-i-built-this",
+    "title": "AI Pulse",
+    "section": "Why I Built This",
+    "text": "Why I Built This\nAI Pulse started because I needed it. Evaluating AI-adjacent startups at Nucleus Fund requires knowing what’s real and what’s hype – which model advances matter, which policy shifts will reshape markets, which product launches signal durable trends versus demos. Tracking this weekly became a professional edge.\nPublishing forces discipline: I can’t skim a paper and call it research if I have to explain it to readers. The archive also compounds – six months of curated AI developments is a reference library I use in diligence calls and investment memos.\n\nSkills Demonstrated: AI Content Strategy, Editorial Curation, Next.js Development, Publishing Operations, AI Tool Integration\nTools Used: Next.js, Grok AI, Vercel, X.com API"
+  },
+  {
+    "objectID": "projects/project-2.html",
+    "href": "projects/project-2.html",
+    "title": "Compass",
+    "section": "",
+    "text": "Compass is an AI-powered business development automation platform designed for professional services firms. It intelligently monitors commercial triggers, scores prospects, and generates contextual outreach—helping busy professionals identify and engage with new business opportunities without spending hours researching and writing cold emails.\nThe core insight behind Compass is simple: the best business development happens when you reach the right person at the right time with the right message. Compass automates all three."
+  },
+  {
+    "objectID": "projects/project-2.html#overview",
+    "href": "projects/project-2.html#overview",
+    "title": "Compass",
+    "section": "",
+    "text": "Compass is an AI-powered business development automation platform designed for professional services firms. It intelligently monitors commercial triggers, scores prospects, and generates contextual outreach—helping busy professionals identify and engage with new business opportunities without spending hours researching and writing cold emails.\nThe core insight behind Compass is simple: the best business development happens when you reach the right person at the right time with the right message. Compass automates all three."
+  },
+  {
+    "objectID": "projects/project-2.html#the-problem",
+    "href": "projects/project-2.html#the-problem",
+    "title": "Compass",
+    "section": "The Problem",
+    "text": "The Problem\nLawyers, consultants, and other professional services providers face a persistent challenge: business development is critical to their practice, but it competes with billable work for their most limited resource—time.\nToday’s workflow looks like this:\n\nManually scan news, court filings, and industry reports for potential leads\nResearch each prospect to understand their situation\nDraft personalized outreach from scratch\nRepeat daily—or more likely, let it slip for weeks\n\nThe result? Missed opportunities, generic outreach that gets ignored, and a business development pipeline that runs on luck rather than system."
+  },
+  {
+    "objectID": "projects/project-2.html#the-solution",
+    "href": "projects/project-2.html#the-solution",
+    "title": "Compass",
+    "section": "The Solution",
+    "text": "The Solution\nCompass replaces this manual grind with an intelligent, automated pipeline:\n\n1. Signal Library\nA modular event monitoring system that detects commercial triggers relevant to the user’s practice.\n\nProcesses real-world events like court filings, funding rounds, executive hires, and M&A activity\nEnriches raw data with context—who’s involved, what’s at stake, and why it matters\nExtensible architecture allows new signal types to be added without rebuilding the platform\n\n\n\n2. R-Score (Relevance Scoring)\nAn intelligent ranking algorithm that surfaces the highest-value prospects first.\n\n\n\n\n\n\n\n\nFactor\nWeight\nRationale\n\n\n\n\nSignal Recency\n50%\nTimely outreach dramatically improves response rates\n\n\nIndustry Match\n30%\nProspects in your target industries convert at higher rates\n\n\nDecision Maker Authority\n20%\nReaching the right person matters more than reaching any person\n\n\n\n\n\n3. Hook Generator\nAI-powered personalization that creates contextual opening lines for each prospect.\n\nReferences the specific trigger event that makes outreach relevant\nTailors messaging to the prospect’s industry and situation\nProduces outreach that reads as informed, not automated\n\n\n\n4. Daily Digest\nA human-in-the-loop workflow that respects the professional’s judgment.\n\nGenerates a curated set of AI-drafted outreach emails each day\nReview interface for approve, edit, or reject decisions\nOne-click sending keeps the human in control while eliminating the drafting burden"
+  },
+  {
+    "objectID": "projects/project-2.html#technical-architecture",
+    "href": "projects/project-2.html#technical-architecture",
+    "title": "Compass",
+    "section": "Technical Architecture",
+    "text": "Technical Architecture\nBackend: FastAPI (Python), PostgreSQL, SQLAlchemy ORM, OpenAI API, JWT authentication\nFrontend: React 18, Vite, Tailwind CSS, Zustand state management, Recharts for data visualization\nInfrastructure: Docker & Docker Compose for containerized deployment"
+  },
+  {
+    "objectID": "projects/project-2.html#why-this-matters",
+    "href": "projects/project-2.html#why-this-matters",
+    "title": "Compass",
+    "section": "Why This Matters",
+    "text": "Why This Matters\nProfessional services is a $700B+ market where rainmaking still runs on manual effort and luck. The partners who generate business are the ones who happen to notice a relevant filing or funding round – and most don’t, because they’re busy billing. Compass turns business development from a sporadic activity into a systematic pipeline.\nThe platform scales horizontally: court docket monitoring for litigators, funding round alerts for venture lawyers, M&A activity for corporate advisors, regulatory changes for compliance consultants. Each vertical is a wedge into a new customer segment with the same core engine."
+  },
+  {
+    "objectID": "projects/project-2.html#status",
+    "href": "projects/project-2.html#status",
+    "title": "Compass",
+    "section": "Status",
+    "text": "Status\nCompass is currently in active development. The MVP is functional with signal processing, relevance scoring, AI-powered hook generation, and the daily digest workflow all operational. Next phases will focus on real-time data source integration, email delivery, and analytics.\n\nSkills Demonstrated: Full-Stack Development, AI Integration, Algorithm Design, API Architecture, Database Design, Product Strategy\nTools Used: Claude Code, FastAPI, React, PostgreSQL, OpenAI API, Docker"
+  },
+  {
+    "objectID": "problems.html",
+    "href": "problems.html",
+    "title": "Problems I’m Exploring",
+    "section": "",
+    "text": "Challenges at the intersection of finance, technology, and entrepreneurship\nThese are problems I encounter firsthand – as an investment analyst, a builder, and a student moving between finance and technology. Each one represents a gap I’ve observed in practice, not in theory."
+  },
+  {
+    "objectID": "problems.html#fragmented-investment-research-for-retail-investors",
+    "href": "problems.html#fragmented-investment-research-for-retail-investors",
+    "title": "Problems I’m Exploring",
+    "section": "1 Fragmented Investment Research for Retail Investors",
+    "text": "1 Fragmented Investment Research for Retail Investors\nThe Problem: Individual investors lack access to the same consolidated research tools that institutional investors use. Information is scattered across SEC filings, news sources, earnings calls, and financial databases, making comprehensive due diligence time-consuming and incomplete.\nWhy This Matters to Me: At Nucleus Fund, I use CapIQ, FactSet, and PitchBook daily. The quality gap between institutional and retail research tools is staggering. Retail investors are making allocation decisions with a fraction of the information – and the tools that do exist (Yahoo Finance, Seeking Alpha) optimize for engagement, not rigor.\nThe Opportunity: An AI-powered research platform that synthesizes SEC filings, earnings transcripts, news sentiment, and technical indicators into structured investment briefs. The moat is editorial quality and source verification – not just aggregation."
+  },
+  {
+    "objectID": "problems.html#inefficient-deal-flow-management-in-venture-capital",
+    "href": "problems.html#inefficient-deal-flow-management-in-venture-capital",
+    "title": "Problems I’m Exploring",
+    "section": "2 Inefficient Deal Flow Management in Venture Capital",
+    "text": "2 Inefficient Deal Flow Management in Venture Capital\nThe Problem: VC firms receive hundreds of pitch decks monthly, but the initial screening process is largely manual and inconsistent. Good opportunities get missed while partners spend excessive time on deals that don’t fit their thesis.\nWhy This Matters to Me: At Nucleus Fund, I’ve screened hundreds of pitch decks. The initial filter is mostly pattern matching: Does this fit our thesis? Is the team credible? Is the timing right? That pattern matching is exactly what ML does well – yet most firms still run deal flow through shared inboxes and spreadsheets.\nThe Opportunity: Intelligent deal flow tools that pre-screen opportunities against a firm’s investment thesis, flag founder background signals (repeat founders, domain expertise, technical depth), and surface high-potential deals before competitors see them. The winners here will own the data layer, not just the UI."
+  },
+  {
+    "objectID": "problems.html#lack-of-financial-literacy-tools-for-young-professionals",
+    "href": "problems.html#lack-of-financial-literacy-tools-for-young-professionals",
+    "title": "Problems I’m Exploring",
+    "section": "3 Lack of Financial Literacy Tools for Young Professionals",
+    "text": "3 Lack of Financial Literacy Tools for Young Professionals\nThe Problem: Most young professionals enter the workforce without understanding fundamental concepts like compound interest, tax-advantaged accounts, or equity compensation. Traditional financial education is either too basic or too complex, leaving a gap for practical, actionable knowledge.\nWhy This Matters to Me: I watch peers at BYU – smart, driven students headed to Goldman and McKinsey – who don’t understand tax-advantaged accounts or equity compensation. If future finance professionals have this gap, the general population is worse off. The consequences compound over decades.\nThe Opportunity: Personalized financial education that uses interactive simulations and AI coaching to build real decision-making skills. The key insight: financial literacy isn’t about knowledge transfer – it’s about behavior change, which requires practice and feedback loops, not articles."
+  },
+  {
+    "objectID": "problems.html#disconnected-data-systems-in-small-business-operations",
+    "href": "problems.html#disconnected-data-systems-in-small-business-operations",
+    "title": "Problems I’m Exploring",
+    "section": "4 Disconnected Data Systems in Small Business Operations",
+    "text": "4 Disconnected Data Systems in Small Business Operations\nThe Problem: Small businesses often use multiple disconnected tools for accounting, inventory, CRM, and operations. This creates data silos, manual reconciliation work, and makes it difficult to get a unified view of business health.\nWhy This Matters to Me: At Genesis Bank, I watched loan officers spend days chasing clean financial data from small business applicants – not because the data didn’t exist, but because it was trapped in five different tools that don’t talk to each other. The borrower’s inability to present a unified financial picture directly affects their cost of capital.\nThe Opportunity: Integration layers that automatically sync data across common small business tools (QuickBooks, Square, Shopify, CRMs) into real-time dashboards. The wedge is lending preparation: if you can produce bank-ready financials automatically, you own the relationship between the borrower and the lender."
+  },
+  {
+    "objectID": "problems.html#limited-access-to-alternative-investment-opportunities",
+    "href": "problems.html#limited-access-to-alternative-investment-opportunities",
+    "title": "Problems I’m Exploring",
+    "section": "5 Limited Access to Alternative Investment Opportunities",
+    "text": "5 Limited Access to Alternative Investment Opportunities\nThe Problem: Alternative investments like private equity, venture capital, and real estate syndications have historically been restricted to accredited investors, leaving most people with only public market options for wealth building.\nWhy This Matters to Me: The best risk-adjusted returns over the last two decades have come from alternatives – PE, VC, real assets – yet 95% of Americans can’t access them. Regulation is evolving (Reg A+, Reg CF, interval funds), but the infrastructure to make these vehicles accessible, compliant, and understandable is still nascent.\nThe Opportunity: Compliant platforms and fund structures that enable broader participation in alternatives. The hard part isn’t the UI – it’s the legal architecture, investor education, and ongoing compliance. Whoever solves the full stack (structuring + distribution + education) builds a durable franchise."
+  },
+  {
+    "objectID": "problems.html#lets-talk",
+    "href": "problems.html#lets-talk",
+    "title": "Problems I’m Exploring",
+    "section": "Let’s Talk",
+    "text": "Let’s Talk\nIf you’re working on any of these problems – or backing founders who are – I’d like to hear about it.\n\n  Connect on LinkedIn    Follow on GitHub \n\n\n  kshintak@byu.edu    kaishintak08@gmail.com"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "AI Architect & Software Engineer | Strategic Consulting | BYU Marriott School of Business\n\n\n  LinkedIn    GitHub    Resume"
+  },
+  {
+    "objectID": "about.html#my-story",
+    "href": "about.html#my-story",
+    "title": "About Me",
+    "section": "My Story",
+    "text": "My Story\nI’m a sophomore at Brigham Young University studying Strategic Management with an emphasis in Finance, carrying a 3.82 GPA and a family history that refuses to let me settle.\n\nTwo Legacies, One Purpose\nMy grandmother, Marguerite Jackson, marched with the NAACP in Alabama during Jim Crow and raised a family as a single Black woman while working in mental health—a field that barely acknowledged her patients, let alone her. She spoke openly about what she endured and taught me that faith and opportunity are meant to be seized.\nMy grandfather, Kenji Shintaku, never spoke about the internment camps. I learned his story differently—standing at Manzanar when I was ten, finding my family’s names in the registry. His silence taught me that resilience doesn’t always announce itself.\nTogether, their legacies gave me a simple framework: From everyone who has been given much, much will be demanded (Luke 12:48).\n\n\nTested Early\nWhen my father lost his job last year, I depleted my savings and took on a second job to keep my family stable—while maintaining my coursework, captaining the BYU Water Polo Club, and organizing a charity tournament that raised over $500. It was the hardest stretch of my life, and also the smallest taste of what my grandparents endured. That perspective kept me moving.\n\n\nWhere I’m Headed\nMy goal is to graduate from BYU, earn an MBA from Stanford, and build a venture capital firm that backs founders who understand sacrifice – entrepreneurs solving hard problems in physical tech and software who are willing to endure what building something meaningful requires. In the meantime, I’m building products myself so that when I sit across from a founder, I understand what they’re going through.\n\n\nBeyond the Resume\nWhen I need to quiet the noise, I surf. Fountain Valley, California shaped me, and the ocean remains where I reset—grateful for what was given, focused on what I’m building with it.\n\n\nGuiding Principles\nTwo ideas anchor how I approach work and life:\n\n“You can only change two things in your life: your attitude and your effort.”\n\n\n“The joy we feel has little to do with the circumstances of our lives and everything to do with the focus of our lives.” — President Russell M. Nelson\n\nThese are the filter through which I make decisions."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\n\nBrigham Young University – Marriott School of Business\n\nBachelor of Science in Strategic Management and Statistics\n\n\nConcentration in Finance | Expected April 2028 | Provo, UT\n\nGPA: 3.82/4.00\nScholarship: BYU Multicultural Scholarship\nRelevant Coursework: Investment Analysis, Financial Modeling, Data Analytics, Statistical Methods"
+  },
+  {
+    "objectID": "about.html#professional-experience",
+    "href": "about.html#professional-experience",
+    "title": "About Me",
+    "section": "Professional Experience",
+    "text": "Professional Experience\n\nTechnical Founder\n\nCareBridge Connect\n\n\nJanuary 2026 – Present | Provo, UT\n\n\nDeveloped a full-stack healthcare platform improving transparency between skilled nursing facilities and families, delivering key patient well-being indicators in a clear, accessible interface\nBuilt an automated CRM of 200+ healthcare facilities across the Western region, generating 50+ warm leads of potential clients\nFundraised $1,000+ in grants for initial funding applied toward software development and go-to-market outreach\n\n\n\nInvestment Analyst\n\nNucleus Fund\n\n\nSeptember 2025 – Present | Salt Lake City, UT\n\n\nPerformed due diligence on 15+ early-stage startups by conducting market research, industry expert calls, and financial analysis to evaluate investment potential\nContributed to the funding of $500k+ in equity across multiple companies, directly supporting portfolio growth and revenue generation\nCollaborated with founders to assess how funding would accelerate growth; partnered with analysts to deliver in-depth analyses and pitch decks for investment decisions\n\n\n\nCommercial Banking Summer Analyst\n\nGenesis Bank\n\n\nJune 2025 – August 2025 | Newport Beach, CA\n\n\nSupported Genesis Bank’s acquisition of a publicly traded bank by assisting with financial due diligence, utilizing CapIQ and FactSet\nWorked alongside the President/COO to plan for the implementation and execution of a large-scale backfile for acquired loans\nCollaborated with deal teams on a market expansion strategy, delivering a proposal that identified $30M+ in potential loan and deposit growth\n\n\n\nAmbassador\n\nSnagtag\n\n\nJanuary 2025 – June 2025 | Lehi, UT\n\n\nRepresented Snagtag at the Silicon Slopes Startup Expo, connecting with 8 investors and 20+ potential clients\nConducted market research on community impact, providing actionable insights to strengthen product offerings\nGathered feedback on the new app, facilitating discussions with software development engineers"
+  },
+  {
+    "objectID": "about.html#leadership-development",
+    "href": "about.html#leadership-development",
+    "title": "About Me",
+    "section": "Leadership & Development",
+    "text": "Leadership & Development\n\nSEO EDGE Participant\n\nSEO Career\n\n\nJanuary 2025 – June 2025 | New York, NY\n\n\nSelected for competitive program providing coaching on interview, technical, and professional development\nCompleted industry-specific training focused on developing technical skills and institutional knowledge\n\n\n\nActivities President\n\nBYU FlexGE Student Council\n\n\nJanuary 2024 – April 2024 | Provo, UT\n\n\nPrivately consulted 25+ students on academic and professional positioning, helping them secure scholarships and admittance to specialty programs\n\n\n\nIn-Country Humanitarian Director\n\nThe Church of Jesus Christ of Latter-day Saints\n\n\nDecember 2021 – January 2024 | Santo Domingo, Dominican Republic\n\n\nServed two years conducting community outreach in Spanish (fluent) across social media, cold calling, door-to-door, and referral channels\nCoordinated social and educational events with community leaders, positively impacting underprivileged populations"
+  },
+  {
+    "objectID": "about.html#skills-expertise",
+    "href": "about.html#skills-expertise",
+    "title": "About Me",
+    "section": "Skills & Expertise",
+    "text": "Skills & Expertise\n\n\n\n\n\n\nAI Architecture\n\nLLM Integration (OpenAI, Grok, Claude)\nPrompt Engineering & Reasoning Systems\nAI-Native Workflow Design\nAgentic Systems & Automation\n\n\n\n\n\n\n\n\nEngineering\n\nFull-Stack Development (Next.js, React, FastAPI)\nPython, SQL, VBA\nDatabase Design (PostgreSQL, Supabase)\nHIPAA-Compliant Systems Architecture\n\n\n\n\n\n\n\n\nStrategic Consulting\n\nAI Integration Strategy\nDue Diligence & Market Analysis\nFinancial Modeling & Valuation\nGo-to-Market & Product Strategy"
+  },
+  {
+    "objectID": "about.html#organizations",
+    "href": "about.html#organizations",
+    "title": "About Me",
+    "section": "Organizations",
+    "text": "Organizations\nLeadership Roles: President, Trading Desk at BYU | Captain, Water Polo Club\nProfessional Clubs: AI in Business Association | Management Consulting Association | Venture Capital Club\nOther Activities: Student Athlete & Volunteer Coach (Water Polo) | Physical & Mental Health Advocate"
+  },
+  {
+    "objectID": "about.html#languages",
+    "href": "about.html#languages",
+    "title": "About Me",
+    "section": "Languages",
+    "text": "Languages\nSpanish – Fluent (reading, writing, and speaking)\nGained through two years of full-time service in the Dominican Republic."
+  },
+  {
+    "objectID": "about.html#what-im-looking-for",
+    "href": "about.html#what-im-looking-for",
+    "title": "About Me",
+    "section": "What I’m Looking For",
+    "text": "What I’m Looking For\nI’m focused on roles at the intersection of AI architecture, software engineering, and strategic consulting — building and advising on systems that matter. I want to work where deep technical execution meets real business problems: designing AI-native workflows, architecting enterprise systems, and translating complex technology into strategic advantage.\nMy financial background isn’t gone — it’s a lens. Understanding how deals are structured, how markets move, and how investors think makes me a sharper engineer and a better strategic partner. I evaluate problems the way a builder and an analyst would simultaneously: not just “does this work?” but “does this compound?”"
+  },
+  {
+    "objectID": "about.html#lets-connect",
+    "href": "about.html#lets-connect",
+    "title": "About Me",
+    "section": "Let’s Connect",
+    "text": "Let’s Connect\nI’m always interested in discussing AI architecture, software engineering, and where strategic consulting meets technical execution.\n\n  Download Resume    Connect on LinkedIn \n\n\n  kshintak@byu.edu    kaishintak08@gmail.com"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Kainoa Shintaku",
+    "section": "",
+    "text": "AI Architect & Software Engineer | Strategic Consulting | BYU Marriott School of Business\n\n\n  About Me    Download Resume"
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Kainoa Shintaku",
+    "section": "At a Glance",
+    "text": "At a Glance\n\n\n\n\n\n\n6 Products Shipped\nFull-stack apps from zero to live — healthcare, AI tooling, telemedicine, and more\n\n\n\n\n\n\n\n15+ Startups\nDue diligence performed at Nucleus Fund, contributing to $500K+ in equity funding\n\n\n\n\n\n\n\n3.82 GPA\nBYU Marriott School of Business, Multicultural Scholarship Recipient"
+  },
+  {
+    "objectID": "index.html#about-1",
+    "href": "index.html#about-1",
+    "title": "Kainoa Shintaku",
+    "section": "About",
+    "text": "About\nI’m a Technical Founder at CareBridge Connect, Investment Analyst at Nucleus Fund, and a student at BYU’s Marriott School of Business — focused on AI architecture, software engineering, and strategic consulting.\nI design and ship AI-native systems, then evaluate them from an investor’s perspective. That dual lens — deep technical execution and strategic business thinking — is what I bring to every problem. I’ve shipped six products from zero to live, performed due diligence on 15+ startups, and built systems that operate at the intersection of healthcare, AI, and enterprise.\nLearn more about my background →"
+  },
+  {
+    "objectID": "index.html#what-i-bring",
+    "href": "index.html#what-i-bring",
+    "title": "Kainoa Shintaku",
+    "section": "What I Bring",
+    "text": "What I Bring\n\n\n\n\n\n\nStrategic Consulting\n\nAI Integration Strategy\nDue Diligence & Market Analysis\nFinancial Modeling & Valuation\nGo-to-Market & Product Strategy\n\n\n\n\n\n\n\n\nTechnical Skills\n\nPython, SQL, VBA\nFull-Stack Development (Next.js, React, FastAPI)\nData Analytics & Statistical Modeling\nDatabase Design (PostgreSQL, Supabase)\n\n\n\n\n\n\n\n\nAI Architecture\n\nLLM Integration (OpenAI, Grok, Claude)\nPrompt Engineering & Reasoning Systems\nAgentic Systems & Automation\nHIPAA-Compliant AI Infrastructure"
+  },
+  {
+    "objectID": "index.html#projects",
+    "href": "index.html#projects",
+    "title": "Kainoa Shintaku",
+    "section": "Featured Projects",
+    "text": "Featured Projects\n\n\nCareBridge Connect\nA HIPAA-compliant B2B platform that eliminates 2-3 hours of nurse call burden per shift by translating clinical documentation into plain-language family updates. Pivoted from consumer to B2B after customer discovery revealed stronger product-market fit with facility operators.\nKey Features:\n\nEvent-based care timeline surfaced from existing facility documentation\nAI-generated daily/weekly progress summaries in plain language\nGuardrailed AI chat for 24/7 family inquiries\nSecure Vault for medical documents and emergency information\n\n\n  Live Demo    View Source    Case Study \n\n\n\n\n\nCompass\nA business development automation platform for professional services firms. Monitors commercial triggers (court filings, funding rounds, executive hires), scores prospects with a proprietary relevance algorithm, and generates contextual outreach – replacing the manual grind that most rainmakers abandon within weeks.\nKey Features:\n\nSignal Library for monitoring commercial triggers across industries\nR-Score algorithm for intelligent prospect ranking\nAI-powered Hook Generator for contextual outreach\nDaily Digest with human-in-the-loop review workflow\n\n\n  Case Study \n\n\n Currently in active development\n\n\n\n\n\nConsulting Agent\nA strategic advisory platform that compresses the execution layer of consulting – SCQA structuring, MECE frameworks, Pyramid Principle – so practitioners can focus on judgment, where expertise actually compounds. Generates complete executive decks from a single brief.\nKey Features:\n\nInteractive advisory chat at senior consultant level\nExecutive deck builder with PPTX export (5–20 slides)\nSCQA framework builder and consulting frameworks library\nGraph/chart builder for data visualization\n\n\n  Live Demo    Case Study \n\n\n\n\n\nAI Pulse\nA weekly AI intelligence publication started as a personal curation habit for deal evaluation at Nucleus Fund. Covers research, products, policy, models, and applications – published every Wednesday for the BYU community.\nKey Features:\n\n5 curated articles weekly across Research, Products, Policy, Models, and Applications\nAI-generated drafts with editorial curation and source verification\nTies directly to deal evaluation work at Nucleus Fund\nSearchable archive of past editions\n\n\n  Read Publication    Case Study \n\n\n\n\n\nEternally\nA digital memorial platform with 10,000+ memorials created that turns cemeteries into interactive living memorials. Combines a consumer product (collaborative storytelling, AI photo restoration) with a marketplace model (remote grave services) that cemetery operators can white-label.\nKey Features:\n\nLife history timeline for collaborative family storytelling\nRemote grave services marketplace (flowers, cleaning, decorations)\nAI-enhanced photo and video gallery\nInteractive cemetery map with offline access\n\n\n  Live Demo    Case Study \n\n\n\n\n\nPeptide Portal\nA telemedicine platform serving 4,200+ patients that solves the prescribing compliance layer for peptide therapy – connecting patients with board-certified doctors across weight loss, longevity, recovery, and cognitive performance. Regulatory expertise as a moat.\nKey Features:\n\n2-minute free consultation quiz and async physician review\nDiscreet home delivery with no contracts\nPersonal health dashboard with direct provider messaging\nHIPAA-compliant telemedicine infrastructure\n\n\n  Live Demo    Case Study"
+  },
+  {
+    "objectID": "index.html#currently-exploring",
+    "href": "index.html#currently-exploring",
+    "title": "Kainoa Shintaku",
+    "section": "Currently Exploring",
+    "text": "Currently Exploring\nI spend my free cycles on problems at the intersection of AI and enterprise: why most “AI integrations” are surface-level wrappers, how agentic systems can replace entire workflow layers, and where strategic consulting firms are still using 2010-era tooling on 2026 problems. These aren’t hypothetical — they come from building products and sitting in diligence calls.\nSee what I’m working on →"
+  },
+  {
+    "objectID": "index.html#lets-connect",
+    "href": "index.html#lets-connect",
+    "title": "Kainoa Shintaku",
+    "section": "Let’s Connect",
+    "text": "Let’s Connect\nAI architect who thinks strategically. Seeking roles in AI engineering, technical consulting, and product strategy.\n\n  Connect on LinkedIn    Download Resume \n\n\n  kshintak@byu.edu    kaishintak08@gmail.com"
+  },
+  {
+    "objectID": "projects/project-1.html",
+    "href": "projects/project-1.html",
+    "title": "CareBridge Connect",
+    "section": "",
+    "text": "CareBridge Connect is a HIPAA-compliant B2B communication platform that bridges skilled nursing facilities and families. Healthcare already documents everything—but families still feel blind. CareBridge solves the communication gap by translating clinical documentation into plain-language family updates, reducing staff call burden while dramatically improving family satisfaction and trust.\nThe Problem in Numbers:\n\n2–3 hours per nurse shift lost to routine family calls\n27% of families dissatisfied with communication quality\nOnly 29% of families report being informed of care changes\n\nTarget Customer: Skilled nursing facilities, long-term care operators, and care coordinators seeking to reduce staff burden, improve family satisfaction scores, and increase census through stronger family trust."
+  },
+  {
+    "objectID": "projects/project-1.html#overview",
+    "href": "projects/project-1.html#overview",
+    "title": "CareBridge Connect",
+    "section": "",
+    "text": "CareBridge Connect is a HIPAA-compliant B2B communication platform that bridges skilled nursing facilities and families. Healthcare already documents everything—but families still feel blind. CareBridge solves the communication gap by translating clinical documentation into plain-language family updates, reducing staff call burden while dramatically improving family satisfaction and trust.\nThe Problem in Numbers:\n\n2–3 hours per nurse shift lost to routine family calls\n27% of families dissatisfied with communication quality\nOnly 29% of families report being informed of care changes\n\nTarget Customer: Skilled nursing facilities, long-term care operators, and care coordinators seeking to reduce staff burden, improve family satisfaction scores, and increase census through stronger family trust."
+  },
+  {
+    "objectID": "projects/project-1.html#live-product",
+    "href": "projects/project-1.html#live-product",
+    "title": "CareBridge Connect",
+    "section": "Live Product",
+    "text": "Live Product\n\n  Open App in New Tab \n  View Source on GitHub"
+  },
+  {
+    "objectID": "projects/project-1.html#technical-details",
+    "href": "projects/project-1.html#technical-details",
+    "title": "CareBridge Connect",
+    "section": "Technical Details",
+    "text": "Technical Details\nFramework/Stack: Next.js 14 (App Router), React 18, TypeScript, Tailwind CSS, Supabase\nDeployment: Vercel (custom domain: carebridgeconnect.ai)\nSecurity & Compliance:\n\nHIPAA-compliant architecture with end-to-end encryption\nRow Level Security (RLS) policies on all Supabase tables\nRole-based access control (Admin, Care Staff, Family)\nIntegration-ready with PointClickCare and existing EHR systems\n\nDatabase: Supabase (PostgreSQL) with real-time subscriptions\nTools Used: Claude Code, Supabase, Vercel, OpenAI API"
+  },
+  {
+    "objectID": "projects/project-1.html#key-features",
+    "href": "projects/project-1.html#key-features",
+    "title": "CareBridge Connect",
+    "section": "Key Features",
+    "text": "Key Features\n\n1. Event-Based Care Timeline\nA timestamped, chronological feed of care events—medications administered, vitals recorded, activities attended—surfaced automatically from existing facility documentation. Families see what’s happening without staff needing to make a call.\n\n\n2. AI-Generated Progress Summaries\nDaily and weekly summaries that identify trends and highlight notable changes in plain language. Instead of raw clinical notes, families receive a paragraph like: “Mom had a great week—her appetite improved and she attended three group activities.”\n\n\n3. Guardrailed AI Family Chat\nFamilies can ask questions 24/7 and receive accurate, safe responses drawn from their loved one’s care record. The AI is constrained to verified data, preventing hallucination while reducing overnight call volume.\n\n\n4. The Vault\nA secure information hub storing:\n\nFacility contacts, room numbers, and visiting hours\nMedication lists, insurance cards, and care directives\nEmergency contacts and physician information\n\n\n\n5. Permission-Based Access\nGranular role controls so administrators, care staff, and family members each see only what’s appropriate—with full audit logging for compliance."
+  },
+  {
+    "objectID": "projects/project-1.html#business-value-for-facilities",
+    "href": "projects/project-1.html#business-value-for-facilities",
+    "title": "CareBridge Connect",
+    "section": "Business Value for Facilities",
+    "text": "Business Value for Facilities\n\n\n\n\n\n\n\nOutcome\nDriver\n\n\n\n\nReduced call volume\nAI chat + proactive updates handle routine inquiries\n\n\nHigher family satisfaction\nFamilies feel informed and in control\n\n\nBetter online reviews\nTrust translates to 5-star ratings\n\n\nIncreased census\nInformed families recommend the facility"
+  },
+  {
+    "objectID": "projects/project-1.html#development-journey",
+    "href": "projects/project-1.html#development-journey",
+    "title": "CareBridge Connect",
+    "section": "Development Journey",
+    "text": "Development Journey\nCareBridge Connect began as GatherIn, a consumer-facing caregiving app for families. After 15+ customer discovery interviews, a clear pattern emerged: families wanted better communication, but they had no purchasing power. The budget holder was the facility operator, and what they needed was a turnkey communication layer that reduced call volume and improved satisfaction scores – not another app for families to download.\nThe pivot to CareBridge Connect reoriented the product around facility workflows, PointClickCare integration, and staff-facing dashboards while preserving the family-side experience that made the original concept compelling. This is the kind of pivot that separates real product work from class projects: the willingness to follow the market signal, even when it means rebuilding.\n\nSkills Demonstrated: B2B Product Strategy, Healthcare Compliance (HIPAA), Full-Stack Development, AI Integration, Customer Discovery, Go-to-Market Pivoting\nTools Used: Claude Code, Next.js, Supabase, OpenAI API, Vercel"
+  },
+  {
+    "objectID": "projects/project-3.html",
+    "href": "projects/project-3.html",
+    "title": "Consulting Agent",
+    "section": "",
+    "text": "Consulting Agent is an AI-powered strategic advisory platform that generates McKinsey-caliber analysis and executive presentations. It applies rigorous consulting methodology—MECE structuring, the Pyramid Principle, hypothesis-driven thinking—to help professionals produce structured, boardroom-ready deliverables without a traditional consulting engagement.\nThe Problem: Strategy consultants and business leaders spend disproportionate time on formatting, structuring, and drafting rather than thinking. The frameworks exist; the bottleneck is execution speed.\nThe Solution: A browser-based platform that acts as a senior consultant on demand—generating structured decks, performing SCQA analysis, and providing real-time strategic guidance in minutes rather than days."
+  },
+  {
+    "objectID": "projects/project-3.html#overview",
+    "href": "projects/project-3.html#overview",
+    "title": "Consulting Agent",
+    "section": "",
+    "text": "Consulting Agent is an AI-powered strategic advisory platform that generates McKinsey-caliber analysis and executive presentations. It applies rigorous consulting methodology—MECE structuring, the Pyramid Principle, hypothesis-driven thinking—to help professionals produce structured, boardroom-ready deliverables without a traditional consulting engagement.\nThe Problem: Strategy consultants and business leaders spend disproportionate time on formatting, structuring, and drafting rather than thinking. The frameworks exist; the bottleneck is execution speed.\nThe Solution: A browser-based platform that acts as a senior consultant on demand—generating structured decks, performing SCQA analysis, and providing real-time strategic guidance in minutes rather than days."
+  },
+  {
+    "objectID": "projects/project-3.html#live-product",
+    "href": "projects/project-3.html#live-product",
+    "title": "Consulting Agent",
+    "section": "Live Product",
+    "text": "Live Product\n\n  Open App in New Tab"
+  },
+  {
+    "objectID": "projects/project-3.html#key-features",
+    "href": "projects/project-3.html#key-features",
+    "title": "Consulting Agent",
+    "section": "Key Features",
+    "text": "Key Features\n\n1. Advisory Chat\nAn interactive AI consultant operating at the senior consultant level. Users describe their strategic challenge; the agent asks clarifying questions, applies appropriate frameworks, and delivers structured recommendations. It draws on consulting best practices from McKinsey, BCG, and Bain methodologies.\n\n\n2. Executive Deck Builder\nGenerates complete slide decks (5–20 slides) from a single brief. Each deck follows a logical narrative arc with an executive summary, analysis slides, and a clear recommendation. Outputs are customizable by format and export to PPTX, Markdown, JSON, or HTML.\n\n\n3. SCQA Framework Builder\nStructures any situation into the Situation → Complication → Question → Answer format used in top-tier consulting engagements. Forces rigorous problem framing before jumping to solutions.\n\n\n4. Graph & Chart Builder\nGenerates publication-ready data visualizations for inclusion in decks—bar charts, waterfall charts, trend lines—formatted to consulting presentation standards.\n\n\n5. Quick Prompt Templates\nPre-built scenarios for common consulting tasks: market entry analysis, competitive positioning, operational improvement, and M&A rationale. Reduces setup time for common engagement types."
+  },
+  {
+    "objectID": "projects/project-3.html#technical-architecture",
+    "href": "projects/project-3.html#technical-architecture",
+    "title": "Consulting Agent",
+    "section": "Technical Architecture",
+    "text": "Technical Architecture\nFrontend: React 18, Vite, Tailwind CSS\nAI Integration: OpenAI API (GPT-4o, GPT-4o Mini, GPT-4 Turbo)\nExport: PPTX generation, Markdown, JSON, HTML\nStorage: Browser-based local storage (no server-side data retention)\nDeployment: Vercel"
+  },
+  {
+    "objectID": "projects/project-3.html#why-i-built-this",
+    "href": "projects/project-3.html#why-i-built-this",
+    "title": "Consulting Agent",
+    "section": "Why I Built This",
+    "text": "Why I Built This\nI watched analysts at Nucleus Fund spend hours formatting decks when the actual insight took minutes. The bottleneck in consulting and investment analysis is rarely thinking – it’s execution. MECE structuring, Pyramid Principle narratives, and clean slide layouts are learnable frameworks, not scarce judgment. That makes them ideal candidates for AI compression.\nBuilding this also forced me to solve a hard prompt engineering problem: getting an LLM to produce consistently structured, logically rigorous outputs rather than plausible-sounding filler. The gap between “AI that sounds smart” and “AI that structures thinking” is where the real product work lives.\n\nSkills Demonstrated: AI Product Development, Prompt Engineering, React Development, Consulting Methodology, UX Design\nTools Used: Claude Code, React, OpenAI API (GPT-4o), Vercel, PPTX Export Libraries"
+  },
+  {
+    "objectID": "projects/project-5.html",
+    "href": "projects/project-5.html",
+    "title": "Eternally",
+    "section": "",
+    "text": "Eternally transforms cemeteries from static physical locations into interactive living memorials. Families can preserve life stories, coordinate remote grave services, and stay connected to their loved ones—regardless of where they live.\nThe platform bridges the gap between physical burial sites and distributed families. Most families no longer live near their ancestral cemeteries. Visiting requires travel; maintaining graves requires proximity; sharing memories requires coordination. Eternally makes all three possible from anywhere.\nScale: 10,000+ memorials created, 4.9-star family rating, partnerships with multiple cemeteries."
+  },
+  {
+    "objectID": "projects/project-5.html#overview",
+    "href": "projects/project-5.html#overview",
+    "title": "Eternally",
+    "section": "",
+    "text": "Eternally transforms cemeteries from static physical locations into interactive living memorials. Families can preserve life stories, coordinate remote grave services, and stay connected to their loved ones—regardless of where they live.\nThe platform bridges the gap between physical burial sites and distributed families. Most families no longer live near their ancestral cemeteries. Visiting requires travel; maintaining graves requires proximity; sharing memories requires coordination. Eternally makes all three possible from anywhere.\nScale: 10,000+ memorials created, 4.9-star family rating, partnerships with multiple cemeteries."
+  },
+  {
+    "objectID": "projects/project-5.html#live-product",
+    "href": "projects/project-5.html#live-product",
+    "title": "Eternally",
+    "section": "Live Product",
+    "text": "Live Product\n\n  Open App in New Tab"
+  },
+  {
+    "objectID": "projects/project-5.html#key-features",
+    "href": "projects/project-5.html#key-features",
+    "title": "Eternally",
+    "section": "Key Features",
+    "text": "Key Features\n\n1. Life History Timeline\nA collaborative storytelling tool where family members contribute memories, milestones, and photos to build a comprehensive biography. The timeline surfaces the full arc of a person’s life—not just their dates.\n\n\n2. Photo & Video Gallery with AI Enhancement\nFamilies upload decades-old photos that get automatically enhanced using AI—sharpened, colorized, and restored. The gallery becomes a permanent, high-quality visual record.\n\n\n3. Interactive Cemetery Map\nA digital map of the cemetery with offline access. Visitors can navigate to the exact gravesite without searching. Cemetery operators can embed it for visitor wayfinding.\n\n\n4. Remote Grave Services Marketplace\nFamilies order flowers, professional cleaning, seasonal decorations, and memorial items—delivered and placed by local service providers. A family in California can have flowers placed on a grave in Hawaii for a birthday or anniversary.\n\n\n5. Moderated Guest Book\nFriends, former colleagues, and community members leave memories and condolences in a moderated digital guest book. Unlike social media comments, the platform curates what becomes part of the permanent memorial.\n\n\n6. Privacy Controls\nMemorials can be set to public, family-only, or unlisted. Families control who can view, contribute, and share."
+  },
+  {
+    "objectID": "projects/project-5.html#technical-architecture",
+    "href": "projects/project-5.html#technical-architecture",
+    "title": "Eternally",
+    "section": "Technical Architecture",
+    "text": "Technical Architecture\nFrontend: Next.js, React, Tailwind CSS\nImage Processing: Cloudinary (AI enhancement, optimization, transformation)\nMaps: Interactive cemetery mapping with offline-capable routing\nDeployment: Vercel"
+  },
+  {
+    "objectID": "projects/project-5.html#market-context-why-i-built-this",
+    "href": "projects/project-5.html#market-context-why-i-built-this",
+    "title": "Eternally",
+    "section": "Market Context & Why I Built This",
+    "text": "Market Context & Why I Built This\nThe U.S. death care industry generates $23B+ annually, yet cemetery operators run on paper records and phone calls. Families have no centralized platform for preservation or coordination. This is a classic “picks and shovels” opportunity: don’t compete with funeral homes – give cemetery operators the digital infrastructure they lack and charge for the platform.\nThe remote services marketplace is the wedge. Flowers, cleaning, and decorations create recurring revenue that cemetery operators can white-label. Once you own the digital relationship between family and cemetery, you own the distribution channel for every adjacent service: estate planning referrals, memorial events, genealogy integrations. Legacy industries with fragmented operators and no digital incumbents are exactly where platform businesses get built.\n\nSkills Demonstrated: Consumer Product Design, Marketplace Architecture, AI Feature Integration, Next.js Development, Service Marketplace Design\nTools Used: Claude Code, Next.js, Cloudinary, Vercel"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "AI Architect & Software Engineer | Strategic Consulting | BYU Marriott School of Business\n\n\n  Download PDF    LinkedIn"
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Resume",
+    "section": "Education",
+    "text": "Education\n\nBrigham Young University – Marriott School of Business\n\nBachelor of Science in Strategic Management and Statistics\n\n\nConcentration in Finance | Expected April 2028 | Provo, UT\n\nGPA: 3.82/4.00\nScholarship: Brigham Young University Multicultural Scholarship"
+  },
+  {
+    "objectID": "resume.html#experience",
+    "href": "resume.html#experience",
+    "title": "Resume",
+    "section": "Experience",
+    "text": "Experience\n\nTechnical Founder\n\nCareBridge Connect\n\n\nJanuary 2026 – Present | Provo, UT\n\n\nDeveloped a full-stack healthcare platform improving transparency between skilled nursing facilities and families, delivering key patient well-being indicators in a clear, accessible interface\nBuilt an automated CRM of 200+ healthcare facilities across the Western region, generating 50+ warm leads of potential clients\nFundraised $1,000+ in grants for initial funding, applied toward software development and go-to-market outreach\n\n\n\nInvestment Analyst\n\nNucleus Fund\n\n\nSeptember 2025 – Present | Salt Lake City, UT\n\n\nPerformed due diligence on 15+ early-stage startups by conducting market research, industry expert calls, and financial analysis to evaluate investment potential\nContributed to the funding of $500k+ in equity across multiple companies, directly supporting portfolio growth and revenue generation\nCollaborated with founders to assess how funding would accelerate growth; partnered with a team of analysts to deliver in-depth analyses and pitch decks for investment decisions\n\n\n\nCommercial Banking Summer Analyst\n\nGenesis Bank\n\n\nJune 2025 – August 2025 | Newport Beach, CA\n\n\nSupported Genesis Bank’s acquisition of a publicly traded bank by assisting with financial due diligence, improving the Phase 1-2 request list utilizing SMPs such as CapIQ and FactSet\nWorked alongside the President/COO to plan for the implementation and execution of a large-scale backfile for acquired loans, which beat the one-time cost saved in the acquisition model\nCollaborated with deal teams on a market expansion strategy, delivering a proposal to senior leadership that identified $30M+ in potential loan and deposit growth across new sectors\n\n\n\nAmbassador\n\nSnagtag\n\n\nJanuary 2025 – June 2025 | Lehi, UT\n\n\nConducted market research on community impact, providing actionable insights to strengthen Snagtag’s product offerings\nRepresented Snagtag at the Silicon Slopes Startup Expo, generating brand exposure and connecting with 8 investors and 20+ potential clients\nGathered feedback on Snagtag’s new app, facilitating discussions with software development engineers to enhance future operations development"
+  },
+  {
+    "objectID": "resume.html#leadership-professional-development",
+    "href": "resume.html#leadership-professional-development",
+    "title": "Resume",
+    "section": "Leadership & Professional Development",
+    "text": "Leadership & Professional Development\n\nSEO EDGE Participant\n\nSEO Career\n\n\nJanuary 2025 – June 2025 | New York, NY\n\n\nSelected for competitive program (&lt; 15% acceptance) providing technical interview preparation and professional development for careers in finance\nCompleted industry-specific training in financial modeling, valuation, and accounting fundamentals\n\n\n\nActivities President\n\nBYU FlexGE Student Council\n\n\nJanuary 2024 – April 2024 | Provo, UT\n\n\nDirected planning and execution of service and social events, increasing student participation\nPrivately consulted 25+ students on academic and professional positioning, helping them secure scholarships and admittance to specialty programs\n\n\n\nIn-Country Humanitarian Director\n\nThe Church of Jesus Christ of Latter-day Saints\n\n\nDecember 2021 – January 2024 | Santo Domingo, Dominican Republic\n\n\nEngaged with dozens of individuals in Spanish (fluent) across social media, cold calling, door-to-door, and referral channels promoting community engagement and humanitarian work\nCollaborated with community leaders to coordinate social and educational events, positively impacting underprivileged populations"
+  },
+  {
+    "objectID": "resume.html#organizations-activities",
+    "href": "resume.html#organizations-activities",
+    "title": "Resume",
+    "section": "Organizations & Activities",
+    "text": "Organizations & Activities\n\n\n\n\n\n\nLeadership Roles\n\nPresident, Trading Desk at BYU\nCaptain, Water Polo Club\nOfficer, Water Polo Club\nActivities President, Student Council\n\n\n\n\n\n\n\n\nProfessional Clubs\n\nAI in Business Association (2025-2026)\nManagement Consulting Association\nVenture Capital Club (2024-2025)\n\n\n\n\n\n\n\n\nOther Activities\n\nStudent Athlete, Water Polo\nVolunteer Coach, High School Water Polo\nPhysical & Mental Health Advocate"
+  },
+  {
+    "objectID": "resume.html#skills-certifications",
+    "href": "resume.html#skills-certifications",
+    "title": "Resume",
+    "section": "Skills & Certifications",
+    "text": "Skills & Certifications\n\n\n\n\n\n\nEngineering\n\nFull-Stack Development (Next.js, React, FastAPI)\nPython, SQL, VBA\nDatabase Design (PostgreSQL, Supabase)\nHIPAA-Compliant Systems Architecture\n\n\n\n\n\n\n\n\nAI & Architecture\n\nLLM Integration (OpenAI, Grok, Claude)\nPrompt Engineering & Reasoning Systems\nAI-Native Workflow Design\nAgentic Systems & Automation\n\n\n\n\n\n\n\n\nLanguages & Focus\n\nSpanish – Fluent (Reading, Writing, Speaking)\nStrategic Consulting & AI Integration\nEntrepreneurial Finance\nVenture Capital & Fund Structuring"
+  },
+  {
+    "objectID": "resume.html#lets-connect",
+    "href": "resume.html#lets-connect",
+    "title": "Resume",
+    "section": "Let’s Connect",
+    "text": "Let’s Connect\nAI architect and software engineer with a strategic consulting lens. Building systems that solve hard problems at the intersection of AI and enterprise.\n\n  Download Resume    Connect on LinkedIn \n\n\n  kshintak@byu.edu    kaishintak08@gmail.com"
+  },
+  {
+    "objectID": "writing/agentic-systems.html",
+    "href": "writing/agentic-systems.html",
+    "title": "Agentic Systems Are the Next Infrastructure Layer",
+    "section": "",
+    "text": "For the past two years, most AI products have been built on a simple pattern: user inputs something, AI outputs something. The human is in every loop. The AI is a sophisticated autocomplete.\nThat’s changing. The next wave of AI infrastructure is agentic — systems where the AI doesn’t just respond to prompts but executes sequences of actions, makes decisions, and operates autonomously over time. The architecture required to build these systems is fundamentally different from what most engineers are used to building."
+  },
+  {
+    "objectID": "writing/agentic-systems.html#what-agentic-actually-means-in-practice",
+    "href": "writing/agentic-systems.html#what-agentic-actually-means-in-practice",
+    "title": "Agentic Systems Are the Next Infrastructure Layer",
+    "section": "What “Agentic” Actually Means in Practice",
+    "text": "What “Agentic” Actually Means in Practice\nAn agentic system has at minimum four components that a standard LLM API call doesn’t:\nPersistent memory. The agent needs to remember what it has done, what it has learned, and what context is relevant to its current task. This is not the same as conversation history — it’s a structured knowledge graph that persists across sessions, updates as new information arrives, and can be queried selectively.\nTool use. The agent can call external services — APIs, databases, browsers, code execution environments — and incorporate the results into its reasoning. The LLM itself doesn’t execute code or browse the web. It generates calls to tools that do those things, receives the results, and reasons about what to do next.\nPlanning and decomposition. Complex tasks require breaking down into subtasks, executing them in the right order, handling failures, and replanning when results are unexpected. This requires a different prompting architecture than single-shot responses — typically some form of chain-of-thought that makes the planning visible and testable.\nAction execution. The agent doesn’t just recommend actions — it takes them. This is where most engineers slow down, because giving an AI system the ability to take irreversible actions (send emails, modify databases, make API calls with side effects) requires careful guardrailing."
+  },
+  {
+    "objectID": "writing/agentic-systems.html#the-infrastructure-gap",
+    "href": "writing/agentic-systems.html#the-infrastructure-gap",
+    "title": "Agentic Systems Are the Next Infrastructure Layer",
+    "section": "The Infrastructure Gap",
+    "text": "The Infrastructure Gap\nThe gap between “I want to build an agentic system” and “I have a production-ready agentic system” is much larger than most people expect.\nThe specific problems that aren’t solved by existing tools:\nReliability under failure. Agentic systems fail in ways that synchronous API calls don’t. A tool call might time out. An LLM output might not parse correctly. An external API might return unexpected data. Each failure mode requires explicit handling, retry logic, and fallback behavior. Systems that work 90% of the time in testing fail constantly in production.\nObservability. When a multi-step agent fails or produces a wrong result, you need to understand exactly which step went wrong, what inputs it received, what the model reasoned, and what action it took. Standard application monitoring doesn’t capture this. You need agent-specific observability tooling — most of which is still being built by the ecosystem.\nCost management. Agentic systems make many more LLM calls than single-shot applications. A task that requires 10 reasoning steps with tool calls between each step might cost 10-50x more than a simple prompt. Without careful cost modeling and optimization, production systems become prohibitively expensive fast.\nParallelism and coordination. Some tasks can be decomposed into parallel subtasks. Others have strict sequential dependencies. Orchestrating multiple agents working on different aspects of the same problem — and merging their outputs correctly — is a genuinely hard engineering problem with no standard solution yet."
+  },
+  {
+    "objectID": "writing/agentic-systems.html#why-this-matters-strategically",
+    "href": "writing/agentic-systems.html#why-this-matters-strategically",
+    "title": "Agentic Systems Are the Next Infrastructure Layer",
+    "section": "Why This Matters Strategically",
+    "text": "Why This Matters Strategically\nThe companies that figure out agentic infrastructure first will have a significant and durable advantage.\nThe current AI landscape is largely commoditized at the model level. GPT-4o, Claude Sonnet, Gemini Pro — these are increasingly interchangeable for most tasks. Competitive advantage doesn’t come from choosing the right model. It comes from the system architecture around the model.\nAgentic infrastructure is the next layer where this plays out. The companies with the cleanest data architectures, the most reliable tool execution layers, and the best observability into agent behavior will be able to automate workflows that their competitors still run manually. And because agentic systems improve through feedback loops, those advantages compound.\nI’m building in this direction deliberately. Compass’s signal processing pipeline is an early version of an agentic architecture — a system that monitors external data sources, enriches what it finds, scores it against criteria, and drafts actions for human review. The human-in-the-loop review workflow is a guardrail, not a fundamental limitation. As the system builds a track record of accurate scoring, the human review step can be progressively automated away.\nThat progression — from tool to agent to autonomous system — is the architectural arc I’m designing toward.\n\nI write about this more technically on the AI Pulse publication. The Compass signal processing architecture is documented in the case study."
+  },
+  {
+    "objectID": "writing/why-ai-integrations-fail.html",
+    "href": "writing/why-ai-integrations-fail.html",
+    "title": "Why Most AI Integrations Fail",
+    "section": "",
+    "text": "I’ve reviewed the AI strategies of dozens of companies — some in diligence at Nucleus Fund, others through consulting conversations, others just by using their products. The pattern of failure is remarkably consistent.\nMost AI integrations fail not because the AI doesn’t work, but because the workflow it’s plugged into wasn’t designed for AI."
+  },
+  {
+    "objectID": "writing/why-ai-integrations-fail.html#the-bolt-on-problem",
+    "href": "writing/why-ai-integrations-fail.html#the-bolt-on-problem",
+    "title": "Why Most AI Integrations Fail",
+    "section": "The “Bolt-On” Problem",
+    "text": "The “Bolt-On” Problem\nThe default AI integration looks like this:\n\nIdentify a task someone does manually (write emails, summarize documents, answer questions)\nFind an LLM that can do that task\nAdd a button that calls the LLM API\nCall it “AI-powered”\n\nThis approach produces tools that are mildly useful, occasionally impressive, and rarely transformative. The reason is that the underlying workflow was designed for a human completing that task manually. You haven’t eliminated the friction — you’ve just automated one step inside a process full of other steps.\nI built the Consulting Agent this way initially. The first version was a chat interface where you described your strategic problem and received AI-generated analysis. Users found it interesting but didn’t change how they worked. They’d use it to generate a first draft, then immediately export it and rebuild it in PowerPoint.\nThe insight was that the bottleneck wasn’t the analysis — it was the transition from analysis to presentation. The workflow was: think → analyze → format → present. I’d automated the analysis step. The formatting step was still entirely manual.\nThe second version integrated the deck builder directly into the analysis output. Now the workflow is: think → analyze+format → present. The AI doesn’t just answer the question — it produces the artifact that ends the workflow. That’s a fundamentally different product."
+  },
+  {
+    "objectID": "writing/why-ai-integrations-fail.html#what-ai-native-actually-means",
+    "href": "writing/why-ai-integrations-fail.html#what-ai-native-actually-means",
+    "title": "Why Most AI Integrations Fail",
+    "section": "What “AI-Native” Actually Means",
+    "text": "What “AI-Native” Actually Means\nThe term is overused to the point of meaninglessness. But the underlying concept is real: some workflows are designed from scratch with AI capabilities as assumptions, not additions.\nThe difference shows up in three places:\nData architecture. Bolt-on AI operates on data that was structured for humans to read — PDFs, spreadsheets, unstructured text in CRMs. AI-native systems structure data for retrieval and inference from the start. Vector embeddings, structured metadata, chunking strategies — these are architectural decisions that have to be made before the first line of product code is written.\nPermission models. Most enterprise software has permission models designed around human access patterns: who can see this file, who can edit this record. AI agents require a different permission model: what can this agent query, what can it act on, and how do we audit its actions? Retrofitting this onto an existing permission model is extremely hard. Building it in from the start is straightforward.\nFeedback loops. Human workflows improve through training and documentation. AI-native workflows improve through systematic feedback — thumbs up/down, correction interfaces, evaluation datasets. Products that don’t build these feedback mechanisms have AI that doesn’t get better. Products that do have a compounding advantage over time."
+  },
+  {
+    "objectID": "writing/why-ai-integrations-fail.html#the-consulting-implication",
+    "href": "writing/why-ai-integrations-fail.html#the-consulting-implication",
+    "title": "Why Most AI Integrations Fail",
+    "section": "The Consulting Implication",
+    "text": "The Consulting Implication\nI’m interested in strategic consulting as a lens specifically because this problem is everywhere in enterprise. Large organizations are buying AI tools, watching adoption stagnate, and concluding that AI isn’t ready for enterprise use. The diagnosis is usually wrong. The AI works. The integration strategy doesn’t.\nThe right consulting engagement isn’t “which AI tool should we buy?” It’s “how do we redesign this workflow so AI is a load-bearing structural element, not an optional add-on?”\nThat question requires both technical and strategic depth simultaneously. You need to understand what AI can reliably do (and what it reliably cannot), how to architect a system that takes advantage of those capabilities, and how to make the business case for rebuilding a workflow that’s currently functional.\nMost consulting firms have people who can do the strategy piece. Very few have people who can also write the architecture document and evaluate whether the implementation actually delivered what was promised.\nThat’s the gap I’m trying to fill.\n\nThe Consulting Agent is live at consulting-agent.vercel.app. The workflow redesign problem is also what Compass was built to solve — see the case study."
+  }
+]
