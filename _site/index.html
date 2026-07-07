@@ -1,827 +1,591 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>Kainoa Shintaku</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-</style>
-
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/favicon.svg" rel="icon" type="image/svg+xml">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ef9176d5b3a494f395673aa65efdea21.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kainoa Shintaku — AI engineer, founder, investor-in-training</title>
+<meta name="description" content="Kainoa Shintaku ships AI-native systems, then judges them from the investor's seat. Full-stack engineer at Tech Force Advisors, founder of CareBridge Connect, formerly Perplexity AI and Nucleus Fund. BYU Marriott, Class of 2028.">
+<meta name="theme-color" content="#F7F5F0">
+<meta property="og:title" content="Kainoa Shintaku — AI engineer, founder, investor-in-training">
+<meta property="og:description" content="I ship AI-native systems, then judge them from the investor's seat. Five products shipped, 10+ startups diligenced, $500K+ in deployments informed.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E5F66'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23F3F7F6' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Spline+Sans+Mono:wght@400..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
+<body id="top">
 
-<body class="nav-fixed quarto-light">
+<a class="skip-link" href="#main">Skip to content</a>
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Kainoa Shintaku</span>
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <a class="logo" href="#top" aria-label="Kainoa Shintaku — home">
+      <span class="logo-name">Kainoa Shintaku</span>
+      <span class="logo-kanji" aria-hidden="true">新宅</span>
     </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./resume.html"> 
-<span class="menu-text">Resume</span></a>
-  </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Projects</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-projects">    
-        <li>
-    <a class="dropdown-item" href="./projects/project-1.html">
- <span class="dropdown-text">CareBridge Connect</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./projects/project-2.html">
- <span class="dropdown-text">Compass</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./projects/project-3.html">
- <span class="dropdown-text">Consulting Agent</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./projects/project-4.html">
- <span class="dropdown-text">AI Pulse</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./projects/project-5.html">
- <span class="dropdown-text">Eternally</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./projects/project-6.html">
- <span class="dropdown-text">Peptide Portal</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./stack.html"> 
-<span class="menu-text">Stack</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./writing.html"> 
-<span class="menu-text">Writing</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./problems.html"> 
-<span class="menu-text">Problems I’m Exploring</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
+    <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#writing">Writing</a></li>
+      </ul>
+      <a class="btn btn-sm" href="files/Kainoa_Shintaku_Resume.pdf" download>Resume (PDF)</a>
     </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    
-<!-- main -->
-<main class="content column-page" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Kainoa Shintaku</h1>
-</div>
-
-
-
-<div class="quarto-title-meta column-page">
-
-    
-  
-    
   </div>
-  
-
-
 </header>
 
+<main id="main">
 
-<div class="hero-banner">
-<p><img src="images/profile.jpg" alt="Kainoa Shintaku" class="rounded-circle" width="180"></p>
-<section id="kainoa-shintaku" class="level1">
-<h1>Kainoa Shintaku</h1>
-<p class="lead">
-AI Architect &amp; Software Engineer | Strategic Consulting | BYU Marriott School of Business
-</p>
-<div class="d-flex justify-content-center gap-3 flex-wrap">
-<p><a href="#about" class="btn btn-primary"> <i class="fas fa-user"></i> About Me </a> <a href="files/Kainoa_Shintaku_Resume.pdf" class="btn btn-outline-primary" download=""> <i class="fas fa-download"></i> Download Resume </a></p>
-</div>
-</section>
-</div>
-<section id="about" class="level2">
-<h2 class="anchored" data-anchor-id="about">At a Glance</h2>
-<div class="skill-cards">
-<div class="skill-card">
-<div class="skill-card-icon">
-<p><i class="fas fa-dollar-sign"></i></p>
-</div>
-<section id="products-shipped" class="level3">
-<h3 class="anchored" data-anchor-id="products-shipped">6 Products Shipped</h3>
-<p>Full-stack apps from zero to live — healthcare, AI tooling, telemedicine, and more</p>
-</section>
-</div>
-<div class="skill-card">
-<div class="skill-card-icon">
-<p><i class="fas fa-chart-line"></i></p>
-</div>
-<section id="startups" class="level3">
-<h3 class="anchored" data-anchor-id="startups">15+ Startups</h3>
-<p>Due diligence performed at Nucleus Fund, contributing to $500K+ in equity funding</p>
-</section>
-</div>
-<div class="skill-card">
-<div class="skill-card-icon">
-<p><i class="fas fa-graduation-cap"></i></p>
-</div>
-<section id="gpa" class="level3">
-<h3 class="anchored" data-anchor-id="gpa">3.82 GPA</h3>
-<p>BYU Marriott School of Business, Multicultural Scholarship Recipient</p>
-</section>
-</div>
-</div>
-<div class="divider">
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1 class="reveal">I ship AI-native systems, then judge them from the <em>investor&rsquo;s seat</em>.</h1>
+        <p class="hero-sub reveal d1">Full-stack engineer at Tech Force Advisors. Founder of CareBridge Connect. Formerly growth at Perplexity AI and venture diligence at Nucleus Fund. <span class="mono">BYU Marriott &middot; Class of 2028</span></p>
+        <div class="hero-actions reveal d2">
+          <a class="btn" href="#projects">See the work</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="ledger-stage reveal d1">
+        <div class="ledger-card" role="group" aria-label="Operating ledger: a running tally of shipped work and measured outcomes">
+          <div class="lc-top">
+            <span class="lc-title">Operating ledger</span>
+            <span class="lc-live">2026 &middot; live</span>
+          </div>
+          <div class="lc-now">
+            <div class="lc-now-label">Currently</div>
+            <div class="lc-now-role">Full-Stack Engineer <span class="mono">&middot; Tech Force Advisors</span></div>
+            <div class="lc-now-role">Founder &amp; Head Engineer <span class="mono">&middot; CareBridge Connect</span></div>
+          </div>
+          <ul class="lc-feed" id="lcFeed" aria-live="off">
+            <li><span class="lc-what">Equity deployments informed</span><span class="lc-fig">$500K+</span></li>
+            <li><span class="lc-what">Healthcare facilities in automated CRM</span><span class="lc-fig">200+</span></li>
+            <li><span class="lc-what">Customer acquisition via content engine</span><span class="lc-fig">5&times;</span></li>
+          </ul>
+          <div class="lc-foot">
+            <span>B.S. Strategic Management &amp; Statistics</span>
+            <span class="mono">BYU &middot; Apr 2028</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
-</section>
-<section id="about-1" class="level2">
-<h2 class="anchored" data-anchor-id="about-1">About</h2>
-<p>I’m a <strong>Technical Founder</strong> at CareBridge Connect, <strong>Investment Analyst</strong> at Nucleus Fund, and a student at <strong>BYU’s Marriott School of Business</strong> — focused on AI architecture, software engineering, and strategic consulting.</p>
-<p>I design and ship AI-native systems, then evaluate them from an investor’s perspective. That dual lens — deep technical execution and strategic business thinking — is what I bring to every problem. I’ve shipped six products from zero to live, performed due diligence on 15+ startups, and built systems that operate at the intersection of healthcare, AI, and enterprise.</p>
-<p><a href="./about.html">Learn more about my background →</a></p>
-<div class="divider">
+  <!-- ============ 01 ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">01 &mdash; About</span>
+        <h2>Two legacies. <em>One operating system.</em></h2>
+      </div>
+      <div class="about-grid">
+        <figure class="about-photo reveal">
+          <img src="images/profile.jpg" alt="Portrait of Kainoa Shintaku" width="340" height="510">
+          <figcaption>Provo, UT &middot; via Fountain Valley, CA &middot; via Santo Domingo, DR</figcaption>
+        </figure>
+        <div class="about-copy reveal d1">
+          <p class="lede">I work where AI engineering, product, and capital collide &mdash; building systems deep enough to ship and legible enough to fund.</p>
+          <p>My grandmother, Marguerite Jackson, marched with the NAACP in Alabama during Jim Crow and raised a family alone while working in mental health. My grandfather, Kenji Shintaku, never spoke about the internment camps &mdash; I found our family&rsquo;s names in the Manzanar registry when I was ten. One taught me to seize opportunity out loud; the other taught me that resilience doesn&rsquo;t always announce itself.</p>
+          <p>That inheritance turned into a working rule: <strong>from everyone who has been given much, much will be demanded.</strong> So I ship. Five products from zero to live. Due diligence on 10+ startups with $500K+ deployed behind theses I helped build. Two years of humanitarian work in Spanish in the Dominican Republic. A 17-athlete water polo team captained through multiple tournament wins.</p>
+          <p>The long game: build products until I understand what founders endure, then back the ones solving hard problems. In the meantime I reset in the ocean &mdash; Fountain Valley, California shaped me, and surfing is still where the noise goes quiet.</p>
+          <div class="principle">
+            <p>&ldquo;You can only change two things in your life: your attitude and your effort.&rdquo;</p>
+            <cite>The filter for every decision</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
-</section>
-<section id="what-i-bring" class="level2">
-<h2 class="anchored" data-anchor-id="what-i-bring">What I Bring</h2>
-<div class="skill-cards">
-<div class="skill-card">
-<div class="skill-card-icon">
-<p><i class="fas fa-search-dollar"></i></p>
-</div>
-<section id="strategic-consulting" class="level3">
-<h3 class="anchored" data-anchor-id="strategic-consulting">Strategic Consulting</h3>
-<ul>
-<li>AI Integration Strategy</li>
-<li>Due Diligence &amp; Market Analysis</li>
-<li>Financial Modeling &amp; Valuation</li>
-<li>Go-to-Market &amp; Product Strategy</li>
-</ul>
-</section>
-</div>
-<div class="skill-card">
-<div class="skill-card-icon">
-<p><i class="fas fa-code"></i></p>
-</div>
-<section id="technical-skills" class="level3">
-<h3 class="anchored" data-anchor-id="technical-skills">Technical Skills</h3>
-<ul>
-<li>Python, SQL, VBA</li>
-<li>Full-Stack Development (Next.js, React, FastAPI)</li>
-<li>Data Analytics &amp; Statistical Modeling</li>
-<li>Database Design (PostgreSQL, Supabase)</li>
-</ul>
-</section>
-</div>
-<div class="skill-card">
-<div class="skill-card-icon">
-<p><i class="fas fa-robot"></i></p>
-</div>
-<section id="ai-architecture" class="level3">
-<h3 class="anchored" data-anchor-id="ai-architecture">AI Architecture</h3>
-<ul>
-<li>LLM Integration (OpenAI, Grok, Claude)</li>
-<li>Prompt Engineering &amp; Reasoning Systems</li>
-<li>Agentic Systems &amp; Automation</li>
-<li>HIPAA-Compliant AI Infrastructure</li>
-</ul>
-</section>
-</div>
-</div>
-<div class="divider">
+  <!-- ============ 02 EXPERIENCE ============ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">02 &mdash; Experience</span>
+        <h2>The ledger so far.</h2>
+        <p>Engineering, growth, venture, and banking &mdash; each row is a seat I&rsquo;ve actually sat in, with the numbers that came out of it.</p>
+      </div>
+      <ol class="ledger">
+        <li class="reveal">
+          <div class="ledger-when">Mar 2026 &mdash; Present<span class="place">San Clemente, CA</span></div>
+          <div class="ledger-body">
+            <h3>Full-Stack Software Engineer</h3>
+            <div class="org">Tech Force Advisors</div>
+            <ul>
+              <li>Built a retrieval-augmented (RAG) analytics system, deployed internally and client-facing, that surfaces key insights from unstructured firm data.</li>
+              <li>Developed a live content-generation tool in React for B2B outreach &mdash; lifted marketing productivity 80% and drove a 5&times; increase in customer acquisition across social channels.</li>
+            </ul>
+          </div>
+          <div class="ledger-fig"><span class="fig">5&times;</span><span class="fig-label">customer acquisition</span></div>
+        </li>
+        <li class="reveal">
+          <div class="ledger-when">Jan 2026 &mdash; Present<span class="place">Provo, UT</span></div>
+          <div class="ledger-body">
+            <h3>Founder &amp; Head Engineer</h3>
+            <div class="org">CareBridge Connect</div>
+            <ul>
+              <li>Built a full-stack, HIPAA-compliant healthcare platform that surfaces patient well-being indicators for families and skilled nursing facilities.</li>
+              <li>Created an automated CRM covering 200+ Western U.S. healthcare facilities, producing 50+ warm leads for customer discovery.</li>
+              <li>Raised $8,000+ in grants to fund initial development and outreach.</li>
+            </ul>
+          </div>
+          <div class="ledger-fig"><span class="fig">$8K+</span><span class="fig-label">grants raised</span></div>
+        </li>
+        <li class="reveal">
+          <div class="ledger-when">Jan 2026 &mdash; Jun 2026<span class="place">San Francisco, CA</span></div>
+          <div class="ledger-body">
+            <h3>Growth Lead</h3>
+            <div class="org">Perplexity AI</div>
+            <ul>
+              <li>Owned campus growth strategy, leading 20+ events that established BYU as Perplexity&rsquo;s top-performing university for AI-tooling adoption.</li>
+              <li>Designed an agentic-browser registration workflow that automated event sign-ups and eliminated manual coordination.</li>
+              <li>Convened students, faculty, and staff around responsible AI &mdash; ethics, labor impact, and policy.</li>
+            </ul>
+          </div>
+          <div class="ledger-fig"><span class="fig">20+</span><span class="fig-label">campus events led</span></div>
+        </li>
+        <li class="reveal">
+          <div class="ledger-when">Sep 2025 &mdash; Apr 2026<span class="place">Salt Lake City, UT</span></div>
+          <div class="ledger-body">
+            <h3>Venture Capital Investment Analyst</h3>
+            <div class="org">Nucleus Fund</div>
+            <ul>
+              <li>Conducted due diligence on 10+ early-stage startups through market research, expert calls, and financial analysis.</li>
+              <li>Built investment theses and pitched opportunities that informed $500K+ in equity deployments across portfolio companies.</li>
+              <li>Partnered with founders and analysts to quantify growth impact and deliver decision-ready analyses and pitch decks.</li>
+            </ul>
+          </div>
+          <div class="ledger-fig"><span class="fig">$500K+</span><span class="fig-label">deployments informed</span></div>
+        </li>
+        <li class="reveal">
+          <div class="ledger-when">Jun 2025 &mdash; Aug 2025<span class="place">Newport Beach, CA</span></div>
+          <div class="ledger-body">
+            <h3>Commercial Banking Summer Analyst</h3>
+            <div class="org">Genesis Bank</div>
+            <ul>
+              <li>Supported the acquisition of a publicly traded bank &mdash; financial due diligence and Phase 1&ndash;2 request-list refinement in CapIQ and FactSet.</li>
+              <li>Partnered with the President/COO to plan and execute a large-scale loan backfile, beating the one-time cost savings modeled in the deal.</li>
+              <li>Delivered a market-expansion proposal to senior leadership identifying $30M+ in potential loan and deposit growth.</li>
+            </ul>
+          </div>
+          <div class="ledger-fig"><span class="fig">$30M+</span><span class="fig-label">growth identified</span></div>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-</div>
-</section>
-<section id="projects" class="level2">
-<h2 class="anchored" data-anchor-id="projects">Featured Projects</h2>
-<div class="project-card">
-<section id="carebridge-connect" class="level3 project-card-content">
-<h3 class="anchored" data-anchor-id="carebridge-connect">CareBridge Connect</h3>
-<p>A HIPAA-compliant B2B platform that eliminates 2-3 hours of nurse call burden per shift by translating clinical documentation into plain-language family updates. Pivoted from consumer to B2B after customer discovery revealed stronger product-market fit with facility operators.</p>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li>Event-based care timeline surfaced from existing facility documentation</li>
-<li>AI-generated daily/weekly progress summaries in plain language</li>
-<li>Guardrailed AI chat for 24/7 family inquiries</li>
-<li>Secure Vault for medical documents and emergency information</li>
-</ul>
-<div class="d-flex gap-3 flex-wrap mt-4">
-<p><a href="https://www.carebridgeconnect.ai" class="btn btn-primary" target="_blank"> <i class="fas fa-external-link-alt"></i> Live Demo </a> <a href="https://github.com/Kainoa00/gather-app" class="btn btn-outline-dark" target="_blank"> <i class="fab fa-github"></i> View Source </a> <a href="./projects/project-1.html" class="btn btn-outline-dark"> <i class="fas fa-file-alt"></i> Case Study </a></p>
-</div>
-</section>
-</div>
-<div class="project-card">
-<section id="compass" class="level3 project-card-content">
-<h3 class="anchored" data-anchor-id="compass">Compass</h3>
-<p>A business development automation platform for professional services firms. Monitors commercial triggers (court filings, funding rounds, executive hires), scores prospects with a proprietary relevance algorithm, and generates contextual outreach – replacing the manual grind that most rainmakers abandon within weeks.</p>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li>Signal Library for monitoring commercial triggers across industries</li>
-<li>R-Score algorithm for intelligent prospect ranking</li>
-<li>AI-powered Hook Generator for contextual outreach</li>
-<li>Daily Digest with human-in-the-loop review workflow</li>
-</ul>
-<div class="d-flex gap-3 flex-wrap mt-4">
-<p><a href="./projects/project-2.html" class="btn btn-outline-dark"> <i class="fas fa-file-alt"></i> Case Study </a></p>
-</div>
-<p class="text-muted mt-2" style="font-size: 0.9rem;">
-<i class="fas fa-wrench"></i> Currently in active development
-</p>
-</section>
-</div>
-<div class="project-card">
-<section id="consulting-agent" class="level3 project-card-content">
-<h3 class="anchored" data-anchor-id="consulting-agent">Consulting Agent</h3>
-<p>A strategic advisory platform that compresses the execution layer of consulting – SCQA structuring, MECE frameworks, Pyramid Principle – so practitioners can focus on judgment, where expertise actually compounds. Generates complete executive decks from a single brief.</p>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li>Interactive advisory chat at senior consultant level</li>
-<li>Executive deck builder with PPTX export (5–20 slides)</li>
-<li>SCQA framework builder and consulting frameworks library</li>
-<li>Graph/chart builder for data visualization</li>
-</ul>
-<div class="d-flex gap-3 flex-wrap mt-4">
-<p><a href="https://consulting-agent.vercel.app" class="btn btn-primary" target="_blank"> <i class="fas fa-external-link-alt"></i> Live Demo </a> <a href="./projects/project-3.html" class="btn btn-outline-dark"> <i class="fas fa-file-alt"></i> Case Study </a></p>
-</div>
-</section>
-</div>
-<div class="project-card">
-<section id="ai-pulse" class="level3 project-card-content">
-<h3 class="anchored" data-anchor-id="ai-pulse">AI Pulse</h3>
-<p>A weekly AI intelligence publication started as a personal curation habit for deal evaluation at Nucleus Fund. Covers research, products, policy, models, and applications – published every Wednesday for the BYU community.</p>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li>5 curated articles weekly across Research, Products, Policy, Models, and Applications</li>
-<li>AI-generated drafts with editorial curation and source verification</li>
-<li>Ties directly to deal evaluation work at Nucleus Fund</li>
-<li>Searchable archive of past editions</li>
-</ul>
-<div class="d-flex gap-3 flex-wrap mt-4">
-<p><a href="https://ai-pulse-umber.vercel.app" class="btn btn-primary" target="_blank"> <i class="fas fa-external-link-alt"></i> Read Publication </a> <a href="./projects/project-4.html" class="btn btn-outline-dark"> <i class="fas fa-file-alt"></i> Case Study </a></p>
-</div>
-</section>
-</div>
-<div class="project-card">
-<section id="eternally" class="level3 project-card-content">
-<h3 class="anchored" data-anchor-id="eternally">Eternally</h3>
-<p>A digital memorial platform with 10,000+ memorials created that turns cemeteries into interactive living memorials. Combines a consumer product (collaborative storytelling, AI photo restoration) with a marketplace model (remote grave services) that cemetery operators can white-label.</p>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li>Life history timeline for collaborative family storytelling</li>
-<li>Remote grave services marketplace (flowers, cleaning, decorations)</li>
-<li>AI-enhanced photo and video gallery</li>
-<li>Interactive cemetery map with offline access</li>
-</ul>
-<div class="d-flex gap-3 flex-wrap mt-4">
-<p><a href="https://eternally-f2g2.vercel.app" class="btn btn-primary" target="_blank"> <i class="fas fa-external-link-alt"></i> Live Demo </a> <a href="./projects/project-5.html" class="btn btn-outline-dark"> <i class="fas fa-file-alt"></i> Case Study </a></p>
-</div>
-</section>
-</div>
-<div class="project-card">
-<section id="peptide-portal" class="level3 project-card-content">
-<h3 class="anchored" data-anchor-id="peptide-portal">Peptide Portal</h3>
-<p>A telemedicine platform serving 4,200+ patients that solves the prescribing compliance layer for peptide therapy – connecting patients with board-certified doctors across weight loss, longevity, recovery, and cognitive performance. Regulatory expertise as a moat.</p>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li>2-minute free consultation quiz and async physician review</li>
-<li>Discreet home delivery with no contracts</li>
-<li>Personal health dashboard with direct provider messaging</li>
-<li>HIPAA-compliant telemedicine infrastructure</li>
-</ul>
-<div class="d-flex gap-3 flex-wrap mt-4">
-<p><a href="https://peptide-portal-final-ten.vercel.app" class="btn btn-primary" target="_blank"> <i class="fas fa-external-link-alt"></i> Live Demo </a> <a href="./projects/project-6.html" class="btn btn-outline-dark"> <i class="fas fa-file-alt"></i> Case Study </a></p>
-</div>
-</section>
-</div>
-<div class="divider">
+  <!-- ============ 03 PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">03 &mdash; Projects</span>
+        <h2>Built, shipped, <em>measured.</em></h2>
+        <p>Not mockups. Products with users, compliance constraints, and revenue models &mdash; each one a bet on where AI actually replaces a workflow.</p>
+      </div>
 
-</div>
-</section>
-<section id="currently-exploring" class="level2">
-<h2 class="anchored" data-anchor-id="currently-exploring">Currently Exploring</h2>
-<p>I spend my free cycles on problems at the intersection of AI and enterprise: why most “AI integrations” are surface-level wrappers, how agentic systems can replace entire workflow layers, and where strategic consulting firms are still using 2010-era tooling on 2026 problems. These aren’t hypothetical — they come from building products and sitting in diligence calls.</p>
-<p><a href="./problems.html">See what I’m working on →</a></p>
-<div class="divider">
+      <!-- CareBridge -->
+      <article class="project">
+        <div class="project-copy reveal">
+          <span class="project-index">P.01 &mdash; Healthcare &middot; B2B SaaS</span>
+          <h3>CareBridge Connect</h3>
+          <p>A HIPAA-compliant platform that eliminates 2&ndash;3 hours of nurse call burden per shift by translating clinical documentation into plain-language family updates. Pivoted from consumer to B2B after 15+ discovery interviews surfaced who actually holds the budget: facility operators.</p>
+          <ul class="project-facts">
+            <li>Event-based care timeline surfaced from existing facility documentation</li>
+            <li>Guardrailed AI chat for 24/7 family inquiries &mdash; constrained to verified care-record data</li>
+            <li>Auditable retrieval layer between every query and the LLM</li>
+          </ul>
+          <div class="chips">
+            <span class="chip chip-sea">Live</span>
+            <span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase</span><span class="chip">OpenAI API</span><span class="chip">HIPAA</span>
+          </div>
+          <p class="project-links">
+            <a class="text-link" href="projects/carebridge.html">Case study</a><span class="link-sep">&middot;</span>
+            <a class="text-link" href="https://www.carebridgeconnect.ai" target="_blank" rel="noopener">carebridgeconnect.ai</a>
+          </p>
+        </div>
+        <div class="project-art reveal d1">
+          <div class="artifact">
+            <div class="artifact-card" aria-label="Illustration: a CareBridge daily family update">
+              <div class="ac-head">
+                <span class="ac-title">CareBridge &middot; Daily update</span>
+                <span class="ac-tag">AI &middot; guardrailed</span>
+              </div>
+              <p class="ac-note">&ldquo;Mom had a great week &mdash; her appetite improved and she attended <strong>three group activities</strong>. No changes to her medication.&rdquo;</p>
+              <div class="ac-row"><span class="k">Nurse call burden</span><span class="v">&minus;2&ndash;3 hrs/shift</span></div>
+              <div class="ac-row"><span class="k">Care events surfaced</span><span class="v">automatic</span></div>
+              <div class="ac-row"><span class="k">Family questions</span><span class="v">24/7 AI chat</span></div>
+              <div class="ac-foot"><span>Verified against care record</span><span>audit-logged</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
 
-</div>
-</section>
-<div id="connect" class="cta-section">
-<section id="lets-connect" class="level2">
-<h2 class="anchored" data-anchor-id="lets-connect">Let’s Connect</h2>
-<p>AI architect who thinks strategically. Seeking roles in AI engineering, technical consulting, and product strategy.</p>
-<div class="cta-buttons">
-<p><a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" class="btn btn-primary" target="_blank"> <i class="fab fa-linkedin"></i> Connect on LinkedIn </a> <a href="files/Kainoa_Shintaku_Resume.pdf" class="btn btn-outline-dark" download=""> <i class="fas fa-download"></i> Download Resume </a></p>
-</div>
-<div class="cta-emails">
-<p><span class="email-chip" onclick="navigator.clipboard.writeText('kshintak@byu.edu'); this.innerHTML='<i class=\'fas fa-check\'></i> Copied!';"> <i class="fas fa-envelope"></i> kshintak@byu.edu </span> <span class="email-chip" onclick="navigator.clipboard.writeText('kaishintak08@gmail.com'); this.innerHTML='<i class=\'fas fa-check\'></i> Copied!';"> <i class="fas fa-envelope"></i> kaishintak08@gmail.com </span></p>
-</div>
-</section>
-</div>
+      <!-- Compass -->
+      <article class="project flip">
+        <div class="project-copy reveal">
+          <span class="project-index">P.02 &mdash; Professional services &middot; Automation</span>
+          <h3>Compass</h3>
+          <p>Business development automation for professional services firms. Monitors commercial triggers &mdash; court filings, funding rounds, executive hires &mdash; scores prospects with a proprietary relevance algorithm, and drafts contextual outreach for human review. Rainmaking as a system, not a habit.</p>
+          <ul class="project-facts">
+            <li>Signal Library: modular monitoring of real-world commercial events</li>
+            <li>R-Score: recency 50% &middot; industry match 30% &middot; decision-maker authority 20%</li>
+            <li>Daily digest with approve / edit / reject &mdash; human stays in the loop</li>
+          </ul>
+          <div class="chips">
+            <span class="chip chip-sea">In development</span>
+            <span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">PostgreSQL</span><span class="chip">OpenAI API</span><span class="chip">Docker</span>
+          </div>
+          <p class="project-links">
+            <a class="text-link" href="projects/compass.html">Case study</a>
+          </p>
+        </div>
+        <div class="project-art reveal d1">
+          <div class="artifact">
+            <div class="artifact-card" aria-label="Illustration: the Compass daily signal digest">
+              <div class="ac-head">
+                <span class="ac-title">Compass &middot; Daily digest</span>
+                <span class="ac-tag">3 signals</span>
+              </div>
+              <div class="ac-row"><span class="k">Series B &mdash; Meridian Health</span><span class="v">R&middot;92</span></div>
+              <div class="ac-row"><span class="k">Court filing &mdash; Delaware Ch.</span><span class="v">R&middot;87</span></div>
+              <div class="ac-row"><span class="k">CFO hire &mdash; Lattice Legal</span><span class="v">R&middot;74</span></div>
+              <p class="ac-note">Hook drafted: &ldquo;Saw Tuesday&rsquo;s Series B announcement &mdash; congratulations. Most teams revisit their <strong>data-processing agreements</strong> at this stage&hellip;&rdquo;</p>
+              <div class="ac-foot"><span>Human-in-the-loop review</span><span>approve &middot; edit &middot; reject</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
 
+      <!-- Eternally -->
+      <article class="project">
+        <div class="project-copy reveal">
+          <span class="project-index">P.03 &mdash; Consumer &middot; Marketplace</span>
+          <h3>Eternally</h3>
+          <p>A digital memorial platform &mdash; 10,000+ memorials created &mdash; that turns cemeteries into interactive living memorials. Consumer product on the front (collaborative storytelling, AI photo restoration), marketplace on the back (remote grave services cemetery operators can white-label).</p>
+          <ul class="project-facts">
+            <li>Life-history timeline for collaborative family storytelling</li>
+            <li>AI-enhanced photo restoration via Cloudinary pipelines</li>
+            <li>Remote services marketplace: flowers, cleaning, and decorations placed by local providers</li>
+          </ul>
+          <div class="chips">
+            <span class="chip chip-sea">Live</span>
+            <span class="chip">Next.js</span><span class="chip">React</span><span class="chip">Cloudinary</span><span class="chip">Vercel</span>
+          </div>
+          <p class="project-links">
+            <a class="text-link" href="projects/eternally.html">Case study</a><span class="link-sep">&middot;</span>
+            <a class="text-link" href="https://eternally-f2g2.vercel.app" target="_blank" rel="noopener">Live product</a>
+          </p>
+        </div>
+        <div class="project-art reveal d1">
+          <div class="artifact">
+            <div class="artifact-card" aria-label="Illustration: an Eternally memorial page">
+              <div class="ac-head">
+                <span class="ac-title">Eternally &middot; Memorial</span>
+                <span class="ac-tag">family-only</span>
+              </div>
+              <p class="ac-note" style="font-family:var(--serif);font-style:italic;font-size:1rem">A life remembered, 1931&ndash;2018 &mdash; forty-seven timeline entries, contributed by three generations.</p>
+              <div class="ac-row"><span class="k">Photos restored with AI</span><span class="v">12</span></div>
+              <div class="ac-row"><span class="k">Remote service ordered</span><span class="v">flowers &middot; Sat</span></div>
+              <div class="ac-row"><span class="k">Guest book entries</span><span class="v">31 &middot; moderated</span></div>
+              <div class="ac-foot"><span>10,000+ memorials created</span><span>4.9&#9733; family rating</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
 
+      <!-- Open-source pair -->
+      <div class="mini-projects">
+        <article class="mini-card reveal">
+          <span class="project-index">P.04 &mdash; Open source &middot; Genealogy</span>
+          <h3>My Story &mdash; FamilySearch Agent</h3>
+          <p>An open-source agent harness for the FamilySearch database that helps people find and connect ancestors &mdash; then writes a living family log describing the period, culture, and economics each ancestor lived through.</p>
+          <div class="chips">
+            <span class="chip">Agent harness</span><span class="chip">FamilySearch API</span><span class="chip">Open source</span>
+          </div>
+          <a class="text-link" href="https://github.com/Kainoa00" target="_blank" rel="noopener">GitHub</a>
+        </article>
+        <article class="mini-card reveal d1">
+          <span class="project-index">P.05 &mdash; Open source &middot; Markets</span>
+          <h3>Economic Indicator Analysis</h3>
+          <p>An open-source economic indicator system spanning buy- and sell-side markets, integrating proprietary and public data sources &mdash; with an AI tooling layer that automates research compilation, reporting, and distribution.</p>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">Market data</span><span class="chip">AI reporting</span>
+          </div>
+          <a class="text-link" href="https://github.com/Kainoa00" target="_blank" rel="noopener">GitHub</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
-          }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
-  });
-  </script>
-</div> <!-- /content -->
-<script src="scroll-reveal.js"></script>
+  <!-- ============ 04 LEADERSHIP ============ -->
+  <section class="section" id="leadership">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">04 &mdash; Leadership &amp; community</span>
+        <h2>Rooms I&rsquo;ve helped build.</h2>
+      </div>
+      <div class="lead-grid">
+        <article class="lead-card reveal">
+          <span class="when">May 2026 &mdash; Present &middot; Provo, UT</span>
+          <h3>Director</h3>
+          <span class="org">Summit Labs</span>
+          <p>Founded and lead a multi-university community of AI builders across Utah and California. Monthly hackathons and live trainings; members placed into 15+ companies building AI-native tools.</p>
+        </article>
+        <article class="lead-card reveal d1">
+          <span class="when">Aug 2024 &mdash; Present &middot; Provo, UT</span>
+          <h3>Captain</h3>
+          <span class="org">BYU Water Polo</span>
+          <p>Elected captain of a 17-athlete team; led it to multiple intercollegiate tournament wins and run the monthly team-building that keeps the squad cohesive.</p>
+        </article>
+        <article class="lead-card reveal d2">
+          <span class="when">Dec 2021 &mdash; Jan 2024 &middot; Santo Domingo, DR</span>
+          <h3>In-Country Humanitarian Director</h3>
+          <span class="org">The Church of Jesus Christ of Latter-day Saints</span>
+          <p>Directed humanitarian outreach in Spanish across social media, cold calls, and door-to-door channels; coordinated social and educational events with local leaders for underprivileged communities.</p>
+        </article>
+        <article class="lead-card reveal">
+          <span class="when">2026 &mdash; Present &middot; BYU</span>
+          <h3>Research Cohort Member</h3>
+          <span class="org">BYU AI Research &amp; Development Lab</span>
+          <p>Selected for a 10-person cohort working on applied AI research and development inside the Marriott School.</p>
+        </article>
+        <article class="lead-card reveal d1">
+          <span class="when">2025 &mdash; Present &middot; BYU</span>
+          <h3>Board Member</h3>
+          <span class="org">AI in Business Association</span>
+          <p>Help run BYU&rsquo;s hub for students applying AI to real business problems &mdash; programming, speakers, and workshops.</p>
+        </article>
+        <article class="lead-card reveal d2">
+          <span class="when">Jun 2025 &mdash; Jun 2026 &middot; New York, NY</span>
+          <h3>EDGE Participant</h3>
+          <span class="org">SEO Career (Sponsors for Educational Opportunity)</span>
+          <p>Completed competitive coaching, technical training, and industry-specific assessments in business fundamentals and interview readiness.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
+  <!-- ============ 05 EDUCATION & TOOLKIT ============ -->
+  <section class="section" id="toolkit">
+    <div class="container split-grid">
+      <div class="split-copy reveal">
+        <span class="eyebrow">05 &mdash; Education &amp; toolkit</span>
+        <h2>Trained on both sides of the table.</h2>
+        <p>The degree is strategy plus statistics. The practice is shipping production systems and reading financial statements &mdash; <strong>the same problem from two seats.</strong></p>
+        <div class="edu-card">
+          <div class="school">Brigham Young University &mdash; Marriott School of Business</div>
+          <div class="degree">B.S. Strategic Management &amp; Statistics (Data Science) &middot; Provo, UT</div>
+          <div class="edu-meta">
+            <span>GPA <strong>3.8 / 4.0</strong></span>
+            <span>Class of <strong>Apr 2028</strong></span>
+            <span><strong>Multicultural Scholarship</strong></span>
+          </div>
+        </div>
+        <p style="margin-top:1.4rem;font-size:.9375rem"><strong>Coursework:</strong> Product Strategy &middot; Machine Learning &middot; Agentic Development &amp; Architecture &middot; Data Structures &middot; Database Management &middot; Python for Data Science &middot; Statistics &middot; Data Analytics &middot; Organizational Behavior &middot; Corporate Communications</p>
+      </div>
+      <dl class="spec-list reveal d1">
+        <div>
+          <dt>Engineering</dt>
+          <dd>React &middot; TypeScript &middot; Next.js &middot; Tailwind CSS &middot; Python &middot; FastAPI &middot; SQL / VBA &middot; R &middot; PostgreSQL / Supabase</dd>
+        </div>
+        <div>
+          <dt>AI systems</dt>
+          <dd>Agentic architecture &middot; RAG pipelines &middot; LLM integration &amp; training (Anthropic, OpenAI, Google) &middot; prompt &amp; reasoning design</dd>
+        </div>
+        <div>
+          <dt>Data &amp; analytics</dt>
+          <dd>Tableau &middot; Excel &middot; pandas / NumPy &middot; statistical modeling</dd>
+        </div>
+        <div>
+          <dt>Finance tooling</dt>
+          <dd>Financial modeling &middot; CapIQ &middot; FactSet &middot; due diligence &amp; market sizing</dd>
+        </div>
+        <div>
+          <dt>Certifications</dt>
+          <dd>Wall Street Prep (Financial Modeling) &middot; AI integration &amp; automation &middot; LLM model training &middot; Microsoft &amp; Google suites</dd>
+        </div>
+        <div>
+          <dt>Languages</dt>
+          <dd>English &middot; Spanish (fluent &mdash; reading, writing, speaking)</dd>
+        </div>
+        <div>
+          <dt>Off the clock</dt>
+          <dd>Surfing &middot; water polo &middot; pickleball &middot; content creation</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
 
+  <!-- ============ 06 WRITING ============ -->
+  <section class="section" id="writing">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">06 &mdash; Writing</span>
+        <h2>Working notes, <em>not takes.</em></h2>
+        <p>Essays from someone who ships products and sits in diligence calls &mdash; the overlap is where the interesting problems live.</p>
+      </div>
+      <ul class="essay-list">
+        <li class="reveal">
+          <a class="essay-link" href="writing/agentic-systems.html">
+            <span class="date">Mar 2026</span>
+            <span>
+              <h3>Agentic Systems Are the Next Infrastructure Layer</h3>
+              <p>We&rsquo;re moving from AI as a tool to AI as an actor. The architecture implications are enormous.</p>
+            </span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="essay-link" href="writing/hipaa-ai.html">
+            <span class="date">Feb 2026</span>
+            <span>
+              <h3>What I Learned Building HIPAA-Compliant AI</h3>
+              <p>Most &ldquo;secure AI&rdquo; products skip the hard parts. What actually matters when you&rsquo;re handling health data.</p>
+            </span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="essay-link" href="writing/why-ai-integrations-fail.html">
+            <span class="date">Jan 2026</span>
+            <span>
+              <h3>Why Most AI Integrations Fail</h3>
+              <p>Companies are bolting AI onto existing workflows. The ones that win are rebuilding the workflow around AI.</p>
+            </span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
 
+  <!-- ============ 07 OPEN PROBLEMS ============ -->
+  <section class="section" id="problems">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">07 &mdash; Open problems</span>
+        <h2>What I&rsquo;d build next.</h2>
+        <p>Gaps I&rsquo;ve hit firsthand &mdash; as an analyst, a builder, and a student moving between finance and technology. Observed in practice, not in theory.</p>
+      </div>
+      <div class="problems reveal">
+        <details>
+          <summary><span class="p-num">/01</span><h3>Institutional-grade research for retail investors</h3><span class="p-toggle" aria-hidden="true">+</span></summary>
+          <div class="p-body">
+            <p>At Nucleus Fund I used CapIQ, FactSet, and PitchBook daily. Retail investors make allocation decisions with a fraction of that information &mdash; and the tools they do have optimize for engagement, not rigor.</p>
+            <p><strong>The opportunity:</strong> an AI research platform that synthesizes SEC filings, earnings transcripts, and sentiment into structured briefs. The moat is editorial quality and source verification, not aggregation.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="p-num">/02</span><h3>Deal flow screening that actually uses ML</h3><span class="p-toggle" aria-hidden="true">+</span></summary>
+          <div class="p-body">
+            <p>I&rsquo;ve screened hundreds of pitch decks. The initial filter is pattern matching &mdash; thesis fit, team credibility, timing &mdash; which is exactly what ML does well. Most firms still run deal flow through shared inboxes and spreadsheets.</p>
+            <p><strong>The opportunity:</strong> tools that pre-screen against a firm&rsquo;s thesis and surface founder signals before competitors see them. The winners own the data layer, not the UI.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="p-num">/03</span><h3>Financial literacy that changes behavior</h3><span class="p-toggle" aria-hidden="true">+</span></summary>
+          <div class="p-body">
+            <p>Smart, driven peers headed to Goldman and McKinsey don&rsquo;t understand tax-advantaged accounts or equity compensation. The consequences compound for decades.</p>
+            <p><strong>The opportunity:</strong> financial literacy isn&rsquo;t knowledge transfer &mdash; it&rsquo;s behavior change, which requires simulations and feedback loops, not articles.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="p-num">/04</span><h3>A unified data layer for small business lending</h3><span class="p-toggle" aria-hidden="true">+</span></summary>
+          <div class="p-body">
+            <p>At Genesis Bank I watched loan officers spend days chasing clean financials from applicants &mdash; not because the data didn&rsquo;t exist, but because it was trapped in five tools that don&rsquo;t talk to each other. That directly raises the borrower&rsquo;s cost of capital.</p>
+            <p><strong>The opportunity:</strong> integration layers that produce bank-ready financials automatically. Lending preparation is the wedge; the borrower&ndash;lender relationship is the prize.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span class="p-num">/05</span><h3>Alternatives access for the other 95%</h3><span class="p-toggle" aria-hidden="true">+</span></summary>
+          <div class="p-body">
+            <p>The best risk-adjusted returns of the last two decades came from PE, VC, and real assets &mdash; and most Americans can&rsquo;t touch them. Regulation is evolving faster than the infrastructure.</p>
+            <p><strong>The opportunity:</strong> the hard part isn&rsquo;t the UI &mdash; it&rsquo;s legal architecture, education, and compliance. Whoever solves the full stack builds a durable franchise.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
 
-</body></html>
+  <!-- ============ CONTACT BAND ============ -->
+  <section class="band" id="contact">
+    <div class="container">
+      <h2 class="reveal">Building something <em>hard?</em></h2>
+      <p class="reveal d1">AI engineering, product, venture &mdash; if the problem sits where those meet, I want to hear about it. I read everything sent to my inbox.</p>
+      <div class="band-actions reveal d2">
+        <a class="btn btn-paper" href="mailto:kaishintaku08@gmail.com">kaishintaku08@gmail.com</a>
+        <a class="btn btn-ghost" style="color:var(--paper);border-color:rgba(243,247,246,.4)" href="files/Kainoa_Shintaku_Resume.pdf" download>Resume (PDF)</a>
+      </div>
+      <div class="band-links reveal d2">
+        <a href="https://www.linkedin.com/in/kainoa-shintaku-6b23472a7" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Kainoa00" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:kshintak@byu.edu">kshintak@byu.edu</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>&copy; 2026 Kainoa Shintaku &middot; Provo, UT</span>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#writing">Writing</a>
+    </nav>
+    <span class="mono">Designed &amp; built by hand &mdash; no templates.</span>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+(function(){
+  "use strict";
+  /* Operating ledger: rotate real entries into the feed */
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var feed = document.getElementById("lcFeed");
+  if(!feed) return;
+  var ENTRIES = [
+    ["Grants raised for CareBridge", "$8K+"],
+    ["Startups diligenced at Nucleus Fund", "10+"],
+    ["Campus events led for Perplexity", "20+"],
+    ["Builders placed via Summit Labs", "15+"],
+    ["Loan &amp; deposit growth identified", "$30M+"],
+    ["Memorials created on Eternally", "10K+"],
+    ["Marketing productivity lift shipped", "+80%"],
+    ["Warm leads from automated CRM", "50+"],
+    ["Equity deployments informed", "$500K+"],
+    ["Healthcare facilities in automated CRM", "200+"],
+    ["Customer acquisition via content engine", "5&times;"]
+  ];
+  var i = 0;
+  function push(){
+    if(document.hidden) return;
+    var li = document.createElement("li");
+    li.className = "entry-new";
+    var what = document.createElement("span");
+    what.className = "lc-what";
+    what.innerHTML = ENTRIES[i][0];
+    var fig = document.createElement("span");
+    fig.className = "lc-fig";
+    fig.innerHTML = ENTRIES[i][1];
+    li.appendChild(what); li.appendChild(fig);
+    feed.insertBefore(li, feed.firstChild);
+    while(feed.children.length > 3) feed.removeChild(feed.lastChild);
+    i = (i + 1) % ENTRIES.length;
+  }
+  setInterval(push, reduceMotion ? 8000 : 3800);
+})();
+</script>
+</body>
+</html>

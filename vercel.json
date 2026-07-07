@@ -1,5 +1,19 @@
 {
   "outputDirectory": "_site",
   "buildCommand": null,
-  "installCommand": null
+  "installCommand": null,
+  "redirects": [
+    { "source": "/about.html", "destination": "/#about", "permanent": true },
+    { "source": "/resume.html", "destination": "/#experience", "permanent": true },
+    { "source": "/stack.html", "destination": "/#toolkit", "permanent": true },
+    { "source": "/problems.html", "destination": "/#problems", "permanent": true },
+    { "source": "/writing.html", "destination": "/#writing", "permanent": true },
+    { "source": "/PRODUCT.html", "destination": "/", "permanent": true },
+    { "source": "/projects/project-1.html", "destination": "/projects/carebridge.html", "permanent": true },
+    { "source": "/projects/project-2.html", "destination": "/projects/compass.html", "permanent": true },
+    { "source": "/projects/project-5.html", "destination": "/projects/eternally.html", "permanent": true },
+    { "source": "/projects/project-3.html", "destination": "/#projects", "permanent": true },
+    { "source": "/projects/project-4.html", "destination": "/#projects", "permanent": true },
+    { "source": "/projects/project-6.html", "destination": "/#projects", "permanent": true }
+  ]
 }

@@ -1,11 +1,14 @@
-name: Publish Quarto Website
+name: Publish Website
+
+# The site is hand-authored static HTML in _site/ (no build step).
+# Vercel deploys _site via vercel.json; this workflow mirrors it to GitHub Pages.
 
 on:
   push:
     branches: [main]
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -17,12 +20,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Render Quarto Project
-        uses: quarto-dev/quarto-actions/render@v2
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
